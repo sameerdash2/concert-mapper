@@ -5,18 +5,26 @@
 class Setlist:
     # raw_setlist: dict containing raw data from setlist.fm API
     def __init__(self, raw_setlist: dict):
-        self.event_date = raw_setlist["eventDate"]
-        self.venue_name = raw_setlist["venue"]["name"]
-        self.city_name = raw_setlist["venue"]["city"]["name"]
-        self.city_lat = raw_setlist["venue"]["city"]["coords"]["lat"]
-        self.city_long = raw_setlist["venue"]["city"]["coords"]["long"]
-        # Sometimes they don't give a state
-        self.state_name = raw_setlist["venue"]["city"].get("state", "")
-        self.country_name = raw_setlist["venue"]["city"]["country"]["name"]
-        self.setlist_url = raw_setlist["url"]
-        # Count songs performed in all sets
-        self.songs_performed = sum(len(set["song"]) for set in raw_setlist["sets"]["set"])
-    
+        # Essential fields: if any are missing, mark the setlist as invalid.
+        try:
+            # TODO: Convert to better date format than dd-MM-yyyy
+            self.event_date = raw_setlist["eventDate"]
+            self.city_lat = raw_setlist["venue"]["city"]["coords"]["lat"]
+            self.city_long = raw_setlist["venue"]["city"]["coords"]["long"]
+        except KeyError:
+            raise ValueError("Missing essential setlist data")
+
+        # Optional fields: if missing, set to None
+        self.venue_name = raw_setlist["venue"].get("name", None)
+        self.city_name = raw_setlist["venue"]["city"].get("name", None)
+        self.state_name = raw_setlist["venue"]["city"].get("state", None)
+        self.country_name = raw_setlist["venue"]["city"].get("country", {}).get("name", None)
+        self.setlist_url = raw_setlist.get("url", None)
+        # Count songs performed in all sets.
+        # Treat 0 count as missing data.
+        song_count = sum(len(set["song"]) for set in raw_setlist["sets"]["set"])
+        self.songs_performed = song_count if song_count > 0 else None
+
     # Convert Setlist object to a dictionary cause Flask needs it
     def to_dict(self) -> dict:
         return {

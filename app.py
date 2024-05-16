@@ -62,7 +62,14 @@ def search_artist(artist_name: str):
         raw_setlists = []
 
     # Convert raw setlists to custom Setlist objects, then to dicts
-    setlists = [Setlist(raw_setlist).to_dict() for raw_setlist in raw_setlists]
+    setlists = []
+    for raw_setlist in raw_setlists:
+        try:
+            setlist = Setlist(raw_setlist)
+        except ValueError:
+            # Skip invalid setlists
+            continue
+        setlists.append(setlist.to_dict())
 
     return {
         "artist": artist["name"],
