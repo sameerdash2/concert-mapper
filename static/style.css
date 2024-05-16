@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+}
+
+:root {
+    --pico-transition: 0.1s ease-in-out;
+    --pico-font-size: 100%;
+}
+
+body {
+    color: #000;
+    /* background-color: #454545; */
+    min-height: 100vh;
+    font-family: "Inter";
+    font-size: medium; /* 16px? */
+}
+
+.header-sec, .the-form {
+    text-align: center;
+}
+
+#message {
+    color: #666;
+}
+
+main {
+    max-width: 1050px;
+    display: grid;
+    row-gap: 1rem;
+}
+
+input[type="search"] {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    height: revert;
+    margin-bottom: 0.25rem;
+}
+
+#the-map {
+    height: 68vh;
+}
+
+/* Remove Pico styles within map, but don't override Leaflet styles */
+/* Using where() as a hack to reduce specificity */
+:where(#the-map) [role="button"] {
+    all: revert;
+}
+
+.leaflet-control-zoom > a {
+    padding: revert;
+}
+
+/* Further customization of content grid */
+/* Small screen: single column */
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+/* All other screens: two columns */
+
+@media only screen and (min-width: 768px) {
+    .content {
+        grid-template-columns: 1fr 250px;
+    }
+}
+
+.pfp-container {
+    text-align: center;
+    /* Until I find an artist image API... */
+    display: none;
+}
+
+img.artist-pfp {
+    max-height: 200px;
+}
+
+#the-profile-col, #the-placeholder {
+    font-size: 0.8rem;
+}
+
+#the-profile-col {
+    display: none;
+}
+
+h4, h5 {
+    margin-bottom: 0.25rem;
+}
