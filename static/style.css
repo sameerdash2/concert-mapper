@@ -5,13 +5,13 @@
 :root {
     --pico-transition: 0.1s ease-in-out;
     --pico-font-size: 100%;
+    --cm-font-family: "Inter", sans-serif;
 }
 
 body {
     color: #000;
-    /* background-color: #454545; */
     min-height: 100vh;
-    font-family: "Inter";
+    font-family: var(--cm-font-family);
     font-size: medium; /* 16px? */
 }
 
@@ -50,6 +50,10 @@ input[type="search"] {
     padding: revert;
 }
 
+.leaflet-container > div {
+    font-family: var(--cm-font-family);
+}
+
 /* Further customization of content grid */
 /* Small screen: single column */
 .content {
@@ -85,6 +89,6 @@ img.artist-pfp {
     display: none;
 }
 
-h4, h5 {
+h4, h5, h6 {
     margin-bottom: 0.25rem;
 }

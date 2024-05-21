@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 data.setlists.forEach(setlist => {
                     L.marker([setlist.cityLat, setlist.cityLong])
                         .bindPopup(`<h4>${setlist.eventDate}</h4>
-                        <div>${setlist.cityName},&nbsp;${setlist.countryName}</div>
+                        <h5>${setlist.cityName},&nbsp;${setlist.countryName}</h5>
                         <div><b>Venue</b>:&nbsp;${setlist.venueName}</div>
                         <div><b>Songs performed</b>:&nbsp;${setlist.songsPerformed}</div>
                         <div><a href="${setlist.setlistUrl}">View setlist</a></div>`)
