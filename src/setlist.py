@@ -7,8 +7,8 @@ class Setlist:
     def __init__(self, raw_setlist: dict):
         # Essential fields: if any are missing, mark the setlist as invalid.
         try:
-            # TODO: Convert to better date format than dd-MM-yyyy
-            self.event_date = raw_setlist["eventDate"]
+            # Store date in YYYY-MM-DD format (ISO 8601), converting from DD-MM-YYYY
+            self.event_date = "-".join(raw_setlist["eventDate"].split("-")[::-1])
             self.city_lat = raw_setlist["venue"]["city"]["coords"]["lat"]
             self.city_long = raw_setlist["venue"]["city"]["coords"]["long"]
         except KeyError:
@@ -20,8 +20,7 @@ class Setlist:
         self.state_name = raw_setlist["venue"]["city"].get("state", None)
         self.country_name = raw_setlist["venue"]["city"].get("country", {}).get("name", None)
         self.setlist_url = raw_setlist.get("url", None)
-        # Count songs performed in all sets.
-        # Treat 0 count as missing data.
+        # Count songs performed in all sets. Treat 0 count as missing data.
         song_count = sum(len(set["song"]) for set in raw_setlist["sets"]["set"])
         self.songs_performed = song_count if song_count > 0 else None
 

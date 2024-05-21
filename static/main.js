@@ -99,11 +99,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Add new markers
                 data.setlists.forEach(setlist => {
+                    // Interpret date string "YYYY-MM-DD" as a date in local time zone
+                    const [yyyy, mm, dd] = setlist.eventDate.split('-').map(Number);
+                    const eventDateString = new Date(yyyy, mm - 1, dd).toLocaleDateString();
+
                     L.marker([setlist.cityLat, setlist.cityLong])
-                        .bindPopup(`<h4>${setlist.eventDate}</h4>
+                        .bindPopup(`<h4>${eventDateString}</h4>
                         <h5>${setlist.cityName},&nbsp;${setlist.countryName}</h5>
-                        <div><b>Venue</b>:&nbsp;${setlist.venueName}</div>
-                        <div><b>Songs performed</b>:&nbsp;${setlist.songsPerformed}</div>
+                        <div><b>Venue</b>:&nbsp;${setlist.venueName || 'N/A'}</div>
+                        <div><b>Songs performed</b>:&nbsp;${setlist.songsPerformed || 'N/A'}</div>
                         <div><a href="${setlist.setlistUrl}">View setlist</a></div>`)
                         .addTo(map);
                 });
