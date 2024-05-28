@@ -6,13 +6,17 @@ function initializeMap() {
         center: [39.334, -98.218],
         zoom: 4,
     });
-    map.attributionControl.setPrefix(false);
 
     // Add OpenStreetMap tiles
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
+
+    // Add attribution
+    map.attributionControl
+        .setPrefix(false)
+        .addAttribution('Concert data from <a href="https://www.setlist.fm/">setlist.fm</a>');
 
     return map;
 }
