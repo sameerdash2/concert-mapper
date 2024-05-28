@@ -7,7 +7,7 @@ from src.setlist import Setlist
 app = Flask(__name__)
 assets = Environment(app)
 
-js = Bundle('main.js', filters='jsmin', output='dist/packed.js')
+js = Bundle('main.js', filters='rjsmin', output='dist/packed.js')
 assets.register('js_all', js)
 
 css = Bundle('style.css', filters='cssmin', output='dist/style.css')
