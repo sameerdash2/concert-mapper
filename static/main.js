@@ -53,6 +53,53 @@ function populateProfile(data) {
     }
 }
 
+function plotSetlists(map, setlists) {
+    // Mapping of city coordinates to setlists. Used to distribute setlists around a circle.
+    // Cities are keyed by a string of the form "latitude,longitude".
+    const citySetlists = {};
+
+    // Assign setlists to cities
+    setlists.forEach(setlist => {
+        const cityKey = `${setlist.cityLat},${setlist.cityLong}`;
+        if (!citySetlists[cityKey]) {
+            citySetlists[cityKey] = [];
+        }
+        // Prepend setlist reference, to maintain chronological order
+        citySetlists[cityKey].unshift(setlist);
+    });
+
+    // Distribute setlists around a circle for each city
+    Object.values(citySetlists).forEach(citySetlists => {
+        // Set radius depending on number of setlists
+        const radius = 0.02 * Math.sqrt(citySetlists.length - 1);
+        const angleStep = 2 * Math.PI / citySetlists.length;
+
+        citySetlists.forEach((setlist, index) => {
+            // Start at the top of the circle, then go clockwise.
+            const angle = (Math.PI / 2) + (angleStep * -index);
+            // Store new coordinates
+            setlist.transformedLong = setlist.cityLong + radius * Math.cos(angle);
+            setlist.transformedLat = setlist.cityLat + radius * Math.sin(angle);
+        });
+    });
+
+    // Plot markers
+    setlists.forEach(setlist => {
+        // Interpret date string "YYYY-MM-DD" as a date in local time zone
+        const [yyyy, mm, dd] = setlist.eventDate.split('-').map(Number);
+        const eventDateString = new Date(yyyy, mm - 1, dd).toLocaleDateString();
+
+        // Plot marker
+        L.marker([setlist.transformedLat, setlist.transformedLong])
+            .bindPopup(`<h4>${eventDateString}</h4>
+            <h5>${setlist.cityName},&nbsp;${setlist.countryName}</h5>
+            <div><b>Venue</b>:&nbsp;${setlist.venueName || 'N/A'}</div>
+            <div><b>Songs performed</b>:&nbsp;${setlist.songsPerformed || 'N/A'}</div>
+            <div><a href="${setlist.setlistUrl}">View setlist</a></div>`)
+            .addTo(map);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const map = initializeMap();
     const message = document.getElementById('message');
@@ -98,19 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('the-profile-col').style.display = 'block';
 
                 // Add new markers
-                data.setlists.forEach(setlist => {
-                    // Interpret date string "YYYY-MM-DD" as a date in local time zone
-                    const [yyyy, mm, dd] = setlist.eventDate.split('-').map(Number);
-                    const eventDateString = new Date(yyyy, mm - 1, dd).toLocaleDateString();
-
-                    L.marker([setlist.cityLat, setlist.cityLong])
-                        .bindPopup(`<h4>${eventDateString}</h4>
-                        <h5>${setlist.cityName},&nbsp;${setlist.countryName}</h5>
-                        <div><b>Venue</b>:&nbsp;${setlist.venueName || 'N/A'}</div>
-                        <div><b>Songs performed</b>:&nbsp;${setlist.songsPerformed || 'N/A'}</div>
-                        <div><a href="${setlist.setlistUrl}">View setlist</a></div>`)
-                        .addTo(map);
-                });
+                plotSetlists(map, data.setlists);
 
                 message.textContent = "Showing 20 most recent concerts";
             })
