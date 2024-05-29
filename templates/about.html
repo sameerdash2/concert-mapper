@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}About | {% endblock %}
+
+{% block content %}
+<div>
+  <h2>About this site</h2>
+
+  <p><strong>How does this website work?</strong></p>
+  <p>The site looks up an artist name in the setlist.fm API and then retrieves all the setlists for
+    that artist. Setlist.fm is a large community-maintained database of songs played at concerts,
+    known as "setlists."</p>
+
+  <p><strong>Why is the pin placement a little off?</strong></p>
+  <p>While the data returned by setlist.fm includes names of venues, it only provides map
+    coordinates that correspond to the city of the concert. This means pins will appear on the
+    geographical center of the city, rather than the actual venue of the concert.</p>
+  <p>There is an edge case for when multiple concerts occur in the same city. To prevent their pins
+    from overlapping, I "spread" the pins into a circle around the city's center. This strategy does
+    sometimes push some pins into the ocean, but at least every pin can be clicked.</p>
+
+  <p><strong>What tech does the site use?</strong></p>
+  <p>The backend is a Python app (Flask) that queries the setlist.fm API.
+    On the frontend, we use Leaflet (map embed), Pico CSS, and vanilla JS.
+    The source code is available <a href="https://github.com/sameerdash2/concert-mapper">on GitHub.</a></p>
+</div>
+{% endblock %}

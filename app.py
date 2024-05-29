@@ -33,6 +33,9 @@ def create_error_response(msg: str, code: int) -> tuple[Response, int]:
 def index():
     return render_template('index.html')
 
+@app.route("/about")
+def about():
+    return render_template('about.html')
 
 @app.route("/api/artists/<path:artist_name>")
 def search_artist(artist_name: str):
