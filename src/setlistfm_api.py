@@ -6,6 +6,9 @@ import requests
 import json
 import os
 from dotenv import load_dotenv
+import logging
+
+logger = logging.getLogger(__name__)
 
 load_dotenv()
 
@@ -43,14 +46,14 @@ def search_artist(artist_name: str) -> dict:
         match response.status_code:
             # Rate limited
             case 429:
-                print(f"Rate limited in search_artist('{artist_name}'). Waiting {RETRY_DELAY} ms.")
+                logger.info(f"Rate limited in search_artist('{artist_name}'). Waiting {RETRY_DELAY} ms.")
             # Successful request. 404 means no results.
             case 200 | 404:
                 success = True
                 break
             # Unknown error. Log and retry.
             case _:
-                print(f"In search_artist('{artist_name}'): HTTP {response.status_code}: {response.text[:100]}")
+                logger.warn(f"In search_artist('{artist_name}'): HTTP {response.status_code}: {response.text[:100]}")
 
         time.sleep(RETRY_DELAY / 1000)
 
@@ -81,14 +84,14 @@ def get_artist_setlists(artist_mbid: str) -> dict:
         match response.status_code:
             # Rate limited
             case 429:
-                print(f"Rate limited in get_artist_setlists('{artist_mbid}'). Waiting {RETRY_DELAY} ms.")
+                logger.info(f"Rate limited in get_artist_setlists('{artist_mbid}'). Waiting {RETRY_DELAY} ms.")
             # Successful request. 404 means no results.
             case 200 | 404:
                 success = True
                 break
             # Unknown error. Log and retry.
             case _:
-                print(f"In get_artist_setlists('{artist_mbid}'): HTTP {response.status_code}: {response.text}")
+                logger.warn(f"In get_artist_setlists('{artist_mbid}'): HTTP {response.status_code}: {response.text}")
 
         time.sleep(RETRY_DELAY / 1000)
     

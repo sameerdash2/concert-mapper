@@ -3,6 +3,14 @@ from flask_assets import Environment, Bundle
 from requests import HTTPError
 from src import setlistfm_api
 from src.setlist import Setlist
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    filename="cm.log",
+    format="[%(asctime)s] - %(levelname)s - %(message)s"
+)
+logging.getLogger("werkzeug").setLevel(logging.ERROR)
 
 app = Flask(__name__)
 assets = Environment(app)
@@ -33,9 +41,11 @@ def create_error_response(msg: str, code: int) -> tuple[Response, int]:
 def index():
     return render_template('index.html')
 
+
 @app.route("/about")
 def about():
     return render_template('about.html')
+
 
 @app.route("/api/artists/<path:artist_name>")
 def search_artist(artist_name: str):
@@ -51,6 +61,7 @@ def search_artist(artist_name: str):
         return create_error_response("Artist not found", 404)
 
     mbid = artist["mbid"]
+    resolved_artist_name = artist["name"]
 
     # Step 2: Get setlists for artist from MBID
     try:
@@ -74,8 +85,10 @@ def search_artist(artist_name: str):
             continue
         setlists.append(setlist.to_dict())
 
+    app.logger.info(f"Found {len(setlists)} setlists for '{resolved_artist_name}'")
+
     return {
-        "artist": artist["name"],
+        "artist": resolved_artist_name,
         "numSetlists": len(setlists),
         "setlists": setlists
     }
