@@ -8,6 +8,10 @@
     --cm-font-family: "Inter", sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: #23262b;
+}
+
 body {
     color: #000;
     min-height: 100vh;
@@ -91,4 +95,8 @@ img.artist-pfp {
 
 h4, h5, h6 {
     margin-bottom: 0.25rem;
+}
+
+section {
+    margin-bottom: 0;
 }
