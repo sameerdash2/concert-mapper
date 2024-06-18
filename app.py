@@ -4,14 +4,23 @@ from requests import HTTPError
 from src import setlistfm_api
 from src.setlist import Setlist
 import logging
+import sys
+
+# Set up logging
+file_handler = logging.FileHandler("cm.log")
+stdout_handler = logging.StreamHandler(sys.stdout)
+handlers = [file_handler, stdout_handler]
 
 logging.basicConfig(
     level=logging.INFO,
-    filename="cm.log",
-    format="[%(asctime)s] - %(levelname)s - %(message)s"
+    format="[%(asctime)s] - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S %z",
+    handlers=handlers
 )
+
 logging.getLogger("werkzeug").setLevel(logging.ERROR)
 
+# Create Flask app
 app = Flask(__name__)
 assets = Environment(app)
 
@@ -21,6 +30,8 @@ assets.register('js_all', js)
 css = Bundle('style.css', filters='cssmin', output='dist/style.css')
 assets.register('css_all', css)
 
+# Might print twice in development mode
+app.logger.info("App started")
 
 # Override Flask's long error messages
 @app.errorhandler(500)
