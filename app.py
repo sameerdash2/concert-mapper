@@ -92,3 +92,6 @@ def search_artist(artist_name: str):
         "numSetlists": len(setlists),
         "setlists": setlists
     }
+
+if __name__ == "__main__":
+    app.run(debug=True)

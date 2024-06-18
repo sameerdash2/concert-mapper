@@ -53,7 +53,7 @@ def search_artist(artist_name: str) -> dict:
                 break
             # Unknown error. Log and retry.
             case _:
-                logger.warn(f"In search_artist('{artist_name}'): HTTP {response.status_code}: {response.text[:100]}")
+                logger.warn(f"In search_artist('{artist_name}'): HTTP {response.status_code}: {response.text.rstrip()}")
 
         time.sleep(RETRY_DELAY / 1000)
 
@@ -91,10 +91,10 @@ def get_artist_setlists(artist_mbid: str) -> dict:
                 break
             # Unknown error. Log and retry.
             case _:
-                logger.warn(f"In get_artist_setlists('{artist_mbid}'): HTTP {response.status_code}: {response.text}")
+                logger.warn(f"In get_artist_setlists('{artist_mbid}'): HTTP {response.status_code}: {response.text.rstrip()}")
 
         time.sleep(RETRY_DELAY / 1000)
-    
+
     # If request unsuccessful, raise an exception
     if not success:
         response.raise_for_status()
