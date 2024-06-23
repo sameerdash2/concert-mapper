@@ -33,14 +33,6 @@ assets.register('css_all', css)
 # Might print twice in development mode
 app.logger.info("App started")
 
-# Override Flask's long error messages
-@app.errorhandler(500)
-def internal_server_error(e):
-    return jsonify(error="Internal server error"), 500
-
-@app.errorhandler(404)
-def not_found_error(e):
-    return jsonify(error="Not found"), 404
 
 # Define our own error handler
 def create_error_response(msg: str, code: int) -> tuple[Response, int]:
