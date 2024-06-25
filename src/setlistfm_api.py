@@ -64,13 +64,16 @@ def search_artist(artist_name: str) -> dict:
     return json.loads(response.text)
 
 
-def get_artist_setlists(artist_mbid: str) -> dict:
+def get_artist_setlists(artist_mbid: str, page: int) -> dict:
     """Get setlists for an artist by their MusicBrainz ID.
 
     Raises HTTPError if the response code is not 200 or 404.
     """
 
     url = API_URL + "artist/" + artist_mbid + "/setlists"
+    params = {
+        "p": page
+    }
     headers = {
         "x-api-key": API_KEY,
         "Accept": "application/json"
@@ -79,19 +82,20 @@ def get_artist_setlists(artist_mbid: str) -> dict:
     attempts = 0
     success = False
     while attempts < MAX_ATTEMPTS:
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, params=params, headers=headers)
         attempts += 1
         match response.status_code:
             # Rate limited
             case 429:
-                logger.info(f"Rate limited in get_artist_setlists('{artist_mbid}'). Waiting {RETRY_DELAY} ms.")
+                logger.info(f"Rate limited in get_artist_setlists('{artist_mbid}', {page}). Waiting {RETRY_DELAY} ms.")
             # Successful request. 404 means no results.
             case 200 | 404:
                 success = True
                 break
             # Unknown error. Log and retry.
             case _:
-                logger.warn(f"In get_artist_setlists('{artist_mbid}'): HTTP {response.status_code}: {response.text.rstrip()}")
+                logger.warn(f"In get_artist_setlists('{artist_mbid}', {page}):"
+                            f" HTTP {response.status_code}: {response.text.rstrip()}")
 
         time.sleep(RETRY_DELAY / 1000)
 

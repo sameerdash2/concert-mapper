@@ -5,14 +5,16 @@
 class Setlist:
     # raw_setlist: dict containing raw data from setlist.fm API
     def __init__(self, raw_setlist: dict):
-        # Essential fields: if any are missing, mark the setlist as invalid.
+        # Essential fields: if any are missing, mark the setlist as invalid for this app.
         try:
             # Store date in YYYY-MM-DD format (ISO 8601), converting from DD-MM-YYYY
             self.event_date = "-".join(raw_setlist["eventDate"].split("-")[::-1])
             self.city_lat = raw_setlist["venue"]["city"]["coords"]["lat"]
             self.city_long = raw_setlist["venue"]["city"]["coords"]["long"]
+            self.is_valid = True
         except KeyError:
-            raise ValueError("Missing essential setlist data")
+            # We still store invalid setlists, so we can compare count of fetched setlists to the API's expected count
+            self.is_valid = False
 
         # Optional fields: if missing, set to None
         self.venue_name = raw_setlist["venue"].get("name", None)
@@ -26,14 +28,18 @@ class Setlist:
 
     # Convert Setlist object to a dictionary cause Flask needs it
     def to_dict(self) -> dict:
-        return {
-            "eventDate": self.event_date,
-            "venueName": self.venue_name,
-            "cityName": self.city_name,
-            "cityLat": self.city_lat,
-            "cityLong": self.city_long,
-            "stateName": self.state_name,
-            "countryName": self.country_name,
-            "setlistUrl": self.setlist_url,
-            "songsPerformed": self.songs_performed
-        }
+        if self.is_valid:
+            return {
+                "isValid": True,
+                "eventDate": self.event_date,
+                "venueName": self.venue_name,
+                "cityName": self.city_name,
+                "cityLat": self.city_lat,
+                "cityLong": self.city_long,
+                "stateName": self.state_name,
+                "countryName": self.country_name,
+                "setlistUrl": self.setlist_url,
+                "songsPerformed": self.songs_performed
+            }
+        else:
+            return {"isValid": False}

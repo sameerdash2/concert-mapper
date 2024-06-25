@@ -24,7 +24,7 @@ function initializeMap() {
 // Populate the profile section of the page
 // using data received from /api/artists/
 function populateProfile(data) {
-    document.getElementById('p-artist').textContent = data.artist;
+    document.getElementById('p-artist').textContent = data.artistName;
     document.getElementById('p-count').textContent = data.numSetlists;
 
     if (data.numSetlists > 0 && data.setlists.length > 0) {
@@ -130,6 +130,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     message.textContent = data.error;
                     return;
                 }
+
+                // temp
+                // TODO: use received data to connect to appropriate WebSocket
+                console.log(data);
+                return;
 
                 // Clear previous markers
                 map.eachLayer(layer => {
