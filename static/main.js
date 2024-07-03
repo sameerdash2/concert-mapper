@@ -21,27 +21,18 @@ function initializeMap() {
     return map;
 }
 
-// Populate the profile section of the page
-// using data received from /api/artists/
-function populateProfile(data) {
-    document.getElementById('p-artist').textContent = data.artistName;
-    document.getElementById('p-count').textContent = data.numSetlists;
+// Populate profile with initial info about artist
+function populateProfile({ artistName }) {
+    document.getElementById('p-artist').textContent = artistName;
+}
 
-    if (data.numSetlists > 0 && data.setlists.length > 0) {
-        const firstSetlist = data.setlists[data.setlists.length - 1];
-        const lastSetlist = data.setlists[0];
+// Update profile if new information is available
+function updateProfile({ totalExpected, offset, setlists, firstSetlist }) {
+    if (totalExpected !== null) {
+        document.getElementById('p-count').textContent = totalExpected;
+    }
 
-        // Omit stateName if not included
-        document.getElementById('p-first-concert').textContent =
-            `${firstSetlist.cityName}${firstSetlist.stateName ? ', ' + firstSetlist.stateName : ''}, ${firstSetlist.countryName}`;
-        document.getElementById('p-first-concert').href = firstSetlist.setlistUrl;
-        document.getElementById('p-first-date').textContent = `(${firstSetlist.eventDate})`;
-
-        document.getElementById('p-last-concert').textContent =
-            `${lastSetlist.cityName}${lastSetlist.stateName ? ', ' + lastSetlist.stateName : ''}, ${lastSetlist.countryName}`;
-        document.getElementById('p-last-concert').href = lastSetlist.setlistUrl;
-        document.getElementById('p-last-date').textContent = `(${lastSetlist.eventDate})`;
-    } else {
+    if (totalExpected === 0) {
         document.getElementById('p-first-concert').textContent = 'N/A';
         document.getElementById('p-first-concert').removeAttribute('href');
         document.getElementById('p-first-date').textContent = '';
@@ -50,12 +41,28 @@ function populateProfile(data) {
         document.getElementById('p-last-concert').removeAttribute('href');
         document.getElementById('p-last-date').textContent = '';
     }
+    else if (offset === 0) {
+        const lastSetlist = setlists[0];
+
+        // Omit stateName if not included
+        document.getElementById('p-last-concert').textContent =
+            `${lastSetlist.cityName}${lastSetlist.stateName ? ', ' + lastSetlist.stateName : ''}, ${lastSetlist.countryName}`;
+        document.getElementById('p-last-concert').href = lastSetlist.setlistUrl;
+        document.getElementById('p-last-date').textContent = `(${lastSetlist.eventDate})`;
+    } else if (firstSetlist) {
+        document.getElementById('p-first-concert').textContent =
+            `${firstSetlist.cityName}${firstSetlist.stateName ? ', ' + firstSetlist.stateName : ''}, ${firstSetlist.countryName}`;
+        document.getElementById('p-first-concert').href = firstSetlist.setlistUrl;
+        document.getElementById('p-first-date').textContent = `(${firstSetlist.eventDate})`;
+    }
 }
 
 function plotSetlists(map, setlists) {
     // Mapping of city coordinates to setlists. Used to distribute setlists around a circle.
     // Cities are keyed by a string of the form "latitude,longitude".
     const citySetlists = {};
+
+    // TODO: pagination wrecks circle strat. should create circles after all setlists are fetched
 
     // Assign setlists to cities
     setlists.forEach(setlist => {
@@ -102,6 +109,11 @@ function plotSetlists(map, setlists) {
 document.addEventListener('DOMContentLoaded', function () {
     const map = initializeMap();
     const message = document.getElementById('message');
+    // Encapsulate fetch status in an object so it can be passed around
+    const status = {
+        isFetching: false,
+        totalExpected: null,
+    };
 
     // To be cool, focus input box when '/' is pressed
     document.addEventListener('keydown', function (event) {
@@ -117,6 +129,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Listen to search-form form submission, then read search-artist input box and send a request to server
     document.getElementById('search-form').addEventListener('submit', function (event) {
         event.preventDefault();
+        // Prevent multiple requests (may handle this better later)
+        if (status.isFetching) {
+            return;
+        }
+        status.isFetching = true;
+
         const searchText = document.getElementById('search-artist').value.trim();
         if (searchText.length === 0) {
             return;
@@ -130,11 +148,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     message.textContent = data.error;
                     return;
                 }
-
-                // temp
-                // TODO: use received data to connect to appropriate WebSocket
-                console.log(data);
-                return;
+                else if (data.wssReady === false) {
+                    message.textContent = 'Error: WebSocket server is not ready. Please try again later.';
+                    return;
+                }
 
                 // Clear previous markers
                 map.eachLayer(layer => {
@@ -143,18 +160,54 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
 
+                // Join setlist stream
+                setTimeout(() => joinSetlistStream(data.mbid), 8000);
+
                 // Populate profile section
-                populateProfile(data);
+                populateProfile({ artistName: data.artistName });
                 document.getElementById('the-placeholder').style.display = 'none';
                 document.getElementById('the-profile-col').style.display = 'block';
 
-                // Add new markers
-                plotSetlists(map, data.setlists);
-
-                message.textContent = "Showing 20 most recent concerts";
+                message.textContent = "Fetching concerts...";
             })
             .catch(error => {
                 console.error(error);
             });
     });
+
+
+    function joinSetlistStream(mbid) {
+        const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+        // Remove port if exists and use 5001
+        const ws = new WebSocket(`${protocol}://${window.location.host.replace(/:\d+$/, '')}:5001?mbid=${mbid}`);
+
+        let firstSetlist = null;
+
+        ws.onmessage = function (event) {
+            const data = JSON.parse(event.data);
+            switch (data.type) {
+                case 'hello':
+                    status.totalExpected = data.totalExpected;
+                    break;
+                case 'update':
+                    // Weed out invalid setlists
+                    setlists = data.setlists.filter(setlist => setlist.isValid === true);
+                    // Add new markers
+                    plotSetlists(map, setlists);
+                    // Pass new information to profile
+                    updateProfile(data);
+                    // Update first setlist, in case this is the last update
+                    firstSetlist = data.setlists[data.setlists.length - 1];
+                    break;
+                case 'goodbye':
+                    ws.close();
+
+                    message.textContent = '\u00A0';
+                    updateProfile({ firstSetlist });
+                    status.isFetching = false;
+
+                    break;
+            }
+        };
+    }
 });

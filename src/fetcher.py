@@ -12,11 +12,7 @@ logger = logging.getLogger(__name__)
 def convert_setlists(setlists: list[dict]) -> list[dict]:
     converted_setlists = []
     for raw_setlist in setlists:
-        try:
-            setlist = Setlist(raw_setlist)
-        except ValueError:
-            # Skip invalid setlists
-            continue
+        setlist = Setlist(raw_setlist)
         converted_setlists.append(setlist.to_dict())
     return converted_setlists
 
@@ -76,7 +72,7 @@ class Fetcher:
 
                 event = {
                     "type": "update",
-                    "data": new_setlists,
+                    "setlists": new_setlists,
                     "offset": old_count,
                     "totalExpected": self.total_expected_setlists
                 }
@@ -86,12 +82,15 @@ class Fetcher:
                 logger.info(f"Broadcasted {len(new_setlists)} new setlists to ?? clients.")
 
                 # Update the fetched setlists
-                self.fetched_setlists.extend(raw_setlists)
+                self.fetched_setlists.extend(new_setlists)
+            else:
+                # Just in case API returned 200 but no setlists
+                self.done_fetching = True
 
             # Check if we can conclude
             if self.done_fetching:
                 # Broadcast the goodbye message, signaling the end of setlists
-                await self.wss.broadcast_goodbye_to_channel(self.artist_mbid)
+                await self.wss.broadcast_goodbye_to_channel(self.artist_mbid, len(self.fetched_setlists))
 
                 break
 

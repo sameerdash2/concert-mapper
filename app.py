@@ -36,18 +36,20 @@ def create_app():
     # Register blueprint with routes
     app.register_blueprint(main)
 
-    # Start the WebSocket server.
-    def start_asyncio_loop():
-        asyncio.set_event_loop(asyncio.new_event_loop())
-        loop = asyncio.get_event_loop()
-        wss = WebSocketServer()
+    # This convolution is apparently necessary to run the WebSocket server (an async function)
+    # from this function, which is synchronous
+    def start_async_server():
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+
+        wss = WebSocketServer(loop)
         # Store wss in the app context
         app.wss = wss
+
         loop.run_until_complete(wss.start_server())
         loop.run_forever()
 
-    # Start the asyncio event loop in a background thread
-    thread = Thread(target=start_asyncio_loop, daemon=True)
+    thread = Thread(target=start_async_server, daemon=True)
     thread.start()
 
     app.logger.info("App started")

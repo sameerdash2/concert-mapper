@@ -12,6 +12,13 @@ if TYPE_CHECKING:
 
 logger = logging.getLogger(__name__)
 
+PORT = 5001
+
+# If no clients have connected for an artist by the time their fetch process ends,
+# wait this many seconds for someone (hopefully the user who requested it) to connect,
+# then close the channel.
+GOODBYE_WAIT = 10
+
 # Disable propagation of websockets logs to the root logger
 logging.getLogger("websockets").propagate = False
 
@@ -44,7 +51,10 @@ class QueryParamProtocol(websockets.WebSocketServerProtocol):
 
 
 class WebSocketServer:
-    def __init__(self):
+    def __init__(self, loop: asyncio.AbstractEventLoop):
+        # needed so we can force-close connections in the same event loop
+        # that they started in, or something
+        self.loop = loop
         pass
 
 
@@ -72,9 +82,9 @@ class WebSocketServer:
         if len(fetcher.fetched_setlists) > 0:
             event = {
                 "type": "update",
-                "data": fetcher.fetched_setlists,
+                "setlists": fetcher.fetched_setlists,
                 "offset": 0,
-                "totalExpected": self.total_expected_setlists
+                "totalExpected": fetcher.total_expected_setlists
             }
             await websocket.send(json.dumps(event))
 
@@ -83,19 +93,25 @@ class WebSocketServer:
         # Later when they disconnect, update the set of connections
         await websocket.wait_closed()
 
-        mbids_to_connections[websocket.mbid].remove(websocket)
-
-        # The goodbye broadcast will clean up the mbids_to_connections[websocket.mbid] set.
+        try:
+            conn_set = mbids_to_connections[websocket.mbid]
+        except KeyError:
+            # Already removed by the goodbye broadcast (this client lingered too long)
+            pass
+        else:
+            # Remove client to excuse them from forced cleanup.
+            # If i understand Python right, I don't have to worry about conn_set being deleted
+            conn_set.remove(websocket)
 
 
     async def start_server(self):
         server = await websockets.serve(
             self.handle_connection,
             host="localhost",
-            port=5001,
+            port=PORT,
             create_protocol=QueryParamProtocol
         )
-        logger.info(f"WebSocket server started on port 5001")
+        logger.info(f"WebSocket server started on port {PORT}")
 
         await server.wait_closed()
 
@@ -109,19 +125,25 @@ class WebSocketServer:
 
 
     # Broadcast a goodbye message to a channel, and close all its connections.
-    async def broadcast_goodbye_to_channel(self, mbid: str):
+    async def broadcast_goodbye_to_channel(self, mbid: str, total_setlists: int):
         # Part 1: Goodbye message
 
+        # Include actual number of setlists fetched.
         goodbye_event = {
-            "type": "goodbye"
+            "type": "goodbye",
+            "totalSetlists": total_setlists
         }
 
         # If there are no clients in this channel, wait for at least one to connect
         # before closing the server. Prevents the server from closing too early
         # if the fetch process concludes before any clients connect.
-        # TODO: test without
-        while len(mbids_to_connections[mbid]) == 0:
+        elapsed = 0
+        while len(mbids_to_connections[mbid]) == 0 and elapsed < GOODBYE_WAIT:
             await asyncio.sleep(0.5)
+            elapsed += 0.5
+
+        if len(mbids_to_connections[mbid]) == 0:
+            logger.info(f"No clients connected for artist {mbid} :(")
 
         count = self.broadcast_to_channel(mbid, goodbye_event)
         logger.info(f"Broadcasted goodbye message to {count} clients for artist {mbid}")
@@ -131,12 +153,12 @@ class WebSocketServer:
         # Stop any new connections.
         del fetchers[mbid]
 
-        # For any clients that refused to disconnect even after the goodbye message,
-        # give them 1 second to disconnect before closing the connection.
+        # For any clients that linger around for more than 1 second after
+        # the goodbye message, close them.
         await asyncio.sleep(1)
 
         for conn in mbids_to_connections[mbid]:
-            await conn.close()
+            self.loop.create_task(conn.close())
 
         del mbids_to_connections[mbid]
         logger.info(f"Removed artist '{mbid}'")
