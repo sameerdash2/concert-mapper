@@ -28,20 +28,22 @@ function populateProfile({ artistName }) {
 
 // Update profile if new information is available
 function updateProfile({ totalExpected, offset, setlists, firstSetlist }) {
-    if (totalExpected !== null) {
+    // Don't want null or undefined
+    if (typeof totalExpected === 'number') {
         document.getElementById('p-count').textContent = totalExpected;
+
+        if (totalExpected === 0) {
+            document.getElementById('p-first-concert').textContent = 'N/A';
+            document.getElementById('p-first-concert').removeAttribute('href');
+            document.getElementById('p-first-date').textContent = '';
+
+            document.getElementById('p-last-concert').textContent = 'N/A';
+            document.getElementById('p-last-concert').removeAttribute('href');
+            document.getElementById('p-last-date').textContent = '';
+        }
     }
 
-    if (totalExpected === 0) {
-        document.getElementById('p-first-concert').textContent = 'N/A';
-        document.getElementById('p-first-concert').removeAttribute('href');
-        document.getElementById('p-first-date').textContent = '';
-
-        document.getElementById('p-last-concert').textContent = 'N/A';
-        document.getElementById('p-last-concert').removeAttribute('href');
-        document.getElementById('p-last-date').textContent = '';
-    }
-    else if (offset === 0) {
+    if (offset === 0 && setlists.length > 0) {
         const lastSetlist = setlists[0];
 
         // Omit stateName if not included
@@ -161,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
 
                 // Join setlist stream
-                setTimeout(() => joinSetlistStream(data.mbid), 8000);
+                joinSetlistStream(data.mbid);
 
                 // Populate profile section
                 populateProfile({ artistName: data.artistName });
