@@ -157,10 +157,12 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 if (data.error) {
                     message.textContent = data.error;
+                    status.isFetching = false;
                     return;
                 }
                 else if (data.wssReady === false) {
                     message.textContent = 'Error: WebSocket server is not ready. Please try again later.';
+                    status.isFetching = false;
                     return;
                 }
 

@@ -59,7 +59,6 @@ class WebSocketServer:
 
 
     async def handle_connection(self, websocket: websockets.WebSocketServerProtocol):
-        logger.info(f"Client connected for artist {websocket.mbid}")
         # In case the fetch process finished between process_request and now...
         if websocket.mbid not in mbids_to_connections or websocket.mbid not in fetchers:
             await websocket.close()
@@ -143,10 +142,9 @@ class WebSocketServer:
             elapsed += 0.5
 
         if len(mbids_to_connections[mbid]) == 0:
-            logger.info(f"No clients connected for artist {mbid} :(")
+            logger.warn(f"No clients connected for artist '{mbid}' :(")
 
-        count = self.broadcast_to_channel(mbid, goodbye_event)
-        logger.info(f"Broadcasted goodbye message to {count} clients for artist {mbid}")
+        self.broadcast_to_channel(mbid, goodbye_event)
 
         # Part 2: Shut down the channel
 
@@ -161,7 +159,6 @@ class WebSocketServer:
             self.loop.create_task(conn.close())
 
         del mbids_to_connections[mbid]
-        logger.info(f"Removed artist '{mbid}'")
 
 
     # Add a new artist.

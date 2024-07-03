@@ -8,9 +8,6 @@ from requests import HTTPError
 from src import setlistfm_api
 from src.fetcher import Fetcher
 from flask import current_app
-import logging
-
-logger = logging.getLogger(__name__)
 
 # Define our own error handler
 def create_error_response(msg: str, code: int) -> tuple[Response, int]:
@@ -37,7 +34,7 @@ def query_artist(artist_name: str):
     # This is needed because the Fetcher will run in a thread, and is therefore outside the app context
     wss = current_app.wss
 
-    fetcher = Fetcher(mbid, wss)
+    fetcher = Fetcher(mbid, resolved_artist_name, wss)
 
     # Run start_setlists_fetch in a separate thread
     thread = threading.Thread(target=lambda: asyncio.run(fetcher.start_setlists_fetch()))

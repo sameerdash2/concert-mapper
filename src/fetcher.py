@@ -9,18 +9,12 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-def convert_setlists(setlists: list[dict]) -> list[dict]:
-    converted_setlists = []
-    for raw_setlist in setlists:
-        setlist = Setlist(raw_setlist)
-        converted_setlists.append(setlist.to_dict())
-    return converted_setlists
-
 
 class Fetcher:
-    def __init__(self, artist_mbid: str, wss: WebSocketServer):
+    def __init__(self, artist_mbid: str, artist_name: str, wss: WebSocketServer):
         # Data about the artist or their setlists
         self.artist_mbid = artist_mbid
+        self.artist_name = artist_name
         self.fetched_setlists = []
         # Total expected setlists is known only after the first page is fetched.
         # Until then, use None to convey the unknown state.
@@ -34,7 +28,7 @@ class Fetcher:
 
 
     async def start_setlists_fetch(self):
-        logger.info(f"Starting setlists fetch for '{self.artist_mbid}'")
+        logger.info(f"Starting setlists fetch for '{self.artist_name}' ({self.artist_mbid})")
         # Inform our WebSocketServer about new artist, so it can create a virtual channel
         self.wss.add_artist(self.artist_mbid, self)
 
@@ -51,7 +45,7 @@ class Fetcher:
                 raw_setlists = setlists_response["setlist"]
             except HTTPError:
                 logger.error(
-                    f"Aborting fetch for '{self.artist_mbid}' with {len(self.fetched_setlists)}"
+                    f"Aborting fetch for '{self.artist_name}' ({self.artist_mbid}) with {len(self.fetched_setlists)}"
                     f" of {self.total_expected_setlists} setlists fetched."
                 )
                 self.done_fetching = True
@@ -67,7 +61,7 @@ class Fetcher:
 
             # Prepare a broadcast payload of the new setlists for all connected clients
             if len(raw_setlists) > 0:
-                new_setlists = convert_setlists(raw_setlists)
+                new_setlists = Setlist.convert_setlists(raw_setlists)
                 old_count = len(self.fetched_setlists)
 
                 event = {
@@ -79,7 +73,6 @@ class Fetcher:
 
                 # Broadcast them
                 self.wss.broadcast_to_channel(self.artist_mbid, event)
-                logger.info(f"Broadcasted {len(new_setlists)} new setlists to ?? clients.")
 
                 # Update the fetched setlists
                 self.fetched_setlists.extend(new_setlists)
@@ -89,8 +82,10 @@ class Fetcher:
 
             # Check if we can conclude
             if self.done_fetching:
+                count = len(self.fetched_setlists)
+                logger.info(f"Retrieved {count} setlists for '{self.artist_name}' ({self.artist_mbid})")
                 # Broadcast the goodbye message, signaling the end of setlists
-                await self.wss.broadcast_goodbye_to_channel(self.artist_mbid, len(self.fetched_setlists))
+                await self.wss.broadcast_goodbye_to_channel(self.artist_mbid, count)
 
                 break
 
