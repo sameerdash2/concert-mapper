@@ -89,7 +89,8 @@ img.artist-pfp {
     font-size: 0.8rem;
 }
 
-#the-profile-col {
+#the-profile-col,
+#result-box {
     display: none;
 }
 

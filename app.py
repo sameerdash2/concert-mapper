@@ -72,5 +72,9 @@ def about():
     return render_template('about.html')
 
 @main.route("/api/artists/<path:artist_name>")
-def search_artist(artist_name: str):
+def get_artist(artist_name: str):
     return artists.query_artist(artist_name)
+
+@main.route("/api/setlists/<path:artist_mbid>")
+def get_setlists(artist_mbid: str):
+    return artists.get_artist_setlists(artist_mbid)

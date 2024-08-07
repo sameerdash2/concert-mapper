@@ -13,10 +13,16 @@ from flask import current_app
 def create_error_response(msg: str, code: int) -> tuple[Response, int]:
     return jsonify(error=msg), code
 
-def query_artist(artist_name: str):
-    # Step 1: Search for artist, get MBID
+def query_artist(name: str):
+    """Looks up an artist by name.
+    Args:
+        name: Artist name
+    Returns:
+        A dictionary with info for a single artist.
+    """
+    # Search for artist, get MBID
     try:
-        artist_response = setlistfm_api.search_artist(artist_name)
+        artist_response = setlistfm_api.search_artist(name)
         # Naively assume the first artist is the one we want
         artist = artist_response["artist"][0]
     except HTTPError:
@@ -28,21 +34,33 @@ def query_artist(artist_name: str):
     mbid = artist["mbid"]
     resolved_artist_name = artist["name"]
 
-    # Step 2: Create a Fetcher instance for this artist that will fetch and stream setlists
+    return {
+        "mbid": mbid,
+        "artistName": resolved_artist_name
+    }
 
+
+def get_artist_setlists(mbid: str):
+    """Initiates the fetching of setlists for an artist.
+    Args:
+        mbid: Artist MBID
+    Returns:
+        dict: A dictionary indicating that the websocket channel is ready.
+    """
     # First, pull the WebSocketServer out of the app context to pass to Fetcher.
     # This is needed because the Fetcher will run in a thread, and is therefore outside the app context
     wss = current_app.wss
 
-    fetcher = Fetcher(mbid, resolved_artist_name, wss)
+    # TODO: before this, do test fetch to see if mbid exists
+    # Create a Fetcher instance for this artist that will fetch and stream setlists
+    fetcher = Fetcher(mbid, wss)
 
     # Run start_setlists_fetch in a separate thread
     thread = threading.Thread(target=lambda: asyncio.run(fetcher.start_setlists_fetch()))
     thread.start()
 
-    # Step 3: Return the artist name, and mbid (so client can connect to the WebSocket)
+    # Send back the mbid (so client can connect to the WebSocket)
     return {
-        "artistName": resolved_artist_name,
         "mbid": mbid,
         "wssReady": True
     }

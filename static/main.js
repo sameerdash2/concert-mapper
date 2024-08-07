@@ -123,6 +123,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Encapsulate fetch status in an object so it can be passed around
     const status = {
         isFetching: false,
+        mbid: null,
+        artistName: '',
         totalExpected: null,
     };
 
@@ -140,11 +142,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Listen to search-form form submission, then read search-artist input box and send a request to server
     document.getElementById('search-form').addEventListener('submit', function (event) {
         event.preventDefault();
-        // Prevent multiple requests (may handle this better later)
-        if (status.isFetching) {
-            return;
-        }
-        status.isFetching = true;
 
         const searchText = document.getElementById('search-artist').value.trim();
         if (searchText.length === 0) {
@@ -153,6 +150,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
         message.textContent = 'Working...';
         fetch(`/api/artists/${encodeURIComponent(searchText)}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    message.textContent = data.error;
+                    status.isFetching = false;
+                    return;
+                }
+
+                document.getElementById('result-box').style.display = 'block';
+                status.mbid = data.mbid;
+                status.artistName = data.artistName;
+                document.getElementById('search-results').textContent =
+                    `Artist: ${data.artistName}`;
+
+                message.textContent = '\u00A0';
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    });
+
+    // Listen to get setlists button click
+    document.getElementById('confirm-artist').addEventListener('click', () => {
+        // Prevent multiple requests (may handle this better later)
+        if (status.isFetching) {
+            return;
+        }
+        status.isFetching = true;
+        document.getElementById('result-box').style.display = 'none';
+        // Populate profile section with name
+        populateProfile({ artistName: status.artistName });
+
+        message.textContent = 'Working...';
+        fetch(`/api/setlists/${encodeURIComponent(status.mbid)}`)
             .then(response => response.json())
             .then(data => {
                 if (data.error) {
@@ -176,8 +207,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Join setlist stream
                 joinSetlistStream(data.mbid);
 
-                // Populate profile section
-                populateProfile({ artistName: data.artistName });
                 document.getElementById('the-placeholder').style.display = 'none';
                 document.getElementById('the-profile-col').style.display = 'block';
 
