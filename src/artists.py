@@ -51,7 +51,6 @@ def get_artist_setlists(mbid: str):
     # This is needed because the Fetcher will run in a thread, and is therefore outside the app context
     wss = current_app.wss
 
-    # TODO: before this, do test fetch to see if mbid exists
     # Create a Fetcher instance for this artist that will fetch and stream setlists
     fetcher = Fetcher(mbid, wss)
 

@@ -40,7 +40,6 @@ class Fetcher:
 
             try:
                 setlists_response = setlistfm_api.get_artist_setlists(self.artist_mbid, page)
-
                 raw_setlists = setlists_response["setlist"]
             except HTTPError:
                 logger.error(
