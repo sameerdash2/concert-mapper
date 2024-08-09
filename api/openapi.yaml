@@ -1,0 +1,86 @@
+# Not active yet -- will be used for validation once the frontend is split off
+# and backend only serves API
+
+openapi: 3.0.3
+
+info:
+  title: Concert Mapper
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+
+servers:
+  - url: /api
+
+paths:
+  /artists/{name}:
+    get:
+      description: Search for an artist by name
+      parameters:
+        - in: path
+          name: name
+          required: true
+          schema:
+            type: string
+          description: A search query for artist name
+      responses:
+        200:
+          description: Artist info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Artist'
+        400:
+          description: Bad request
+        404:
+          description: Artist not found
+
+  /setlists/{artistMbid}:
+    get:
+      description: Request a WebSocket channel to be opened for a specific artist's setlists
+      parameters:
+        - in: path
+          name: artistMbid
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: Artist's MusicBrainz Identifier
+      responses:
+        200:
+          description: WebSocket channel info
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebSocketChannel'
+        400:
+          description: Bad request
+
+components:
+  schemas:
+    Artist:
+      type: object
+      properties:
+        mbid:
+          type: string
+          format: uuid
+        artistName:
+          type: string
+      required:
+        - mbid
+        - artistName
+      additionalProperties: false
+
+    WebSocketChannel:
+      type: object
+      properties:
+        mbid:
+          type: string
+          format: uuid
+        wssReady:
+          type: boolean
+      required:
+        - mbid
+        - wssReady
+      additionalProperties: false
