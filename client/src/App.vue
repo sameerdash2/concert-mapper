@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import TitleText from './components/TitleText.vue';
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <HelloWorld msg="App created" />
+      <TitleText />
     </div>
   </header>
 
