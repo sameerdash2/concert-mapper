@@ -1,15 +1,22 @@
 <script setup lang="ts">
+import Map from './components/Map.vue';
+import SearchBar from './components/SearchBar.vue';
 import TitleText from './components/TitleText.vue';
 </script>
 
 <template>
   <!-- `content` class tells Bulma to respect classic HTML tags -->
-  <div class="content">
-    <header class="mt-2">
-      <TitleText />
-    </header>
-    <main>
-      hi
-    </main>
+  <div class="content container p-4 fixed-grid has-1-cols">
+    <div class="grid is-gap-2">
+      <div class="cell">
+        <TitleText />
+      </div>
+      <div class="cell">
+        <SearchBar />
+      </div>
+      <div class="cell">
+        <Map />
+      </div>
+    </div>
   </div>
 </template>
