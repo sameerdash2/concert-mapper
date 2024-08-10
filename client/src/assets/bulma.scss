@@ -1,0 +1,6 @@
+@use "bulma/sass" with (
+  $family-primary: '"Inter", sans-serif',
+  $weight-extrabold: 700
+);
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=fallback');

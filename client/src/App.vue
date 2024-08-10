@@ -3,42 +3,13 @@ import TitleText from './components/TitleText.vue';
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
+  <!-- `content` class tells Bulma to respect classic HTML tags -->
+  <div class="content">
+    <header class="mt-2">
       <TitleText />
-    </div>
-  </header>
-
-  <main>
-    hi
-  </main>
+    </header>
+    <main>
+      hi
+    </main>
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
