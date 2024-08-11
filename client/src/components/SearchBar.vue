@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {setProposedArtist, setMessage} from '../store/state';
+import {store, setMessage} from '../store/state';
 const isProd = import.meta.env.PROD;
 
 const API_BASE_URL = isProd ?
@@ -23,10 +23,11 @@ const searchArtist = () => {
       .then((data) => {
         if (data.error) {
           setMessage(data.error);
+          store.proposedArtist = {};
           return;
         }
 
-        setProposedArtist(data.artistName, data.artistId);
+        store.proposedArtist = data;
 
         setMessage('');
       });

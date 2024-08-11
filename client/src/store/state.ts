@@ -1,8 +1,8 @@
 import {reactive} from 'vue';
 
 interface ProposedArtist {
-  name: string;
-  mbid: string;
+  name?: string;
+  mbid?: string;
 }
 
 // interface Artist extends ProposedArtist {}
@@ -15,8 +15,4 @@ export const store = reactive({
 
 export const setMessage = (message: string) => {
   store.message = message;
-};
-
-export const setProposedArtist = (name: string, mbid: string) => {
-  store.proposedArtist = {name, mbid};
 };

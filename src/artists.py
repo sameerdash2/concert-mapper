@@ -36,7 +36,7 @@ def query_artist(name: str):
 
     return {
         "mbid": mbid,
-        "artistName": resolved_artist_name
+        "name": resolved_artist_name
     }
 
 
