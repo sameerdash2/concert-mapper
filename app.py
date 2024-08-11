@@ -1,7 +1,8 @@
 import asyncio
 from threading import Thread
-from flask import Flask, render_template
+from flask import Flask, render_template, Blueprint
 from flask_assets import Environment, Bundle
+from flask_cors import CORS
 import logging
 import sys
 from src import artists
@@ -24,6 +25,7 @@ def create_app():
 
     logging.getLogger("werkzeug").setLevel(logging.ERROR)
     app = Flask(__name__)
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
     assets = Environment(app)
 
     # Register assets
@@ -56,8 +58,6 @@ def create_app():
 
     return app
 
-
-from flask import Blueprint, render_template
 
 # Create a blueprint
 main = Blueprint('main', __name__)

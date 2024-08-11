@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Info from './components/Info.vue';
 import Map from './components/Map.vue';
 import SearchBar from './components/SearchBar.vue';
 import TitleText from './components/TitleText.vue';
@@ -13,6 +14,9 @@ import TitleText from './components/TitleText.vue';
       </div>
       <div class="cell">
         <SearchBar />
+      </div>
+      <div class="cell">
+        <Info />
       </div>
       <div class="cell">
         <Map />
