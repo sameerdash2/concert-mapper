@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Info from './components/Info.vue';
 import Map from './components/Map.vue';
+import Message from './components/Message.vue';
 import SearchBar from './components/SearchBar.vue';
 import TitleText from './components/TitleText.vue';
 </script>
@@ -14,6 +15,7 @@ import TitleText from './components/TitleText.vue';
       </div>
       <div class="cell">
         <SearchBar />
+        <Message />
       </div>
       <div class="cell">
         <Info />

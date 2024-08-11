@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {setProposedArtist} from '../store/state';
+import {setProposedArtist, setMessage} from '../store/state';
 const isProd = import.meta.env.PROD;
 
 const API_BASE_URL = isProd ?
@@ -17,19 +17,18 @@ const searchArtist = () => {
     return;
   }
 
-  // TODO message
+  setMessage('Searching...');
   fetch(`${API_BASE_URL}/api/artists/${encodeURIComponent(searchText)}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.error) {
-          // TODO message
-          console.error(data.error);
+          setMessage(data.error);
           return;
         }
 
         setProposedArtist(data.artistName, data.artistId);
 
-        // TODO message clear
+        setMessage('');
       });
 };
 </script>

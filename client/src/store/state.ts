@@ -8,9 +8,14 @@ interface ProposedArtist {
 // interface Artist extends ProposedArtist {}
 
 export const store = reactive({
+  message: '',
   proposedArtist: {} as ProposedArtist
   // artist: {} as Artist
 });
+
+export const setMessage = (message: string) => {
+  store.message = message;
+};
 
 export const setProposedArtist = (name: string, mbid: string) => {
   store.proposedArtist = {name, mbid};
