@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import {store, setMessage} from '../store/state';
+import {onMounted, onUnmounted, ref} from 'vue';
+
 const isProd = import.meta.env.PROD;
 
 const API_BASE_URL = isProd ?
@@ -32,11 +34,25 @@ const searchArtist = () => {
         setMessage('');
       });
 };
+
+// To be cool, focus input box when '/' is pressed
+const inputRef = ref<HTMLInputElement | null>(null);
+const handleKeydown = (event: KeyboardEvent) => {
+  if (event.key === '/' &&
+      inputRef.value &&
+      document.activeElement !== inputRef.value) {
+    event.preventDefault();
+    inputRef.value.focus();
+  }
+};
+onMounted(() => window.addEventListener('keydown', handleKeydown));
+onUnmounted(() => window.removeEventListener('keydown', handleKeydown));
 </script>
 
 <template>
   <form @submit.prevent="searchArtist">
     <input
+      ref="inputRef"
       v-model="searchQuery"
       class="input"
       type="text"
