@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import {store} from '@/store/state';
-import {onMounted, ref, watch} from 'vue';
+import {onMounted, watch} from 'vue';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type {Setlist} from '@/store/state';
 
-const map = ref<L.Map | null>(null);
+// my verdict is that I don't need a ref here
+let map: L.Map | null = null;
+
 const plottedSetlists = new Set<Setlist>();
 
 onMounted(() => {
@@ -27,7 +29,7 @@ onMounted(() => {
       .addAttribution('Concert data from <a href="https://www.setlist.fm/">setlist.fm</a>');
 
   // Update ref
-  map.value = newMap;
+  map = newMap;
 });
 
 /**
@@ -41,14 +43,14 @@ const plotSetlists = (setlists: Setlist[]) => {
     const eventDateString = new Date(yyyy, mm - 1, dd).toLocaleDateString();
 
     // Plot marker
-    if (map.value) {
+    if (map) {
       L.marker([setlist.cityLat, setlist.cityLong])
           .bindPopup(`<h4>${eventDateString}</h4>
               <h5>${setlist.cityName}, ${setlist.countryName}</h5>
               <div><b>Venue</b>: ${setlist.venueName || 'N/A'}</div>
           <div><b>Songs performed</b>: ${setlist.songsPerformed || 'N/A'}</div>
               <div><a href="${setlist.setlistUrl}">View setlist</a></div>`)
-          .addTo(map.value as L.Map);
+          .addTo(map);
       plottedSetlists.add(setlist);
     }
   });
@@ -78,9 +80,9 @@ watch(
  * Clear all existing markers and data on the map.
  */
 const clearMap = () => {
-  map.value?.eachLayer((layer) => {
+  map?.eachLayer((layer) => {
     if (layer instanceof L.Marker) {
-      map.value?.removeLayer(layer);
+      map?.removeLayer(layer);
     }
   });
   plottedSetlists.clear();
