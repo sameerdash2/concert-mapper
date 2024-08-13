@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import {store, setMessage} from '../store/state';
+import {
+  setMessage,
+  setProposedArtist,
+  clearProposedArtist
+} from '../store/state';
 import {onMounted, onUnmounted, ref} from 'vue';
-
-const isProd = import.meta.env.PROD;
-
-const API_BASE_URL = isProd ?
-    import.meta.env.VITE_API_BASE_URL_PROD :
-    'http://localhost:8000';
+import API_BASE_URL from '@/services/apiBaseUrl';
 
 const searchQuery = defineModel({
   type: String,
@@ -25,11 +24,11 @@ const searchArtist = () => {
       .then((data) => {
         if (data.error) {
           setMessage(data.error);
-          store.proposedArtist = {};
+          clearProposedArtist();
           return;
         }
 
-        store.proposedArtist = data;
+        setProposedArtist(data);
 
         setMessage('');
       });

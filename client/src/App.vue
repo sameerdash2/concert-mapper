@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import {ref} from 'vue';
 import Info from './components/Info.vue';
 import Map from './components/Map.vue';
 import Message from './components/Message.vue';
 import SearchBar from './components/SearchBar.vue';
 import TitleText from './components/TitleText.vue';
+
+const mapRef = ref<InstanceType<typeof Map> | null>(null);
 </script>
 
 <template>
@@ -18,10 +21,10 @@ import TitleText from './components/TitleText.vue';
         <Message />
       </div>
       <div class="cell">
-        <Info />
+        <Info :map-ref="mapRef" />
       </div>
       <div class="cell">
-        <Map />
+        <Map ref="mapRef" />
       </div>
     </div>
   </div>

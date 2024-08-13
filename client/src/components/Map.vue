@@ -6,7 +6,6 @@ import 'leaflet/dist/leaflet.css';
 const map = ref<L.Map | null>(null);
 
 onMounted(() => {
-  console.log(`the component is now mounted.`);
   // Draw map
   const newMap = L.map('the-map', {
     center: [39.334, -98.218],
@@ -26,6 +25,21 @@ onMounted(() => {
 
   // Update ref
   map.value = newMap;
+});
+
+/**
+ * Clear all existing markers on the map.
+ */
+const clearMarkers = () => {
+  map.value?.eachLayer((layer) => {
+    if (layer instanceof L.Marker) {
+      map.value?.removeLayer(layer);
+    }
+  });
+};
+
+defineExpose({
+  clearMarkers
 });
 </script>
 
