@@ -5,6 +5,8 @@ import Map from './components/Map.vue';
 import Message from './components/Message.vue';
 import SearchBar from './components/SearchBar.vue';
 import TitleText from './components/TitleText.vue';
+import ArtistProfile from './components/ArtistProfile.vue';
+import {store} from './store/state';
 
 const mapRef = ref<InstanceType<typeof Map> | null>(null);
 </script>
@@ -21,7 +23,11 @@ const mapRef = ref<InstanceType<typeof Map> | null>(null);
         <Message />
       </div>
       <div class="cell">
-        <Info :map-ref="mapRef" />
+        <Info
+          v-if="!store.artist.mbid"
+          :map-ref="mapRef"
+        />
+        <ArtistProfile v-else />
       </div>
       <div class="cell">
         <Map ref="mapRef" />

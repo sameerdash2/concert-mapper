@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import {WebSocketManager} from '@/services/websocket';
-import {store, setMessage} from '../store/state';
+import {
+  store,
+  setMessage,
+  setArtist
+} from '../store/state';
 import {computed} from 'vue';
 import Map from './Map.vue';
 import API_BASE_URL from '@/services/apiBaseUrl';
@@ -15,7 +19,11 @@ const proposedArtistExists = computed(() => {
 
 const handleConfirm = () => {
   setMessage('Working...');
+  // Set proposed artist as actual artist
+  setArtist(store.proposedArtist);
+
   const encodedMbid = encodeURIComponent(store.proposedArtist.mbid);
+  // Make request to setlists endpoint to initialize the fetch process
   fetch(`${API_BASE_URL}/api/setlists/${encodedMbid}`)
       .then((response) => response.json())
       .then((data) => {
@@ -31,13 +39,12 @@ const handleConfirm = () => {
         }
 
         // Clear previous markers
-        props.mapRef?.clearMarkers();
+        props.mapRef?.clearMap();
 
         // Join setlist stream
         WebSocketManager.createWebSocket(store.proposedArtist.mbid);
 
         // TODO: status fetching true,
-        // make it display a new component ArtistProfile instead of Info
 
         setMessage('Fetching concerts...');
       });

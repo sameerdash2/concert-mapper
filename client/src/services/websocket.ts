@@ -1,4 +1,4 @@
-import {setMessage} from '@/store/state';
+import {store, setMessage, updateArtist} from '@/store/state';
 
 const isProd = import.meta.env.PROD;
 
@@ -22,23 +22,24 @@ export class WebSocketManager {
 
       switch (data.type) {
         case 'hello':
-          console.log('Total expected:', data.totalExpected);
+          // Total expected is present in hello message iff the backend
+          // has already fetched at least one page of setlists
+          if (data.totalExpected) {
+            updateArtist({concertCount: data.totalExpected});
+          }
           break;
         case 'update': {
           // Weed out invalid setlists
-          // TODO: can do fancy TS stuff here
           const setlists = data.setlists.filter(
               (setlist: {isValid: boolean}) => setlist.isValid === true
           );
-          console.log('setlists:', setlists);
-          // Add new markers
-          // TODO: plotting
-          // plotSetlists(map, setlists);
+          // Update store. Map will listen to this and plot new setlists
+          store.setlists.push(...setlists);
 
-          // Pass new information to profile
-          // TODO: Update
-          // updateProfile(data);
-          console.log('Update:', data);
+          // Display any new information on artist profile
+          if (data.totalExpected) {
+            updateArtist({concertCount: data.totalExpected});
+          }
           break;
         }
         case 'goodbye':
