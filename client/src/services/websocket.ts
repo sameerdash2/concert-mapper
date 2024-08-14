@@ -40,8 +40,8 @@ export class WebSocketManager {
           const setlists = data.setlists.filter(
               (setlist: {isValid: boolean}) => setlist.isValid === true
           );
-          // Update store. Map will listen to this and plot new setlists
-          store.setlists.push(...setlists);
+          // Plot new setlists
+          mapRef?.plotSetlists(setlists);
 
           // Display any new information on artist profile
           if (data.totalExpected) {

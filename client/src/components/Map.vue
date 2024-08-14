@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import {store} from '@/store/state';
-import {onMounted, watch} from 'vue';
+import {onMounted} from 'vue';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type {Setlist} from '@/store/state';
@@ -12,7 +11,7 @@ const plottedSetlists = new Set<Setlist>();
 
 onMounted(() => {
   // Draw map
-  const newMap = L.map('the-map', {
+  map = L.map('the-map', {
     center: [39.334, -98.218],
     zoom: 4
   });
@@ -21,15 +20,12 @@ onMounted(() => {
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(newMap);
+  }).addTo(map);
 
   // Add attribution
-  newMap.attributionControl
+  map.attributionControl
       .setPrefix(false)
       .addAttribution('Concert data from <a href="https://www.setlist.fm/">setlist.fm</a>');
-
-  // Update ref
-  map = newMap;
 });
 
 /**
@@ -55,27 +51,6 @@ const plotSetlists = (setlists: Setlist[]) => {
     }
   });
 };
-
-/**
- * Of the given array, only plot setlists that are not already plotted.
- * @param {Setlist[]} updatedSetlists - full array of setlists
- */
-const handleUpdatedSetlists = (updatedSetlists: Setlist[]) => {
-  const newSetlists = updatedSetlists.filter(
-      (setlist) => !plottedSetlists.has(setlist)
-  );
-  plotSetlists(newSetlists);
-};
-
-// Watch for any change in global setlists, so we can plot new ones
-// TODO: no more watching, have websocket directl plot setlists
-watch(
-    store.setlists,
-    // not calling it "newSetlists" because it refers to the same array
-    (updatedSetlists) => {
-      handleUpdatedSetlists(updatedSetlists);
-    }
-);
 
 /**
  * Scatter existing map markers into a circle around their city,
@@ -136,6 +111,7 @@ const clearMap = () => {
 };
 
 defineExpose({
+  plotSetlists,
   clearMap,
   scatterMarkers
 });
