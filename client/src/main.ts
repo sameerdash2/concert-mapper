@@ -1,4 +1,4 @@
-import './assets/bulma.scss';
+import './assets/style.css';
 
 import {createApp} from 'vue';
 import App from './App.vue';

@@ -18,6 +18,7 @@
     "vue": "^3.4.29"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^6.0.0",
     "@rushstack/eslint-patch": "^1.8.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/leaflet": "^1.9.12",
@@ -29,6 +30,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-vue": "^9.23.0",
     "npm-run-all2": "^6.2.0",
+    "postcss": "^8.4.41",
     "typescript": "^5.5.4",
     "vite": "^5.3.1",
     "vite-plugin-eslint": "^1.8.1",

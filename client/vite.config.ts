@@ -4,6 +4,7 @@ import {defineConfig} from 'vite';
 import vue from '@vitejs/plugin-vue';
 // @ts-ignore
 import eslint from 'vite-plugin-eslint';
+import purgecss from '@fullhuman/postcss-purgecss';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,5 +19,22 @@ export default defineConfig({
   },
   server: {
     port: 8010
+  },
+  css: {
+    postcss: {
+      plugins: [
+        purgecss({
+          content: [
+            './index.html',
+            './src/**/*.{vue,js,ts}'
+          ],
+          variables: true,
+          safelist: {
+            // Keep leaflet classes
+            standard: [/leaflet-/]
+          }
+        })
+      ]
+    }
   }
 });
