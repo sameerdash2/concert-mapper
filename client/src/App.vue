@@ -13,7 +13,7 @@ const mapRef = ref<InstanceType<typeof Map> | null>(null);
 
 <template>
   <!-- `content` class tells Bulma to respect classic HTML tags -->
-  <div class="content container p-4 fixed-grid has-1-cols">
+  <div class="content container is-max-widescreen p-4 fixed-grid has-1-cols">
     <div class="grid is-gap-2">
       <div class="cell">
         <TitleText />

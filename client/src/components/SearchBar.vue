@@ -56,6 +56,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown));
       class="input"
       type="text"
       placeholder="Search artist..."
+      autofocus
     >
   </form>
 </template>
