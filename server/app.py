@@ -1,7 +1,6 @@
 import asyncio
 from threading import Thread
-from flask import Flask, render_template, Blueprint
-from flask_assets import Environment, Bundle
+from flask import Flask, Blueprint
 from flask_cors import CORS
 import logging
 import sys
@@ -26,14 +25,6 @@ def create_app():
     logging.getLogger("werkzeug").setLevel(logging.ERROR)
     app = Flask(__name__)
     CORS(app, resources={r"/api/*": {"origins": "*"}})
-    assets = Environment(app)
-
-    # Register assets
-    js = Bundle('main.js', filters='rjsmin', output='dist/packed.js')
-    assets.register('js_all', js)
-
-    css = Bundle('style.css', filters='cssmin', output='dist/style.css')
-    assets.register('css_all', css)
 
     # Register blueprint with routes
     app.register_blueprint(main)
@@ -63,14 +54,6 @@ def create_app():
 main = Blueprint('main', __name__)
 
 # Define routes
-@main.route("/")
-def index():
-    return render_template('index.html')
-
-@main.route("/about")
-def about():
-    return render_template('about.html')
-
 @main.route("/api/artists/<path:artist_name>")
 def get_artist(artist_name: str):
     return artists.query_artist(artist_name)
