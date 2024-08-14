@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import {onMounted} from 'vue';
+import {createApp, onMounted} from 'vue';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type {Setlist} from '@/store/state';
+import ConcertPopup from './ConcertPopup.vue';
 
 // my verdict is that I don't need a ref here
 let map: L.Map | null = null;
@@ -34,18 +35,14 @@ onMounted(() => {
  */
 const plotSetlists = (setlists: Setlist[]) => {
   setlists.forEach((setlist) => {
-    // Interpret date string "YYYY-MM-DD" as a date in local time zone
-    const [yyyy, mm, dd] = setlist.eventDate.split('-').map(Number);
-    const eventDateString = new Date(yyyy, mm - 1, dd).toLocaleDateString();
+    // Compose a marker and mount it to a new div
+    const popupDiv = document.createElement('div');
+    createApp(ConcertPopup, {setlist}).mount(popupDiv);
 
     // Plot marker
     if (map) {
       L.marker([setlist.cityLat, setlist.cityLong])
-          .bindPopup(`<h4>${eventDateString}</h4>
-              <h5>${setlist.cityName}, ${setlist.countryName}</h5>
-              <div><b>Venue</b>: ${setlist.venueName || 'N/A'}</div>
-          <div><b>Songs performed</b>: ${setlist.songsPerformed || 'N/A'}</div>
-              <div><a href="${setlist.setlistUrl}">View setlist</a></div>`)
+          .bindPopup(popupDiv)
           .addTo(map);
       plottedSetlists.add(setlist);
     }
@@ -124,5 +121,6 @@ defineExpose({
 <style scoped>
 #the-map {
   height: 68vh;
+  font-family: inherit;
 }
 </style>
