@@ -1,6 +1,10 @@
 import {store, setMessage, updateArtist} from '@/store/state';
+import type MapComponent from '@/components/Map.vue';
 
 const isProd = import.meta.env.PROD;
+
+// Defining this type just to make the JSDoc work..
+type MapRef = InstanceType<typeof MapComponent> | null;
 
 /**
  * Class for managing the WebSocket connection
@@ -11,9 +15,12 @@ export class WebSocketManager {
   /**
    * Open a new WebSocket connection to the backend server.
    * @param {string} mbid - socket channel, which is an artist MBID
+   * @param {MapRef} mapRef - ref to Map component
    */
-  static createWebSocket(mbid: string) {
-    const baseUrl = isProd ? import.meta.env.VITE_WEBSOCKET_BASE_URL_PROD : 'ws://localhost:5001';
+  static createWebSocket(mbid: string, mapRef: MapRef) {
+    const baseUrl = isProd ?
+      import.meta.env.VITE_WEBSOCKET_BASE_URL_PROD :
+      'ws://localhost:5001';
 
     this.socket = new WebSocket(`${baseUrl}?mbid=${mbid}`);
 
@@ -47,18 +54,12 @@ export class WebSocketManager {
 
           setMessage('');
 
-          // TODO: scatter
-          // scatterMarkers(map);
+          // Scatter markers that are in the same city
+          mapRef?.scatterMarkers();
 
-          // TODO: update status false
-          // status.isFetching = false;
+          store.isFetching = false;
           break;
       }
-    };
-
-    this.socket.onclose = () => {
-      // TODO: handle
-      console.log('WebSocket closed');
     };
   }
 }

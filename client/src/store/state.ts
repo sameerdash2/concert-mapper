@@ -22,11 +22,13 @@ export interface Setlist {
   songsPerformed: number
 }
 
+// The store
 export const store = reactive({
   message: '',
   proposedArtist: {} as ProposedArtist,
   artist: {} as Artist,
-  setlists: [] as Setlist[]
+  setlists: [] as Setlist[],
+  isFetching: false
 });
 
 export const setMessage = (message: string) => {

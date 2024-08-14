@@ -68,6 +68,7 @@ const handleUpdatedSetlists = (updatedSetlists: Setlist[]) => {
 };
 
 // Watch for any change in global setlists, so we can plot new ones
+// TODO: no more watching, have websocket directl plot setlists
 watch(
     store.setlists,
     // not calling it "newSetlists" because it refers to the same array
@@ -75,6 +76,52 @@ watch(
       handleUpdatedSetlists(updatedSetlists);
     }
 );
+
+/**
+ * Scatter existing map markers into a circle around their city,
+ * to avoid overlap.
+ */
+const scatterMarkers = () => {
+  /*
+    Mapping of city coordinates to markers.
+    Used to distribute markers around a circle.
+    Cities are keyed by a string of the form "latitude,longitude".
+    */
+  const citySetlists: Record<string, L.Marker[]> = {};
+
+  // Assign markers to cities
+  map?.eachLayer((layer) => {
+    if (layer instanceof L.Marker) {
+      const {lat, lng} = layer.getLatLng();
+      const cityKey = `${lat},${lng}`;
+      if (!citySetlists[cityKey]) {
+        citySetlists[cityKey] = [];
+      }
+      // Prepend this marker, to maintain chronological order
+      citySetlists[cityKey].unshift(layer);
+    }
+  });
+
+  // Distribute markers around a circle for each city
+  Object.values(citySetlists).forEach((markers) => {
+    const radius = 0.02 * Math.sqrt(markers.length - 1);
+    const angleStep = 2 * Math.PI / markers.length;
+
+    markers.forEach((marker, index) => {
+      // Start at the top of the circle, then go clockwise.
+      const angle = (Math.PI / 2) + (angleStep * -index);
+      const currentLatLng = marker.getLatLng();
+
+      // latitude is Y, and longitude is X...
+      const newLatLng = L.latLng(
+          currentLatLng.lat + radius * Math.sin(angle),
+          currentLatLng.lng + radius * Math.cos(angle)
+      );
+
+      marker.setLatLng(newLatLng);
+    });
+  });
+};
 
 /**
  * Clear all existing markers and data on the map.
@@ -89,7 +136,8 @@ const clearMap = () => {
 };
 
 defineExpose({
-  clearMap
+  clearMap,
+  scatterMarkers
 });
 </script>
 
