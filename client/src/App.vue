@@ -22,23 +22,34 @@ const mapRef = ref<InstanceType<typeof Map> | null>(null);
         <SearchBar />
         <Message />
       </div>
-      <div class="cell">
-        <!-- yes i made a truth table for this
-
-        proposed exists | artist exists || show Info | show Profile
-        0 0  1 0
-        0 1  0 1
-        1 0  1 0
-        1 1  1 1 -->
-        <Info
-          v-if="!store.artist.mbid || store.proposedArtist.mbid"
-          :map-ref="mapRef"
-        />
-        <ArtistProfile v-if="store.artist.mbid" />
-      </div>
-      <div class="cell">
-        <Map ref="mapRef" />
+      <!-- Main app space -- show side by side on desktop, stacked on mobile -->
+      <div class="columns cell">
+        <div
+          id="info-column"
+          class="column is-narrow"
+        >
+          <!-- yes i made a truth table for this
+          proposed exists | artist exists || show Info | show Profile
+          0 0  1 0
+          0 1  0 1
+          1 0  1 0
+          1 1  1 1 -->
+          <Info
+            v-if="!store.artist.mbid || store.proposedArtist.mbid"
+            :map-ref="mapRef"
+          />
+          <ArtistProfile v-if="store.artist.mbid" />
+        </div>
+        <div class="column">
+          <Map ref="mapRef" />
+        </div>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+#info-column {
+  width: 300px;
+}
+</style>
