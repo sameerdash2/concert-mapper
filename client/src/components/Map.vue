@@ -5,6 +5,23 @@ import 'leaflet/dist/leaflet.css';
 import type {Setlist} from '@/store/state';
 import ConcertPopup from './ConcertPopup.vue';
 
+// Fix default marker icon not loading when bundled
+// https://github.com/Leaflet/Leaflet/issues/4968#issuecomment-269750768
+
+// _getIconUrl tries to hardcode a fully qualified icon path,
+// which won't be transformed by the bundler
+delete L.Icon.Default.prototype['_getIconUrl' as keyof L.Icon.Default];
+
+import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
+import iconUrl from 'leaflet/dist/images/marker-icon.png';
+import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl,
+  iconUrl,
+  shadowUrl
+});
+// End of fix
+
 // my verdict is that I don't need a ref here
 let map: L.Map | null = null;
 
