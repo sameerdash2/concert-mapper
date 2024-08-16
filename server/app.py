@@ -4,25 +4,26 @@ from flask import Flask, Blueprint
 from flask_cors import CORS
 import logging
 import sys
+
+# Set up logging
+file_handler = logging.FileHandler("cm.log")
+stdout_handler = logging.StreamHandler(sys.stdout)
+handlers = [file_handler, stdout_handler]
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="[%(asctime)s] - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S %z",
+    handlers=handlers
+)
+
+logging.getLogger("werkzeug").setLevel(logging.ERROR)
+
 from src import artists
 from src.wss import WebSocketServer
 
-
 # Application factory
 def create_app():
-    # Set up logging
-    file_handler = logging.FileHandler("cm.log")
-    stdout_handler = logging.StreamHandler(sys.stdout)
-    handlers = [file_handler, stdout_handler]
-
-    logging.basicConfig(
-        level=logging.INFO,
-        format="[%(asctime)s] - %(levelname)s - %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S %z",
-        handlers=handlers
-    )
-
-    logging.getLogger("werkzeug").setLevel(logging.ERROR)
     app = Flask(__name__)
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 

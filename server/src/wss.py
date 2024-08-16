@@ -106,7 +106,7 @@ class WebSocketServer:
     async def start_server(self):
         server = await websockets.serve(
             self.handle_connection,
-            host="localhost",
+            host="0.0.0.0",
             port=PORT,
             create_protocol=QueryParamProtocol
         )

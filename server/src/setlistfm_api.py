@@ -15,6 +15,9 @@ load_dotenv()
 API_URL = "https://api.setlist.fm/rest/1.0/"
 API_KEY = os.getenv("SETLISTFM_API_KEY")
 
+if API_KEY is None or len(API_KEY) == 0:
+    logger.warning("SETLISTFM_API_KEY has not been set")
+
 # Max number of times to attempt an API request before giving up
 MAX_ATTEMPTS = 3
 # Delay between retries in ms
