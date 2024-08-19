@@ -7,6 +7,7 @@ import json
 import os
 from dotenv import load_dotenv
 import logging
+from threading import Lock
 
 logger = logging.getLogger(__name__)
 
@@ -20,8 +21,29 @@ if API_KEY is None or len(API_KEY) == 0:
 
 # Max number of times to attempt an API request before giving up
 MAX_ATTEMPTS = 3
-# Delay between retries in ms
+# Rate limit: minimum interval to aim for between requests
+RATE_LIMIT_MS = 500
+# Delay added to retries, on top of rate limit gap.
 RETRY_DELAY = 500
+
+# Time of the last request
+last_request_time = 0
+# Lock for making requests
+rate_limit_lock = Lock()
+
+
+def wait_for_rate_limit():
+    """Utility function that returns after a certain amount of time
+    has passed since the last request."""
+    global last_request_time
+    with rate_limit_lock:
+        current_time = time.time()
+        # Convert to milliseconds
+        elapsed_time = (current_time - last_request_time) * 1000
+
+        if elapsed_time < RATE_LIMIT_MS:
+            time.sleep((RATE_LIMIT_MS - elapsed_time) / 1000)
+        last_request_time = time.time()
 
 
 def search_artist(artist_name: str) -> dict:
@@ -43,6 +65,7 @@ def search_artist(artist_name: str) -> dict:
     attempts = 0
     success = False
     while attempts < MAX_ATTEMPTS:
+        wait_for_rate_limit()
         response = requests.get(url, params=params, headers=headers)
         attempts += 1
 
@@ -56,7 +79,9 @@ def search_artist(artist_name: str) -> dict:
                 break
             # Unknown error. Log and retry.
             case _:
-                logger.warn(f"In search_artist('{artist_name}'): HTTP {response.status_code}: {response.text.rstrip()}")
+                # Sometimes they send back HTML for some reason
+                clean_response = "[HTML page]" if '<html' in response.text else response.text.rstrip()
+                logger.warn(f"In search_artist('{artist_name}'): HTTP {response.status_code}: {clean_response}")
 
         time.sleep(RETRY_DELAY / 1000)
 
@@ -85,6 +110,7 @@ def get_artist_setlists(artist_mbid: str, page: int) -> dict:
     attempts = 0
     success = False
     while attempts < MAX_ATTEMPTS:
+        wait_for_rate_limit()
         response = requests.get(url, params=params, headers=headers)
         attempts += 1
         match response.status_code:
@@ -97,8 +123,10 @@ def get_artist_setlists(artist_mbid: str, page: int) -> dict:
                 break
             # Unknown error. Log and retry.
             case _:
+                # Sometimes they send back HTML for some reason
+                clean_response = "[HTML page]" if '<html' in response.text else response.text.rstrip()
                 logger.warn(f"In get_artist_setlists('{artist_mbid}', {page}):"
-                            f" HTTP {response.status_code}: {response.text.rstrip()}")
+                            f" HTTP {response.status_code}: {clean_response}")
 
         time.sleep(RETRY_DELAY / 1000)
 
