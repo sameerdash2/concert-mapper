@@ -15,25 +15,26 @@
     "bulma": "^1.0.2",
     "leaflet": "^1.9.4",
     "sass": "^1.77.8",
-    "vue": "^3.4.29"
+    "vue": "^3.4.38"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^6.0.0",
-    "@rushstack/eslint-patch": "^1.8.0",
+    "@rushstack/eslint-patch": "^1.10.4",
     "@tsconfig/node20": "^20.1.4",
     "@types/leaflet": "^1.9.12",
-    "@types/node": "^20.14.5",
-    "@vitejs/plugin-vue": "^5.0.5",
+    "@types/node": "^22.4.1",
+    "@vitejs/plugin-vue": "^5.1.2",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/tsconfig": "^0.5.1",
     "eslint": "^8.57.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-vue": "^9.23.0",
-    "npm-run-all2": "^6.2.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "npm-run-all2": "^6.2.2",
     "postcss": "^8.4.41",
     "typescript": "^5.5.4",
-    "vite": "^5.3.1",
+    "vite": "^5.4.1",
     "vite-plugin-eslint": "^1.8.1",
-    "vue-tsc": "^2.0.21"
-  }
+    "vue-tsc": "^2.0.29"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
