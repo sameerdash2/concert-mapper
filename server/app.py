@@ -4,7 +4,8 @@ from flask import Flask, Blueprint
 from flask_cors import CORS
 
 # Set up logging before importing other modules
-import src.logger
+from src.logger import initialize_logger
+initialize_logger()
 
 from src import artists
 from src.wss import WebSocketServer
