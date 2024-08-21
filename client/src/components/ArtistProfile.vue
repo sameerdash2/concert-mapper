@@ -5,6 +5,11 @@ import {
 </script>
 
 <template>
+  <img
+    :src="store.artist.imageUrl"
+    alt="Artist"
+    class="artist-image"
+  >
   <h3>{{ store.artist.name }}</h3>
   <div>
     <p>
@@ -12,3 +17,13 @@ import {
     </p>
   </div>
 </template>
+
+<style scoped>
+.artist-image {
+  width: 200px;
+}
+.content h3 {
+  /* Undo Bulma's big margin */
+  margin-top: .6666em;
+}
+</style>

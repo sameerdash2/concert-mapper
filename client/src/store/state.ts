@@ -3,6 +3,7 @@ import {reactive} from 'vue';
 interface ProposedArtist {
   name: string;
   mbid: string;
+  imageUrl: string;
 }
 
 interface Artist extends ProposedArtist {

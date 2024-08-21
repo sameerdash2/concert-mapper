@@ -34,10 +34,13 @@ const mapRef = ref<InstanceType<typeof Map> | null>(null);
           0 1  0 1
           1 0  1 0
           1 1  1 1 -->
-          <Info
+          <div
             v-if="!store.artist.mbid || store.proposedArtist.mbid"
-            :map-ref="mapRef"
-          />
+            class="mb-4"
+          >
+            <Info :map-ref="mapRef" />
+          </div>
+          <hr v-if="store.artist.mbid && store.proposedArtist.mbid">
           <ArtistProfile v-if="store.artist.mbid" />
         </div>
         <div class="column">

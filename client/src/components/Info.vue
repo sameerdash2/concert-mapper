@@ -58,6 +58,11 @@ const handleConfirm = () => {
     <p>
       <b>Artist:</b> {{ store.proposedArtist.name }}
     </p>
+    <img
+      :src="store.proposedArtist.imageUrl"
+      alt="Artist"
+      class="artist-image"
+    >
     <button
       class="button"
       @click="handleConfirm"
@@ -66,3 +71,9 @@ const handleConfirm = () => {
     </button>
   </div>
 </template>
+
+<style scoped>
+.artist-image {
+  width: 200px;
+}
+</style>
