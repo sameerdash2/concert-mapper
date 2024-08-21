@@ -7,7 +7,9 @@
 1. `cd server`
 1. Create and activate a virtual environment [using the Flask docs](https://flask.palletsprojects.com/en/3.0.x/installation/#virtual-environments)
 1. Install required packages: `pip install -r requirements.txt`
-1. Copy `.env.example` to a new file `.env` and fill in your setlist.fm API key
+1. Copy `.env.example` to a new file `.env`
+1. In `.env`, fill in your setlist.fm API key
+1. *(optional)* To show artist images, add a [fanart.tv API key](https://fanarttv.docs.apiary.io/) to `.env`. If not added, artists will display with a default profile picture.
 1. Run the app: `flask run`
 
 The backend API will run at `http://localhost:8000`.
