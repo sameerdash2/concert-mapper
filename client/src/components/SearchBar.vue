@@ -18,6 +18,7 @@ const searchArtist = () => {
     return;
   }
 
+  searchQuery.value = '';
   setMessage('Searching...');
   fetch(`${API_BASE_URL}/api/artists/${encodeURIComponent(searchText)}`)
       .then((response) => response.json())
