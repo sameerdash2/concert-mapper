@@ -127,4 +127,4 @@ def get_artist_setlists(artist_mbid: str, page: int) -> dict:
         "p": page
     }
 
-    return _perform_request(url, params, f"{artist_mbid}, page {page}")
+    return _perform_request(url, params, f"page {page}")

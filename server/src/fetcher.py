@@ -15,6 +15,7 @@ class Fetcher:
         # Data about the artist or their setlists
         self.artist_mbid = artist_mbid
         self.fetched_setlists = []
+
         # Total expected setlists is known only after the first page is fetched.
         # Until then, use None to convey the unknown state.
         self.total_expected_setlists = None
@@ -24,6 +25,26 @@ class Fetcher:
 
         # Store the app's WebSocketServer instance
         self.wss = wss
+
+        # Just for logging
+        self.artist_name = None
+
+
+    def _update_metadata(self, setlists_response: dict) -> None:
+        if "total" in setlists_response:
+            self.total_expected_setlists = int(setlists_response["total"])
+        if "setlist" in setlists_response and len(setlists_response["setlist"]) > 0:
+            self.artist_name = setlists_response["setlist"][0]["artist"]["name"]
+
+
+    def _broadcast_new_setlists(self, new_setlists: list[Setlist], offset: int) -> None:
+        event = {
+            "type": "update",
+            "setlists": new_setlists,
+            "offset": offset,
+            "totalExpected": self.total_expected_setlists
+        }
+        self.wss.broadcast_to_channel(self.artist_mbid, event)
 
 
     async def start_setlists_fetch(self):
@@ -53,38 +74,24 @@ class Fetcher:
                 # Either way, we are done fetching.
                 self.done_fetching = True
 
-            # Update total expected if exists
-            if setlists_response is not None and "total" in setlists_response:
-                self.total_expected_setlists = int(setlists_response["total"])
+            # Update metadata based on response
+            if setlists_response is not None:
+                self._update_metadata(setlists_response)
 
-            # Prepare a broadcast payload of the new setlists for all connected clients
-            if len(raw_setlists) > 0:
-                new_setlists = Setlist.convert_setlists(raw_setlists)
-                old_count = len(self.fetched_setlists)
+            # Broadcast a payload of the new setlists to all connected clients
+            new_setlists = Setlist.convert_setlists(raw_setlists)
+            self._broadcast_new_setlists(new_setlists, len(self.fetched_setlists))
 
-                event = {
-                    "type": "update",
-                    "setlists": new_setlists,
-                    "offset": old_count,
-                    "totalExpected": self.total_expected_setlists
-                }
-
-                # Broadcast them
-                self.wss.broadcast_to_channel(self.artist_mbid, event)
-
-                # Update the fetched setlists
-                self.fetched_setlists.extend(new_setlists)
-            else:
-                # Just in case API returned 200 but no setlists
-                self.done_fetching = True
+            # Update the fetched setlists
+            self.fetched_setlists.extend(new_setlists)
 
             # Check if we can conclude
             if self.done_fetching:
                 count = len(self.fetched_setlists)
-                logger.info(f"Retrieved {count} setlists for ({self.artist_mbid})")
+                name_clause = f"'{self.artist_name}' " if self.artist_name else ""
+                logger.info(f"Retrieved {count} setlists for {name_clause}({self.artist_mbid})")
                 # Broadcast the goodbye message, signaling the end of setlists
                 await self.wss.broadcast_goodbye_to_channel(self.artist_mbid, count)
-
                 break
 
             # Increment page for next request
