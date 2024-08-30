@@ -19,7 +19,7 @@ def initialize_logger():
         def formatTime(self, record, datefmt=None):
             dt = datetime.fromtimestamp(record.created, TARGET_TZ)
             ms = dt.microsecond // 1000
-            datefmt = f"%Y-%m-%d %H:%M:%S.{ms} %Z"
+            datefmt = f"%Y-%m-%d %H:%M:%S.{ms:03d} %Z"
             return dt.strftime(datefmt)
 
     # Apply the formatter to handlers
