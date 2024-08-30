@@ -11,7 +11,7 @@ load_dotenv()
 
 logger = logging.getLogger(__name__)
 
-API_URL = "http://webservice.fanart.tv/v3"
+API_URL = "https://webservice.fanart.tv/v3"
 API_KEY = os.getenv("FANART_TV_API_KEY")
 
 HAVE_API_KEY = API_KEY is not None and len(API_KEY) > 0
