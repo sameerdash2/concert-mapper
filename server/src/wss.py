@@ -103,7 +103,7 @@ class WebSocketServer:
             conn_set.remove(websocket)
 
 
-    async def start_server(self):
+    async def start_server(self) -> None:
         server = await websockets.serve(
             self.handle_connection,
             host="0.0.0.0",
@@ -117,14 +117,15 @@ class WebSocketServer:
 
     # Broadcast an event to all clients connected to a specific artist's "channel"
     # Returns the number of clients broadcasted to.
-    def broadcast_to_channel(self, mbid: str, event: dict):
+    def broadcast_to_channel(self, mbid: str, event: dict) -> int:
         if mbid in mbids_to_connections:
             websockets.broadcast(mbids_to_connections[mbid], json.dumps(event))
             return len(mbids_to_connections[mbid])
+        return 0
 
 
     # Broadcast a goodbye message to a channel, and close all its connections.
-    async def broadcast_goodbye_to_channel(self, mbid: str, total_setlists: int):
+    async def broadcast_goodbye_to_channel(self, mbid: str, total_setlists: int) -> None:
         # Part 1: Goodbye message
 
         # Include actual number of setlists fetched.
@@ -163,6 +164,6 @@ class WebSocketServer:
 
     # Add a new artist.
     # I would make `fetcher` const if this were C++
-    def add_artist(self, mbid: str, fetcher: 'Fetcher'):
+    def add_artist(self, mbid: str, fetcher: 'Fetcher') -> None:
         mbids_to_connections[mbid] = set()
         fetchers[mbid] = fetcher

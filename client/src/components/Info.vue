@@ -46,8 +46,6 @@ const handleConfirm = () => {
         // Join setlist stream
         WebSocketManager.createWebSocket(store.artist.mbid, props.mapRef);
         store.isFetching = true;
-
-        setMessage('Fetching concerts...');
       });
 };
 </script>

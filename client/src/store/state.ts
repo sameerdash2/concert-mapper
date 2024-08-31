@@ -28,7 +28,6 @@ export const store = reactive({
   message: '',
   proposedArtist: {} as ProposedArtist,
   artist: {} as Artist,
-  setlists: [] as Setlist[],
   isFetching: false
 });
 
