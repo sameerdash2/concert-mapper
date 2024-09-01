@@ -3,7 +3,7 @@
 
 from requests import HTTPError
 from src.setlist import Setlist
-from src import setlistfm_api
+from src.setlistfm_api import SetlistFmAPI
 from src.wss import WebSocketServer
 import logging
 
@@ -28,6 +28,8 @@ class Fetcher:
 
         # Just for logging
         self.artist_name = None
+
+        self.setlistfm = SetlistFmAPI()
 
 
     def _update_metadata(self, setlists_response: dict) -> None:
@@ -60,7 +62,7 @@ class Fetcher:
             setlists_response = None
 
             try:
-                setlists_response = setlistfm_api.get_artist_setlists(self.artist_mbid, page)
+                setlists_response = self.setlistfm.get_artist_setlists(self.artist_mbid, page)
                 raw_setlists = setlists_response["setlist"]
             except HTTPError:
                 logger.error(

@@ -5,12 +5,14 @@ import asyncio
 import threading
 from flask import Response, jsonify
 from requests import HTTPError
-from src import setlistfm_api
+from src.setlistfm_api import SetlistFmAPI
 from src.fetcher import Fetcher
 from src import fanart_tv_api
 from flask import current_app
 
 DEFAULT_ARTIST_IMAGE_URL = "https://abs.twimg.com/sticky/default_profile_images/default_profile_200x200.png"
+
+setlistfm = SetlistFmAPI()
 
 
 # Define our own error handler
@@ -27,7 +29,7 @@ def query_artist(name: str):
     """
     # Search for artist, get MBID
     try:
-        artist_response = setlistfm_api.search_artist(name)
+        artist_response = setlistfm.search_artist(name)
         # Naively assume the first artist is the one we want
         artist = artist_response["artist"][0]
     except HTTPError:
