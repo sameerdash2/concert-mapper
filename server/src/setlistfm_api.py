@@ -17,13 +17,11 @@ API_URL = "https://api.setlist.fm/rest/1.0"
 API_KEY = os.getenv("SETLISTFM_API_KEY")
 
 # Max number of times to attempt an API request before giving up
-MAX_ATTEMPTS = 3
+MAX_ATTEMPTS = 5
 # Rate limit: minimum interval to aim for between requests
 # Official rate limit is 2 reqs per second, but they seem to support
 # a speedy turnaround for recently searched artists
 RATE_LIMIT_MS = 250
-# Delay added to retries, before request is put back into "queue".
-RETRY_DELAY = 500
 
 
 class SetlistFmAPI:
@@ -68,36 +66,35 @@ class SetlistFmAPI:
         }
         endpoint = API_URL + path
 
-        attempts = 0
-        success = False
-        while attempts < MAX_ATTEMPTS:
+        for attempts in range(MAX_ATTEMPTS):
             # Wait to go. This aims to respect setlist.fm rate limit, but won't stop all 429s
             self._wait_for_rate_limit()
 
             # Request
             response = requests.get(endpoint, params=params, headers=headers)
-            attempts += 1
 
+            # Handle success. 404 means no results.
+            if response.status_code == 200 or response.status_code == 404:
+                return json.loads(response.text)
+
+            # Begin error land.
+            # Exponential backoff, capped at 15 seconds
+            delay = min((2 ** attempts) * RATE_LIMIT_MS, 15000)
             match response.status_code:
-                # Successful request. 404 means no results.
-                case 200 | 404:
-                    success = True
-                    break
                 # Rate limited
                 case 429:
-                    logger.info(f"Rate limited in {path} for '{log_info}'. Waiting {RETRY_DELAY} ms.")
+                    logger.info(f"Rate limited in {path} for '{log_info}'. Waiting {delay} ms.")
                 # Unknown error.
                 case _:
                     # Sometimes they send back HTML for some reason
                     clean_response = "[HTML page]" if '<html' in response.text else response.text.rstrip()
                     logger.warning(f"Error in {path} for '{log_info}': HTTP {response.status_code}: {clean_response}")
 
-            time.sleep(RETRY_DELAY / 1000)
+            if attempts < MAX_ATTEMPTS - 1:
+                time.sleep(delay / 1000)
 
-        if not success:
-            response.raise_for_status()
-
-        return json.loads(response.text)
+        logger.info(f"Exhausted {MAX_ATTEMPTS} attempts in {path} for '{log_info}'.")
+        response.raise_for_status()
 
 
     def search_artist(self, artist_name: str) -> dict:
