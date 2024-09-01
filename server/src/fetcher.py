@@ -49,8 +49,12 @@ class Fetcher:
         self.wss.broadcast_to_channel(self.artist_mbid, event)
 
 
+    def __repr__(self) -> str:
+        return f"'{self.artist_name if self.artist_name else '?'}' ({self.artist_mbid})"
+
+
     async def start_setlists_fetch(self):
-        logger.info(f"Starting setlists fetch for ({self.artist_mbid})")
+        logger.info(f"Starting setlists fetch for {self}")
         # Inform our WebSocketServer about new artist, so it can create a virtual channel
         self.wss.add_artist(self.artist_mbid, self)
 
@@ -66,7 +70,7 @@ class Fetcher:
                 raw_setlists = setlists_response["setlist"]
             except HTTPError:
                 logger.error(
-                    f"Aborting fetch for ({self.artist_mbid}) with {len(self.fetched_setlists)}"
+                    f"Aborting fetch for {self} with {len(self.fetched_setlists)}"
                     f" of {self.total_expected_setlists} setlists fetched."
                 )
                 self.done_fetching = True
@@ -90,8 +94,7 @@ class Fetcher:
             # Check if we can conclude
             if self.done_fetching:
                 count = len(self.fetched_setlists)
-                name_clause = f"'{self.artist_name}' " if self.artist_name else ""
-                logger.info(f"Retrieved {count} setlists for {name_clause}({self.artist_mbid})")
+                logger.info(f"Retrieved {count} setlists for {self}")
                 # Broadcast the goodbye message, signaling the end of setlists
                 await self.wss.broadcast_goodbye_to_channel(self.artist_mbid, count)
                 break
