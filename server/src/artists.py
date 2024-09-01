@@ -65,9 +65,8 @@ def get_artist_setlists(mbid: str):
     # Create a Fetcher instance for this artist that will fetch and stream setlists
     fetcher = Fetcher(mbid, wss)
 
-    # Run start_setlists_fetch in a separate thread
-    thread = threading.Thread(target=lambda: asyncio.run(fetcher.start_setlists_fetch()))
-    thread.start()
+    # Tell fetcher to start the fetch process
+    fetcher.start_setlists_fetch()
 
     # Send back the mbid (so client can connect to the WebSocket)
     return {

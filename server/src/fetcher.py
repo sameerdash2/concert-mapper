@@ -1,6 +1,8 @@
 # fetcher.py
 # An instance of the Fetcher class handles the lookup and streaming of setlists to the client, for one artist.
 
+import asyncio
+import threading
 from requests import HTTPError
 from src.setlist import Setlist
 from src.setlistfm_api import SetlistFmAPI
@@ -35,8 +37,6 @@ class Fetcher:
     def _update_metadata(self, setlists_response: dict) -> None:
         if "total" in setlists_response:
             self.total_expected_setlists = int(setlists_response["total"])
-        if "setlist" in setlists_response and len(setlists_response["setlist"]) > 0:
-            self.artist_name = setlists_response["setlist"][0]["artist"]["name"]
 
 
     def _broadcast_new_setlists(self, new_setlists: list[Setlist], offset: int) -> None:
@@ -50,14 +50,19 @@ class Fetcher:
 
 
     def __repr__(self) -> str:
-        return f"'{self.artist_name if self.artist_name else '?'}' ({self.artist_mbid})"
+        return f"'{self.artist_name}' ({self.artist_mbid})"
 
 
-    async def start_setlists_fetch(self):
-        logger.info(f"Starting setlists fetch for {self}")
-        # Inform our WebSocketServer about new artist, so it can create a virtual channel
-        self.wss.add_artist(self.artist_mbid, self)
+    def _obtain_artist_name(self) -> None:
+        """Fetch, and store in self, the current artist's name."""
+        try:
+            response = self.setlistfm.get_artist_info(self.artist_mbid)
+            self.artist_name = response["name"]
+        except (KeyError, HTTPError):
+            self.artist_name = "??"
 
+
+    async def _fetch_setlists(self) -> None:
         # Loop for fetching setlists.
         page = 1
         while True:
@@ -101,3 +106,16 @@ class Fetcher:
 
             # Increment page for next request
             page += 1
+
+
+    def start_setlists_fetch(self) -> None:
+        """Start the setlist fetch process for an artist. Returns once the websocket is ready."""
+        self._obtain_artist_name()
+        logger.info(f"Starting setlists fetch for {self}")
+
+        # Inform our WebSocketServer about new artist, so it can create a virtual channel
+        self.wss.add_artist(self.artist_mbid, self)
+
+        # Run start_setlists_fetch in a separate thread
+        thread = threading.Thread(target=lambda: asyncio.run(self._fetch_setlists()))
+        thread.start()

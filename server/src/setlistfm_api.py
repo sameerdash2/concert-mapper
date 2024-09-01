@@ -126,3 +126,14 @@ class SetlistFmAPI:
         }
 
         return self._perform_request(url, params, f"page {page}")
+
+
+    def get_artist_info(self, mbid: str) -> dict:
+        """Get an artist info by MBID.
+
+        Raises HTTPError if the response code is not 200 or 404.
+        """
+
+        path = f"/artist/{mbid}"
+
+        return self._perform_request(path, {}, mbid)
