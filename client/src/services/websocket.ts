@@ -27,6 +27,7 @@ export class WebSocketManager {
    * @param {string} mbid - mbid of channel
    */
   private static initialize(mbid: string) {
+    store.setlists.length = 0;
     this.socket = new WebSocket(`${BASE_URL}?mbid=${mbid}`);
     this.count = 0;
   }

@@ -86,7 +86,13 @@ watch(
     store.setlists as Setlist[],
     // not calling it "newSetlists" because it refers to the same array
     (updatedSetlists: Setlist[]) => {
+      // Special case: if array empty, clear the map
+      if (updatedSetlists.length === 0) {
+        clearMap();
+        return;
+      }
       // Filter out already-plotted setlists
+      // Maybe not good for scale, but it works for now
       const newSetlists = updatedSetlists.filter(
           (setlist) => !plottedSetlists.has(setlist)
       );
