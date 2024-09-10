@@ -124,14 +124,15 @@ class WebSocketServer:
         return 0
 
 
-    # Broadcast a goodbye message to a channel, and close all its connections.
-    async def broadcast_goodbye_to_channel(self, mbid: str, total_setlists: int) -> None:
+    async def broadcast_goodbye_to_channel(self, mbid: str, total_setlists: int, error: bool) -> None:
+        """Broadcast a goodbye message to a channel, and close all its connections."""
         # Part 1: Goodbye message
 
         # Include actual number of setlists fetched.
         goodbye_event = {
             "type": "goodbye",
-            "totalSetlists": total_setlists
+            "totalSetlists": total_setlists,
+            "hadError": error
         }
 
         # If there are no clients in this channel, wait for at least one to connect

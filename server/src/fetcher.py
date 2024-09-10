@@ -24,6 +24,7 @@ class Fetcher:
 
         # Track state of the fetch process
         self.done_fetching = False
+        self.error = False
 
         # Store the app's WebSocketServer instance
         self.wss = wss
@@ -78,6 +79,7 @@ class Fetcher:
                     f"Aborting fetch for {self} with {len(self.fetched_setlists)}"
                     f" of {self.total_expected_setlists} setlists fetched."
                 )
+                self.error = True
                 self.done_fetching = True
             except KeyError:
                 # No setlists found for artist.
@@ -101,7 +103,7 @@ class Fetcher:
                 count = len(self.fetched_setlists)
                 logger.info(f"Retrieved {count} setlists for {self}")
                 # Broadcast the goodbye message, signaling the end of setlists
-                await self.wss.broadcast_goodbye_to_channel(self.artist_mbid, count)
+                await self.wss.broadcast_goodbye_to_channel(self.artist_mbid, count, self.error)
                 break
 
             # Increment page for next request

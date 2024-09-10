@@ -98,7 +98,13 @@ export class WebSocketManager {
         case 'goodbye':
           this.socket?.close();
 
-          setMessage(`Fetched ${this.count} concerts`);
+          if (data.hadError) {
+            setMessage(
+                `Fetched ${this.count} concerts -- aborted due to error`
+            );
+          } else {
+            setMessage(`Fetched ${this.count} concerts`);
+          }
 
           // Now that fetching is finished, scatter setlists to prevent overlap
           assignScatteredCoordinates();
