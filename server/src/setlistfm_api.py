@@ -65,13 +65,21 @@ class SetlistFmAPI:
             "Accept": "application/json"
         }
         endpoint = API_URL + path
+        response = None
 
         for attempts in range(MAX_ATTEMPTS):
             # Wait to go. This aims to respect setlist.fm rate limit, but won't stop all 429s
             self._wait_for_rate_limit()
 
             # Request
-            response = requests.get(endpoint, params=params, headers=headers)
+            try:
+                response = requests.get(endpoint, params=params, headers=headers, timeout=15)
+            except requests.exceptions.ReadTimeout:
+                logger.warning(f"Request timed out in {path} for '{log_info}'.")
+                continue
+            except requests.exceptions.RequestException as e:
+                logger.error(f"Request failed in {path} for '{log_info}': {e}")
+                continue
 
             # Handle success. 404 means no results.
             if response.status_code == 200 or response.status_code == 404:
@@ -94,7 +102,10 @@ class SetlistFmAPI:
                 time.sleep(delay / 1000)
 
         logger.info(f"Exhausted {MAX_ATTEMPTS} attempts in {path} for '{log_info}'.")
-        response.raise_for_status()
+        if response:
+            response.raise_for_status()
+        else:
+            raise requests.HTTPError
 
 
     def search_artist(self, artist_name: str) -> dict:
@@ -136,4 +147,4 @@ class SetlistFmAPI:
 
         path = f"/artist/{mbid}"
 
-        return self._perform_request(path, {}, mbid)
+        return self._perform_request(path, {}, "")

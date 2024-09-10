@@ -1,8 +1,6 @@
 # artists.py
 # Handles the lookup of artists and initiates the streaming of setlists to the client.
 
-import asyncio
-import threading
 from flask import Response, jsonify
 from requests import HTTPError
 from src.setlistfm_api import SetlistFmAPI
