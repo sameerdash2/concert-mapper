@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import {createApp, onMounted} from 'vue';
+import {onMounted, onUnmounted, watch} from 'vue';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type {Setlist} from '@/store/state';
-import ConcertPopup from './ConcertPopup.vue';
+import {store} from '@/store/state';
 
 // Fix default marker icon not loading when bundled
 // https://github.com/Leaflet/Leaflet/issues/4968#issuecomment-269750768
@@ -44,71 +44,28 @@ onMounted(() => {
   map.attributionControl
       .setPrefix(false)
       .addAttribution('Concert data from <a href="https://www.setlist.fm/">setlist.fm</a>');
+
+  // Plot existing setlists
+  placeSetlistMarkers(store.setlists as Setlist[]);
+});
+
+onUnmounted(() => {
+  // Must make the markers lose their allegiance to this map,
+  // so they can be added to the new map if re-rendered.
+  map?.remove();
+  map = null;
 });
 
 /**
- * Plot some setlists on the map.
+ * Plot some setlists on the map. Uses the markers that exist in each setlist.
  * @param {Setlist[]} setlists - setlists to plot
  */
-const plotSetlists = (setlists: Setlist[]) => {
+const placeSetlistMarkers = (setlists: Setlist[]) => {
   setlists.forEach((setlist) => {
-    // Compose a marker and mount it to a new div
-    const popupDiv = document.createElement('div');
-    createApp(ConcertPopup, {setlist}).mount(popupDiv);
-
-    // Plot marker
     if (map) {
-      L.marker([setlist.cityLat, setlist.cityLong])
-          .bindPopup(popupDiv)
-          .addTo(map);
+      setlist.marker.addTo(map);
       plottedSetlists.add(setlist);
     }
-  });
-};
-
-/**
- * Scatter existing map markers into a circle around their city,
- * to avoid overlap.
- */
-const scatterMarkers = () => {
-  /*
-    Mapping of city coordinates to markers.
-    Used to distribute markers around a circle.
-    Cities are keyed by a string of the form "latitude,longitude".
-    */
-  const citySetlists: Record<string, L.Marker[]> = {};
-
-  // Assign markers to cities
-  map?.eachLayer((layer) => {
-    if (layer instanceof L.Marker) {
-      const {lat, lng} = layer.getLatLng();
-      const cityKey = `${lat},${lng}`;
-      if (!citySetlists[cityKey]) {
-        citySetlists[cityKey] = [];
-      }
-      // Prepend this marker, to maintain chronological order
-      citySetlists[cityKey].unshift(layer);
-    }
-  });
-
-  // Distribute markers around a circle for each city
-  Object.values(citySetlists).forEach((markers) => {
-    const radius = 0.02 * Math.sqrt(markers.length - 1);
-    const angleStep = 2 * Math.PI / markers.length;
-
-    markers.forEach((marker, index) => {
-      // Start at the top of the circle, then go clockwise.
-      const angle = (Math.PI / 2) + (angleStep * -index);
-      const currentLatLng = marker.getLatLng();
-
-      // latitude is Y, and longitude is X...
-      const newLatLng = L.latLng(
-          currentLatLng.lat + radius * Math.sin(angle),
-          currentLatLng.lng + radius * Math.cos(angle)
-      );
-
-      marker.setLatLng(newLatLng);
-    });
   });
 };
 
@@ -124,10 +81,21 @@ const clearMap = () => {
   plottedSetlists.clear();
 };
 
+// Watch for changes in setlists store, and plot new ones.
+watch(
+    store.setlists as Setlist[],
+    // not calling it "newSetlists" because it refers to the same array
+    (updatedSetlists: Setlist[]) => {
+      // Filter out already-plotted setlists
+      const newSetlists = updatedSetlists.filter(
+          (setlist) => !plottedSetlists.has(setlist)
+      );
+      placeSetlistMarkers(newSetlists);
+    }
+);
+
 defineExpose({
-  plotSetlists,
-  clearMap,
-  scatterMarkers
+  clearMap
 });
 </script>
 
@@ -139,5 +107,17 @@ defineExpose({
 #the-map {
   height: 68vh;
   font-family: inherit;
+}
+.leaflet-container {
+  font-size: 14px;
+}
+</style>
+
+<style>
+/* Placing this style here because it doesn't get proper priority
+if placed in ConcertPopup */
+.leaflet-popup-content {
+  /* default margin: 13px 24px 13px 20px */
+  margin: 12px 16px 12px 16px;
 }
 </style>

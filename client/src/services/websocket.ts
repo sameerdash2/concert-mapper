@@ -1,13 +1,19 @@
-import {store, setMessage, updateArtist} from '@/store/state';
-import type MapComponent from '@/components/Map.vue';
+import {
+  store,
+  setMessage,
+  updateArtist,
+  type Setlist,
+  type BareSetlist
+} from '@/store/state';
+import {assignScatteredCoordinates} from './scatter';
+import {createApp} from 'vue';
+import ConcertPopup from '@/components/ConcertPopup.vue';
+import L from 'leaflet';
 
 const IS_PROD = import.meta.env.PROD;
 const BASE_URL = IS_PROD ?
   import.meta.env.VITE_WEBSOCKET_BASE_URL_PROD :
   'ws://localhost:5001';
-
-// Defining this type just to make the JSDoc work..
-type MapRef = InstanceType<typeof MapComponent> | null;
 
 /**
  * Class for managing the WebSocket connection
@@ -37,11 +43,11 @@ export class WebSocketManager {
   }
 
   /**
-   * Open a new WebSocket connection to the backend server.
+   * Open a new WebSocket connection to the backend server,
+   * which will fetch setlists and add them to the global store.
    * @param {string} mbid - socket channel, which is an artist MBID
-   * @param {MapRef} mapRef - ref to Map component
    */
-  static createWebSocket(mbid: string, mapRef: MapRef) {
+  static createWebSocket(mbid: string) {
     this.initialize(mbid);
 
     this.socket.onmessage = (event) => {
@@ -62,12 +68,31 @@ export class WebSocketManager {
           // Update messaging and profile
           this.updateMessage(data);
 
-          // Weed out invalid setlists
-          const setlists = data.setlists.filter(
+          // Build setlist objects
+          const receivedSetlists: BareSetlist[] = data.setlists.filter(
               (setlist: {isValid: boolean}) => setlist.isValid === true
           );
-          // Plot new setlists
-          mapRef?.plotSetlists(setlists);
+          const newSetlists: Setlist[] = [];
+
+          receivedSetlists.forEach((setlist) => {
+            // Create a Leaflet marker to store within each setlist.
+            // Compose a marker and mount it to a new div
+            const popupDiv = document.createElement('div');
+            createApp(ConcertPopup, {setlist}).mount(popupDiv);
+
+            const marker = L.marker([setlist.cityLat, setlist.cityLong])
+                .bindPopup(popupDiv);
+            newSetlists.push({
+              ...setlist,
+              marker
+            });
+          });
+
+          // Add new setlists to store.
+          // The currently active Map component must listen and draw new
+          // markers. This module can't talk directly to a map ref, because
+          // it'll dismount when the user navigates away.
+          store.setlists.push(...newSetlists);
           break;
         }
         case 'goodbye':
@@ -75,8 +100,8 @@ export class WebSocketManager {
 
           setMessage(`Fetched ${this.count} concerts`);
 
-          // Scatter markers that are in the same city
-          mapRef?.scatterMarkers();
+          // Now that fetching is finished, scatter setlists to prevent overlap
+          assignScatteredCoordinates();
 
           store.isFetching = false;
           break;

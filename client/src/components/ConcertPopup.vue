@@ -35,14 +35,8 @@ div:not(:first-child) {
   margin-top: 0.25rem;
 }
 </style>
+
 <style>
-.leaflet-popup-content {
-  /* default margin: 13px 24px 13px 20px */
-  margin: 12px 16px 12px 16px;
-}
-.leaflet-container {
-  font-size: 14px;
-}
 .leaflet-popup-close-button > span {
   font-size: 20px;
 }

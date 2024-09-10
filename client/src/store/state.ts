@@ -1,17 +1,18 @@
 import {reactive} from 'vue';
+import L from 'leaflet';
 
-interface ProposedArtist {
+type ProposedArtist = {
   name: string;
   mbid: string;
   imageUrl: string;
 }
 
-interface Artist extends ProposedArtist {
+type Artist = ProposedArtist & {
   concertCount?: number;
 }
 
-// No flag for validity -- all Setlists must be valid.
-export interface Setlist {
+export type BareSetlist = {
+  isValid: boolean,
   eventDate: string,
   venueName: string,
   cityName: string,
@@ -21,6 +22,13 @@ export interface Setlist {
   countryName: string,
   setlistUrl: string,
   songsPerformed: number
+};
+
+export type Setlist = BareSetlist & {
+  // Attributes for the Map. Store here, so they can exist independently of Map
+  marker: L.Marker<any>,
+  scatterLat?: number,
+  scatterLong?: number,
 }
 
 // The store
@@ -28,7 +36,8 @@ export const store = reactive({
   message: '',
   proposedArtist: {} as ProposedArtist,
   artist: {} as Artist,
-  isFetching: false
+  isFetching: false,
+  setlists: [] as Setlist[]
 });
 
 export const setMessage = (message: string) => {

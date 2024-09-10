@@ -44,7 +44,7 @@ const handleConfirm = () => {
         props.mapRef?.clearMap();
 
         // Join setlist stream
-        WebSocketManager.createWebSocket(store.artist.mbid, props.mapRef);
+        WebSocketManager.createWebSocket(store.artist.mbid);
         store.isFetching = true;
       });
 };
