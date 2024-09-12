@@ -2,9 +2,11 @@ import asyncio
 from threading import Thread
 from flask import Flask, Blueprint
 from flask_cors import CORS
+from connexion import ConnexionMiddleware
+from a2wsgi import WSGIMiddleware, ASGIMiddleware
+from src.logger import initialize_logger
 
 # Set up logging before importing other modules
-from src.logger import initialize_logger
 initialize_logger()
 
 from src import artists
@@ -33,6 +35,16 @@ def create_app():
 
     thread = Thread(target=start_async_server, daemon=True)
     thread.start()
+
+    # Set up OpenAPI validation: wrap middleware around the inner WSGI app
+    # Connexion only speaks ASGI, so need to add 2 more onion layers for that
+    asgi_app = WSGIMiddleware(app.wsgi_app)
+    connexion_app = ConnexionMiddleware(asgi_app)
+    connexion_app.add_api("api/openapi.yaml",
+                          strict_validation=True,
+                          validate_responses=True)
+    new_wsgi_app = ASGIMiddleware(connexion_app)
+    app.wsgi_app = new_wsgi_app
 
     app.logger.info("App started")
 

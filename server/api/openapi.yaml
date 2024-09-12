@@ -1,6 +1,3 @@
-# Not active yet -- will be used for validation once the frontend is split off
-# and backend only serves API
-
 openapi: 3.0.3
 
 info:
@@ -16,6 +13,7 @@ servers:
 paths:
   /artists/{name}:
     get:
+      operationId: app.get_artist
       description: Search for an artist by name
       parameters:
         - in: path
@@ -38,6 +36,7 @@ paths:
 
   /setlists/{artistMbid}:
     get:
+      operationId: app.get_setlists
       description: Request a WebSocket channel to be opened for a specific artist's setlists
       parameters:
         - in: path
@@ -67,9 +66,12 @@ components:
           format: uuid
         name:
           type: string
+        imageUrl:
+          type: string
       required:
         - mbid
         - name
+        - imageUrl
       additionalProperties: false
 
     WebSocketChannel:
