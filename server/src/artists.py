@@ -3,10 +3,10 @@
 
 from flask import Response, jsonify
 from requests import HTTPError
-from src.setlistfm_api import SetlistFmAPI
-from src.fetcher import Fetcher
-from src import fanart_tv_api
+from setlistfm_api import SetlistFmAPI
+from fetcher import Fetcher
 from flask import current_app
+import fanart_tv_api
 
 DEFAULT_ARTIST_IMAGE_URL = "https://abs.twimg.com/sticky/default_profile_images/default_profile_200x200.png"
 

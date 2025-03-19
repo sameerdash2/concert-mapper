@@ -8,7 +8,7 @@ from typing import Dict
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from src.fetcher import Fetcher
+    from fetcher import Fetcher
 
 logger = logging.getLogger(__name__)
 

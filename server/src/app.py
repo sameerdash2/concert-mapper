@@ -4,13 +4,13 @@ from flask import Flask, Blueprint
 from flask_cors import CORS
 from connexion import ConnexionMiddleware
 from a2wsgi import WSGIMiddleware, ASGIMiddleware
-from src.logger import initialize_logger
+from logger import initialize_logger
 
 # Set up logging before importing other modules
 initialize_logger()
 
-from src import artists
-from src.wss import WebSocketServer
+import artists
+from wss import WebSocketServer
 
 # Application factory
 def create_app():

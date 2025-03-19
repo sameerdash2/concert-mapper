@@ -4,9 +4,9 @@
 import asyncio
 import threading
 from requests import HTTPError
-from src.setlist import Setlist
-from src.setlistfm_api import SetlistFmAPI
-from src.wss import WebSocketServer
+from setlist import Setlist
+from setlistfm_api import SetlistFmAPI
+from wss import WebSocketServer
 import logging
 
 logger = logging.getLogger(__name__)

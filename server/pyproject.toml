@@ -1,0 +1,7 @@
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+filterwarnings = [
+    'ignore:jsonschema.RefResolver is deprecated:DeprecationWarning',
+    'ignore:jsonschema.exceptions.RefResolutionError is deprecated:DeprecationWarning',
+    'ignore:Accessing jsonschema.draft4_format_checker is deprecated:DeprecationWarning',
+]
