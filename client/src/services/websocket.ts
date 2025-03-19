@@ -30,6 +30,16 @@ export class WebSocketManager {
     store.setlists.length = 0;
     this.socket = new WebSocket(`${BASE_URL}?mbid=${mbid}`);
     this.count = 0;
+
+    // Cannot read the response code for WebSocket connection closure
+    // Maybe for security reasons? https://stackoverflow.com/a/19305172/
+    this.socket.onclose = (event: CloseEvent) => {
+      if (!event.wasClean) {
+        console.error('WebSocket connection closed', event);
+        setMessage('WebSocket connection failed. Please try again later.');
+        store.isFetching = false;
+      }
+    };
   }
 
   /**

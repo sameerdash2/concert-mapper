@@ -34,7 +34,7 @@ fetchers: Dict[str, 'Fetcher'] = {}
 
 # Override the WebSocketServerProtocol, to handle query parameters before accepting the connection.
 class QueryParamProtocol(websockets.WebSocketServerProtocol):
-    async def process_request(self, path, headers):
+    async def process_request(self, path, _):
         query = urllib.parse.urlparse(path).query
         params = urllib.parse.parse_qs(query)
 
