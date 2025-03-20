@@ -20,7 +20,7 @@ import {
 
 <style scoped>
 .artist-image {
-  width: 200px;
+  width: 128px;
 }
 .content h3 {
   /* Undo Bulma's big margin */

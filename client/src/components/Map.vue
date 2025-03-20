@@ -40,10 +40,11 @@ onMounted(() => {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
 
-  // Add attribution
+  // Add attribution & link to About
   map.attributionControl
       .setPrefix(false)
-      .addAttribution('Concert data from <a href="https://www.setlist.fm/">setlist.fm</a>');
+      .addAttribution('Concert data from <a href="https://www.setlist.fm/">setlist.fm</a>')
+      .addAttribution('<a target="_self" href="/about">About</a>');
 
   // Plot existing setlists
   placeSetlistMarkers(store.setlists as Setlist[]);
@@ -111,8 +112,9 @@ defineExpose({
 
 <style scoped>
 #the-map {
-  height: 68vh;
   font-family: inherit;
+  /* fill up whole viewport */
+  height: 100vh;
 }
 .leaflet-container {
   font-size: 14px;

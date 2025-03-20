@@ -61,6 +61,7 @@ const handleConfirm = () => {
       alt="Artist"
       class="artist-image"
     >
+    <br>
     <button
       class="button"
       @click="handleConfirm"
@@ -72,6 +73,6 @@ const handleConfirm = () => {
 
 <style scoped>
 .artist-image {
-  width: 200px;
+  width: 128px;
 }
 </style>

@@ -1,6 +1,6 @@
 <!-- eslint-disable max-len -->
 <template>
-  <div class="cell">
+  <div class="cell p-4">
     <h2>About</h2>
 
     <p>Learn about concert mapper 📍</p>
@@ -19,10 +19,11 @@
     <p>Concert data is retrieved from <a href="https://www.setlist.fm/">setlist.fm</a>.</p>
     <p>Artist images are retrieved from <a href="https://fanart.tv/">fanart.tv</a>, when available.</p>
     <p>The source code is available <a href="https://github.com/sameerdash2/concert-mapper">on GitHub</a>.</p>
-  </div>
-  <div class="cell has-text-right">
-    <RouterLink to="/">
-      Home
-    </RouterLink>
+
+    <div class="cell has-text-right">
+      <RouterLink to="/">
+        Home
+      </RouterLink>
+    </div>
   </div>
 </template>
