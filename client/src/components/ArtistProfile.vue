@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import {
-  store
-} from '../store/state';
+import {store} from '../store/state';
+import ConcertTable from './ConcertTable.vue';
 </script>
 
 <template>
@@ -11,11 +10,8 @@ import {
     class="artist-image"
   >
   <h3>{{ store.artist.name }}</h3>
-  <div>
-    <p>
-      <b>Concerts</b>: {{ store.artist.concertCount }}
-    </p>
-  </div>
+
+  <ConcertTable />
 </template>
 
 <style scoped>

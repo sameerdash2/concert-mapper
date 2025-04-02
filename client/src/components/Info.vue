@@ -8,7 +8,7 @@ import {
 } from '../store/state';
 import {computed} from 'vue';
 import Map from './Map.vue';
-import API_BASE_URL from '@/services/apiBaseUrl';
+import {API_BASE_URL} from '@/services/util';
 
 const props = defineProps<{
   mapRef: InstanceType<typeof Map> | null;

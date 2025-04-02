@@ -5,7 +5,7 @@ import {
   clearProposedArtist
 } from '../store/state';
 import {onMounted, onUnmounted, ref} from 'vue';
-import API_BASE_URL from '@/services/apiBaseUrl';
+import {API_BASE_URL} from '@/services/util';
 
 const searchQuery = defineModel({
   type: String,

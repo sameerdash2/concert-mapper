@@ -2,14 +2,13 @@
 
 <script setup lang="ts">
 import type {Setlist} from '@/store/state';
+import {formatDate} from '@/services/util';
 
 const props = defineProps<{
   setlist: Setlist;
 }>();
 
-// Interpret date string "YYYY-MM-DD" as a date in local time zone
-const [yyyy, mm, dd] = props.setlist.eventDate.split('-').map(Number);
-const eventDateString = new Date(yyyy, mm - 1, dd).toLocaleDateString();
+const eventDateString = formatDate(props.setlist.eventDate);
 </script>
 
 <template>

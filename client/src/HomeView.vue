@@ -8,9 +8,12 @@ const mapRef = ref<InstanceType<typeof Map> | null>(null);
 
 <template>
   <div class="columns is-gapless">
-    <div id="sidebar" class="column is-narrow">
+    <div
+      id="sidebar"
+      class="column is-narrow"
+    >
       <div class="p-3">
-        <Sidebar :mapRef="mapRef" />
+        <Sidebar :map-ref="mapRef" />
       </div>
     </div>
     <div class="column">
@@ -18,3 +21,18 @@ const mapRef = ref<InstanceType<typeof Map> | null>(null);
     </div>
   </div>
 </template>
+
+<style scoped>
+#sidebar {
+  /* why is this the way to fix the height */
+  overflow-x: hidden;
+  height: 100vh;
+}
+/* match the desktop cutoff point for Bulma is-narrow */
+@media print, screen and (min-width: 769px) {
+  .is-narrow {
+    width: 448px;
+    max-width: 448px;
+  }
+}
+</style>
