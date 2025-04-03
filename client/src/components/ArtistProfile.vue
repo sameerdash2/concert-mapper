@@ -16,7 +16,7 @@ import ConcertTable from './ConcertTable.vue';
 
 <style scoped>
 .artist-image {
-  width: 128px;
+  height: 160px;
 }
 .content h3 {
   /* Undo Bulma's big margin */

@@ -38,7 +38,7 @@ def query_artist(name: str):
     resolved_artist_name = artist["name"]
 
     # Get artist image
-    image_url = get_artist_image_url(mbid)
+    image_url = get_artist_image_url(resolved_artist_name)
 
     return {
         "mbid": mbid,

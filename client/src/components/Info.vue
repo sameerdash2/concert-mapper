@@ -73,6 +73,6 @@ const handleConfirm = () => {
 
 <style scoped>
 .artist-image {
-  width: 128px;
+  height: 160px;
 }
 </style>
