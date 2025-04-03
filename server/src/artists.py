@@ -6,9 +6,7 @@ from requests import HTTPError
 from setlistfm_api import SetlistFmAPI
 from fetcher import Fetcher
 from flask import current_app
-import fanart_tv_api
-
-DEFAULT_ARTIST_IMAGE_URL = "https://abs.twimg.com/sticky/default_profile_images/default_profile_200x200.png"
+from image_api import get_artist_image_url
 
 setlistfm = SetlistFmAPI()
 
@@ -40,7 +38,7 @@ def query_artist(name: str):
     resolved_artist_name = artist["name"]
 
     # Get artist image
-    image_url = _obtain_image_url(mbid)
+    image_url = get_artist_image_url(mbid)
 
     return {
         "mbid": mbid,
@@ -71,30 +69,3 @@ def get_artist_setlists(mbid: str):
         "mbid": mbid,
         "wssReady": True
     }
-
-
-def _obtain_image_url(mbid: str) -> str:
-    """Get an image URL for an artist by fetching and parsing
-    the fanart.tv API response.
-    Args:
-        mbid: Artist MBID
-    Returns:
-        str: URL of image
-    """
-    try:
-        artist_info = fanart_tv_api.get_artist_info(mbid)
-        artist_thumbs = artist_info["artistthumb"]
-    except (HTTPError, ValueError, KeyError):
-        return DEFAULT_ARTIST_IMAGE_URL
-
-    # `artistthumb` is an array of artist pictures, each with fields: id, url, likes.
-    # Find the artistthumb with the maximum "likes" value.
-    thumb_with_max_likes = max(artist_thumbs, key=lambda thumb: int(thumb["likes"]))
-    # Get its URL
-    raw_url = thumb_with_max_likes["url"]
-
-    # Can replace /fanart with /preview in the URL to get a smaller image --
-    # 200x200 instead of 1000x1000. However, i opted not to do this because
-    # their downsizing algorithm is potato lol
-
-    return raw_url
