@@ -51,7 +51,6 @@ const handleConfirm = () => {
 </script>
 
 <template>
-  <h5>Search for an artist to get started</h5>
   <div v-if="proposedArtistExists">
     <p>
       <b>Artist:</b> {{ store.proposedArtist.name }}

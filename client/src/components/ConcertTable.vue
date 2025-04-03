@@ -7,6 +7,8 @@ import {formatDate} from '@/services/util';
   <table class="table">
     <colgroup>
       <col style="width: 30%;">
+      <col style="width: 30%;">
+      <col style="width: 40%;">
     </colgroup>
     <thead>
       <tr>
