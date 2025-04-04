@@ -1,14 +1,10 @@
 import {reactive} from 'vue';
 import L from 'leaflet';
 
-type ProposedArtist = {
+type Artist = {
   name: string;
   mbid: string;
   imageUrl: string;
-}
-
-type Artist = ProposedArtist & {
-  concertCount?: number;
 }
 
 export type BareSetlist = {
@@ -34,7 +30,7 @@ export type Setlist = BareSetlist & {
 // The store
 export const store = reactive({
   message: '',
-  proposedArtist: {} as ProposedArtist,
+  proposedArtist: {} as Artist,
   artist: {} as Artist,
   isFetching: false,
   setlists: [] as Setlist[]
@@ -44,23 +40,14 @@ export const setMessage = (message: string) => {
   store.message = message;
 };
 
-export const setProposedArtist = (artist: ProposedArtist) => {
+export const setProposedArtist = (artist: Artist) => {
   store.proposedArtist = artist;
 };
 
 export const clearProposedArtist = () => {
-  store.proposedArtist = {} as ProposedArtist;
+  store.proposedArtist = {} as Artist;
 };
 
 export const setArtist = (artist: Artist) => {
   store.artist = artist;
-};
-
-/**
- * Update the current artist with new properties.
- * Useful when data slowly trickles in from websocket messages.
- * @param {Partial<Artist>} newProps - new properties
- */
-export const updateArtist = (newProps: Partial<Artist>) => {
-  store.artist = {...store.artist, ...newProps};
 };

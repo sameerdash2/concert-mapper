@@ -1,7 +1,6 @@
 import {
   store,
   setMessage,
-  updateArtist,
   type Setlist,
   type BareSetlist
 } from '@/store/state';
@@ -47,8 +46,6 @@ export class WebSocketManager {
    * @param {object} eventData - data of an update event received from websocket
    */
   private static updateMessage(eventData: {totalExpected: number}) {
-    // TODO: do away with concertCount, combine Artist/ProposedArtist types
-    updateArtist({concertCount: eventData.totalExpected});
     setMessage(
         eventData.totalExpected !== null ?
         `Fetched ${this.count} of ${eventData.totalExpected} concerts...` :
@@ -72,7 +69,7 @@ export class WebSocketManager {
           // Total expected is present in hello message iff the backend
           // has already fetched at least one page of setlists
           if (data.totalExpected) {
-            updateArtist({concertCount: data.totalExpected});
+            this.updateMessage(data);
           }
           break;
         case 'update': {
