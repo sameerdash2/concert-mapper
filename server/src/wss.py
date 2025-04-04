@@ -6,6 +6,7 @@ import logging
 import urllib.parse
 from typing import Dict
 from typing import TYPE_CHECKING
+from database import Database
 
 if TYPE_CHECKING:
     from fetcher import Fetcher
@@ -51,12 +52,11 @@ class QueryParamProtocol(websockets.WebSocketServerProtocol):
 
 
 class WebSocketServer:
-    def __init__(self, loop: asyncio.AbstractEventLoop):
+    def __init__(self, loop: asyncio.AbstractEventLoop, db: Database) -> None:
+        self.db = db
         # needed so we can force-close connections in the same event loop
         # that they started in, or something
         self.loop = loop
-        pass
-
 
     async def handle_connection(self, websocket: websockets.WebSocketServerProtocol):
         # In case the fetch process finished between process_request and now...
@@ -78,14 +78,13 @@ class WebSocketServer:
         await websocket.send(json.dumps(event))
 
         # Send all currently fetched setlists to the client
-        if len(fetcher.fetched_setlists) > 0:
-            event = {
-                "type": "update",
-                "setlists": fetcher.fetched_setlists,
-                "offset": 0,
-                "totalExpected": fetcher.total_expected_setlists
-            }
-            await websocket.send(json.dumps(event))
+        fetched_setlists = self.db.get_all_setlists(fetcher.artist_mbid)
+        event = {
+            "type": "update",
+            "setlists": fetched_setlists,
+            "totalExpected": fetcher.total_expected_setlists
+        }
+        await websocket.send(json.dumps(event))
 
         # Now, the client should receive updates as they are broadcasted by the Fetcher instance.
 
@@ -102,7 +101,6 @@ class WebSocketServer:
             # If i understand Python right, I don't have to worry about conn_set being deleted
             conn_set.remove(websocket)
 
-
     async def start_server(self) -> None:
         server = await websockets.serve(
             self.handle_connection,
@@ -114,15 +112,13 @@ class WebSocketServer:
 
         await server.wait_closed()
 
-
-    # Broadcast an event to all clients connected to a specific artist's "channel"
-    # Returns the number of clients broadcasted to.
     def broadcast_to_channel(self, mbid: str, event: dict) -> int:
+        """Broadcast an event to all clients connected to a specific artist's channel.
+        Returns the number of clients broadcasted to."""
         if mbid in mbids_to_connections:
             websockets.broadcast(mbids_to_connections[mbid], json.dumps(event))
             return len(mbids_to_connections[mbid])
         return 0
-
 
     async def broadcast_goodbye_to_channel(self, mbid: str, total_setlists: int, error: bool) -> None:
         """Broadcast a goodbye message to a channel, and close all its connections."""
@@ -162,9 +158,9 @@ class WebSocketServer:
 
         del mbids_to_connections[mbid]
 
-
     # Add a new artist.
     # I would make `fetcher` const if this were C++
+
     def add_artist(self, mbid: str, fetcher: 'Fetcher') -> None:
         mbids_to_connections[mbid] = set()
         fetchers[mbid] = fetcher

@@ -54,12 +54,10 @@ def get_artist_setlists(mbid: str):
     Returns:
         dict: A dictionary indicating that the websocket channel is ready.
     """
-    # First, pull the WebSocketServer out of the app context to pass to Fetcher.
-    # This is needed because the Fetcher will run in a thread, and is therefore outside the app context
-    wss = current_app.wss
-
-    # Create a Fetcher instance for this artist that will fetch and stream setlists
-    fetcher = Fetcher(mbid, wss)
+    # Create a Fetcher instance for this artist that will fetch and stream setlists.
+    # Need to pull the WebSocketServer and Database out of the app context because
+    # the Fetcher will run in its own thread, which can't access app context
+    fetcher = Fetcher(mbid, current_app.wss, current_app.db)
 
     # Tell fetcher to start the fetch process
     fetcher.start_setlists_fetch()

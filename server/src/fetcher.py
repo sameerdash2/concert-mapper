@@ -7,17 +7,18 @@ from requests import HTTPError
 from setlist import Setlist
 from setlistfm_api import SetlistFmAPI
 from wss import WebSocketServer
+from database import Database
 import logging
 
 logger = logging.getLogger(__name__)
 
 
 class Fetcher:
-    def __init__(self, artist_mbid: str, wss: WebSocketServer):
+    def __init__(self, artist_mbid: str, wss: WebSocketServer, db: Database):
         # Data about the artist or their setlists
         self.artist_mbid = artist_mbid
         self.fetched_setlists = []
-
+        self.artist_name = None
         # Total expected setlists is known only after the first page is fetched.
         # Until then, use None to convey the unknown state.
         self.total_expected_setlists = None
@@ -26,33 +27,26 @@ class Fetcher:
         self.done_fetching = False
         self.error = False
 
-        # Store the app's WebSocketServer instance
+        # Store some tools
         self.wss = wss
-
-        # Just for logging
-        self.artist_name = None
+        self.db = db
 
         self.setlistfm = SetlistFmAPI()
-
 
     def _update_metadata(self, setlists_response: dict) -> None:
         if "total" in setlists_response:
             self.total_expected_setlists = int(setlists_response["total"])
 
-
-    def _broadcast_new_setlists(self, new_setlists: list[Setlist], offset: int) -> None:
+    def _broadcast_new_setlists(self, new_setlists: list[Setlist]) -> None:
         event = {
             "type": "update",
             "setlists": new_setlists,
-            "offset": offset,
             "totalExpected": self.total_expected_setlists
         }
         self.wss.broadcast_to_channel(self.artist_mbid, event)
 
-
     def __repr__(self) -> str:
         return f"'{self.artist_name}' ({self.artist_mbid})"
-
 
     def _obtain_artist_name(self) -> None:
         """Fetch, and store in self, the current artist's name."""
@@ -62,9 +56,12 @@ class Fetcher:
         except (KeyError, HTTPError):
             self.artist_name = "??"
 
-
-    async def _fetch_setlists(self) -> None:
+    async def _fetch_setlists(self, appending: bool) -> None:
         # Loop for fetching setlists.
+        if appending:
+            # TODO: Implement appending: only retrieve newer setlists than those already stored.
+            self.done_fetching = True
+
         page = 1
         while True:
             # Stores current page of setlists
@@ -87,21 +84,28 @@ class Fetcher:
                 # Either way, we are done fetching.
                 self.done_fetching = True
 
-            # Update metadata based on response
             if setlists_response is not None:
+                # Update metadata based on response
                 self._update_metadata(setlists_response)
 
-            # Broadcast a payload of the new setlists to all connected clients
-            new_setlists = Setlist.convert_setlists(raw_setlists)
-            self._broadcast_new_setlists(new_setlists, len(self.fetched_setlists))
+            # TODO: this skips all new concerts if appending
+            if len(raw_setlists) > 0 and not self.done_fetching:
+                # Broadcast a payload of the new setlists to all connected clients
+                new_setlists = Setlist.convert_setlists(raw_setlists)
+                self._broadcast_new_setlists(new_setlists)
 
-            # Update the fetched setlists
-            self.fetched_setlists.extend(new_setlists)
+                # Update the fetched setlists
+                self.fetched_setlists.extend(new_setlists)
+
+                # Update the fetched setlists in DB
+                self.db.insert_setlists(self.artist_mbid, new_setlists)
 
             # Check if we can conclude
             if self.done_fetching:
                 count = len(self.fetched_setlists)
                 logger.info(f"Retrieved {count} setlists for {self}")
+                # Mark fetching for this artist as complete in DB
+                self.db.mark_artist_complete(self.artist_mbid)
                 # Broadcast the goodbye message, signaling the end of setlists
                 await self.wss.broadcast_goodbye_to_channel(self.artist_mbid, count, self.error)
                 break
@@ -109,15 +113,38 @@ class Fetcher:
             # Increment page for next request
             page += 1
 
-
     def start_setlists_fetch(self) -> None:
         """Start the setlist fetch process for an artist. Returns once the websocket is ready."""
         self._obtain_artist_name()
-        logger.info(f"Starting setlists fetch for {self}")
 
-        # Inform our WebSocketServer about new artist, so it can create a virtual channel
-        self.wss.add_artist(self.artist_mbid, self)
+        # Check if artist's setlists are already in DB.
+        exists, in_progress = self.db.check_artist(self.artist_mbid)
 
-        # Run start_setlists_fetch in a separate thread
-        thread = threading.Thread(target=lambda: asyncio.run(self._fetch_setlists()))
-        thread.start()
+        if exists and in_progress:
+            # Fetch in progress: client can join the existing channel.
+            logger.info(f"Setlists for {self} are already being fetched; skipping new fetch")
+        else:
+            # Fetch not in progress.
+            if exists:
+                # Setlists for artist have been fetched.
+                # TODO: Need some condition to purge stored setlists and re-fetch them all,
+                # in case old concerts are retroactively added to setlist.fm.
+                logger.info(f"Setlists for {self} found in database")
+
+                self.db.reinsert_artist(self.artist_mbid)
+
+                thread = threading.Thread(target=lambda: asyncio.run(self._fetch_setlists(appending=True)))
+            else:
+                # New artist. Start a new fetch process
+                logger.info(f"Starting new setlists fetch for {self}")
+
+                # Add artist to database
+                self.db.insert_artist(self.artist_mbid, self.artist_name)
+
+                thread = threading.Thread(target=lambda: asyncio.run(self._fetch_setlists(appending=False)))
+
+            # Inform our WebSocketServer about new artist fetch, so it can create a virtual channel
+            self.wss.add_artist(self.artist_mbid, self)
+
+            # Run start_setlists_fetch in a separate thread
+            thread.start()

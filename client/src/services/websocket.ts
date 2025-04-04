@@ -47,9 +47,12 @@ export class WebSocketManager {
    * @param {object} eventData - data of an update event received from websocket
    */
   private static updateMessage(eventData: {totalExpected: number}) {
+    // TODO: do away with concertCount, combine Artist/ProposedArtist types
     updateArtist({concertCount: eventData.totalExpected});
     setMessage(
-        `Fetched ${this.count} of ${eventData.totalExpected} concerts...`
+        eventData.totalExpected !== null ?
+        `Fetched ${this.count} of ${eventData.totalExpected} concerts...` :
+        `Fetched ${this.count} concerts...`
     );
   }
 
@@ -114,7 +117,7 @@ export class WebSocketManager {
                 `Fetched ${this.count} concerts -- aborted due to error`
             );
           } else {
-            setMessage(`Fetched ${this.count} concerts`);
+            setMessage(`Fetched ${this.count} concerts ✅`);
           }
 
           // Now that fetching is finished, scatter setlists to prevent overlap

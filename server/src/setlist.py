@@ -44,9 +44,9 @@ class Setlist:
         else:
             return {"isValid": False}
 
-    # Convert a list of raw setlists to a list of Setlist objects
     @staticmethod
     def convert_setlists(setlists: list[dict]) -> list[dict]:
+        """Convert a list of raw setlists to a list of Setlist objects represented as dicts."""
         converted_setlists = []
         for raw_setlist in setlists:
             setlist = Setlist(raw_setlist)

@@ -10,6 +10,7 @@ from logger import initialize_logger
 initialize_logger()
 
 import artists
+from database import Database
 from wss import WebSocketServer
 
 # Application factory
@@ -20,13 +21,16 @@ def create_app():
     # Register blueprint with routes
     app.register_blueprint(main)
 
+    # Initialize database
+    app.db = Database()
+
     # This convolution is apparently necessary to run the WebSocket server (an async function)
     # from this function, which is synchronous
     def start_async_server():
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
 
-        wss = WebSocketServer(loop)
+        wss = WebSocketServer(loop, app.db)
         # Store wss in the app context
         app.wss = wss
 
@@ -58,6 +62,7 @@ main = Blueprint('main', __name__)
 @main.route("/api/artists/<path:artist_name>")
 def get_artist(artist_name: str):
     return artists.query_artist(artist_name)
+
 
 @main.route("/api/setlists/<path:artist_mbid>")
 def get_setlists(artist_mbid: str):
