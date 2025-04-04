@@ -41,14 +41,15 @@ class Database:
         )
         # Force connection attempt
         self._client.server_info()
-        # TODO: only keep artists & setlists in self
-        self._db = self._client["cm-db"]
+
+        # Keep a handle to the database collection
+        db = self._client["cm-db"]
+        self._artists: Collection[ArtistDocument] = db["artists"]
 
     def insert_artist(self, mbid: str, name: str) -> None:
         """Add a new artist to the database."""
-        artists: Collection[ArtistDocument] = self._db["artists"]
         try:
-            artists.insert_one(ArtistDocument(
+            self._artists.insert_one(ArtistDocument(
                 mbid=mbid,
                 name=name,
                 lastUpdated=datetime.datetime.now(tz=datetime.timezone.utc),
@@ -60,9 +61,8 @@ class Database:
 
     def reinsert_artist(self, mbid: str) -> None:
         """Revive an artist's inProgress fetch status."""
-        artists: Collection[ArtistDocument] = self._db["artists"]
         try:
-            artists.update_one(
+            self._artists.update_one(
                 {"mbid": mbid},
                 {"$set": {
                     "inProgress": True,
@@ -79,9 +79,8 @@ class Database:
             exists is True if the artist exists in the database.
             inProgress is True if their setlists are being fetched.
         """
-        artists: Collection[ArtistDocument] = self._db["artists"]
         try:
-            artist = artists.find_one({"mbid": mbid})
+            artist = self._artists.find_one({"mbid": mbid})
         except Exception as e:
             logger.error(f"Error checking artist '{mbid}': {e}")
             return False, False
@@ -93,9 +92,8 @@ class Database:
 
     def insert_setlists(self, mbid: str, new_setlists: list[dict]) -> None:
         """Insert new setlists for an artist."""
-        artists: Collection[ArtistDocument] = self._db["artists"]
         try:
-            artists.update_one(
+            self._artists.update_one(
                 {"mbid": mbid},
                 {
                     "$set": {"lastUpdated": datetime.datetime.now(tz=datetime.timezone.utc)},
@@ -107,9 +105,8 @@ class Database:
 
     def get_all_setlists(self, mbid: str) -> list[Setlist]:
         """Get all setlists stored in the database for an artist."""
-        artists: Collection[ArtistDocument] = self._db["artists"]
         try:
-            artist = artists.find_one({"mbid": mbid})
+            artist = self._artists.find_one({"mbid": mbid})
         except Exception as e:
             logger.error(f"Error retrieving all setlists for '{mbid}': {e}")
             return []
@@ -118,9 +115,8 @@ class Database:
         return artist["setlists"] if artist else []
 
     def mark_artist_complete(self, mbid: str) -> None:
-        artists: Collection[ArtistDocument] = self._db["artists"]
         try:
-            artists.update_one(
+            self._artists.update_one(
                 {"mbid": mbid},
                 {"$set": {
                     "inProgress": False,
