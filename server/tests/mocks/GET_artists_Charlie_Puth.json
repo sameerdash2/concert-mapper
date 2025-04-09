@@ -1,0 +1,218 @@
+{
+  "type": "artists",
+  "itemsPerPage": 30,
+  "page": 1,
+  "total": 38,
+  "artist": [
+      {
+          "mbid": "525f1f1c-03f0-4bc8-8dfd-e7521f87631b",
+          "name": "Charlie Puth",
+          "sortName": "Puth, Charlie",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-3db89e3.html"
+      },
+      {
+          "mbid": "a735838b-66ff-40f4-bc3c-8e5a805587d2",
+          "name": "Charlie Puth feat. Meghan Trainor",
+          "sortName": "Charlie Puth feat. Meghan Trainor",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-feat-meghan-trainor-53c00bbd.html"
+      },
+      {
+          "mbid": "77571a61-c075-440a-b03f-a0e904e2a535",
+          "name": "Charlie Puth & Meghan Trainor",
+          "sortName": "Puth, Charlie & Trainor, Meghan",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-and-meghan-trainor-73c51249.html"
+      },
+      {
+          "mbid": "274b3076-596e-457c-a66d-3adddf38d8b5",
+          "name": "Charlie Puth & Tyga",
+          "sortName": "Puth, Charlie & Tyga",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-and-tyga-3be2a424.html"
+      },
+      {
+          "mbid": "a10ada19-80a8-4961-90db-1bca1df10b6e",
+          "name": "Dua Lipa, Kygo,Charlie Puth,",
+          "sortName": "Lipa, Dua, Kygo,Puth, Charlie,",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/dua-lipa-kygocharlie-puth-53e1b3c1.html"
+      },
+      {
+          "mbid": "b5487fac-9388-4981-89a6-8e45c4c0699b",
+          "name": "Charlie Puth feat. James Taylor",
+          "sortName": "Puth, Charlie feat. Taylor, James",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-feat-james-taylor-7bc8ea60.html"
+      },
+      {
+          "mbid": "da93d217-bee2-410c-8fd3-4edd23b34419",
+          "name": "Charlie Puth feat. Shy Carter",
+          "sortName": "Puth, Charlie feat. Carter, Shy",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-feat-shy-carter-43c77717.html"
+      },
+      {
+          "mbid": "f48b0ab1-a30e-42be-8b58-e30b91f0aafb",
+          "name": "Charlie Puth feat. Tyga",
+          "sortName": "Puth, Charlie feat. Tyga",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-feat-tyga-23c07027.html"
+      },
+      {
+          "mbid": "9be608a9-2b04-4da7-a868-cb435201ced1",
+          "name": "Wiz Khalifa & Charlie Puth",
+          "sortName": "Wiz Khalifa & Puth, Charlie",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/wiz-khalifa-and-charlie-puth-23e2a427.html"
+      },
+      {
+          "mbid": "584ddd69-040f-4b6a-ae89-0a85e6a1e336",
+          "name": "Charlie Puth feat. Mike Ballz",
+          "sortName": "Puth, Charlie feat. Mike Ballz",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-feat-mike-ballz-bdb89e2.html"
+      },
+      {
+          "mbid": "2762d650-310e-4dd2-81ea-9bc4a1f90a05",
+          "name": "Wiz Khalifa feat. Charlie Puth",
+          "sortName": "Wiz Khalifa feat. Puth, Charlie",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/wiz-khalifa-feat-charlie-puth-63c5124f.html"
+      },
+      {
+          "mbid": "fc2ce486-e51d-47ed-a733-4ee647c4efa3",
+          "name": "Charlie Puth feat. Jung Kook of BTS",
+          "sortName": "Puth, Charlie feat. Jung Kook",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-feat-jung-kook-of-bts-6bfca2aa.html"
+      },
+      {
+          "mbid": "384157b0-1276-4e41-8225-ee5c6eccc3f4",
+          "name": "Charlie Puth feat. Meghan Trainor",
+          "sortName": "Puth, Charlie feat. Trainor, Meghan",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-feat-meghan-trainor-2bc6240a.html"
+      },
+      {
+          "mbid": "73451fb1-c620-4289-99ce-da810be99c1f",
+          "name": "Lil Wayne feat. Charlie Puth",
+          "sortName": "Lil Wayne feat. Puth, Charlie",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/lil-wayne-feat-charlie-puth-13c4a56d.html"
+      },
+      {
+          "mbid": "3901c2f2-af51-40ee-bf81-68091880a30c",
+          "name": "Lil Wayne & Charlie Puth",
+          "sortName": "Lil Wayne & Puth, Charlie",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/lil-wayne-and-charlie-puth-bc4ddfa.html"
+      },
+      {
+          "mbid": "2d29ddb0-04d2-423e-9207-f145066d206f",
+          "name": "Charlie Puth & blackbear",
+          "sortName": "Puth, Charlie & blackbear",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-and-blackbear-43f4eb4b.html"
+      },
+      {
+          "mbid": "35d1e187-46f9-426e-8cec-687e9c4ba8a9",
+          "name": "Charlie Puth Feat. Selena Gomez",
+          "sortName": "Charlie Puth Feat. Selena Gomez",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-feat-selena-gomez-4bceff12.html"
+      },
+      {
+          "mbid": "806eca25-bf1f-4aab-80bb-2cd67772fe7d",
+          "name": "Calvin Harris, Charlie Puth & Shenseea",
+          "sortName": "Harris, Calvin, Puth, Charlie & Shenseea",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/calvin-harris-charlie-puth-and-shenseea-33fcdcf1.html"
+      },
+      {
+          "mbid": "d833ac06-5cbb-4ec0-a741-3d605b5ffc5b",
+          "name": "Charlie Puth & Wale",
+          "sortName": "Puth, Charlie & Wale",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-and-wale-7bc51248.html"
+      },
+      {
+          "mbid": "de7f951e-7da3-4d1b-a743-bcc5cd28fdb7",
+          "name": "Charlie Puth & Shy Carter",
+          "sortName": "Puth, Charlie & Carter, Shy",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-and-shy-carter-3be2a420.html"
+      },
+      {
+          "mbid": "76055c71-7f6c-4ca1-8eb8-109e62491701",
+          "name": "Charlie Puth feat. French Montana",
+          "sortName": "Puth, Charlie feat. French Montana",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-feat-french-montana-53e53f4d.html"
+      },
+      {
+          "mbid": "79a0f872-7d48-44ce-b18d-22043605957f",
+          "name": "Charlie Puth & Selena Gomez",
+          "sortName": "Puth, Charlie & Gomez, Selena",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-and-selena-gomez-33e2a421.html"
+      },
+      {
+          "mbid": "0fa846e6-4121-4740-ab4b-479317a72e6f",
+          "name": "G‐Eazy feat. Charlie Puth",
+          "sortName": "G‐Eazy feat. Puth, Charlie",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/geazy-feat-charlie-puth-53cd4b51.html"
+      },
+      {
+          "mbid": "63b2c489-6871-46fc-b445-e7e8eb5e3c95",
+          "name": "JVKE feat. Charlie Puth",
+          "sortName": "JVKE feat. Puth, Charlie",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/jvke-feat-charlie-puth-63fafa87.html"
+      },
+      {
+          "mbid": "72c62a0b-1910-4e61-bb82-7ccf7384c144",
+          "name": "Stray Kids feat. Charlie Puth",
+          "sortName": "Stray Kids feat. Puth, Charlie",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/stray-kids-feat-charlie-puth-7be58ea0.html"
+      },
+      {
+          "mbid": "1e8681f3-7964-4837-bf2a-1ebf3c6dbfdd",
+          "name": "Wiz Khalifa feat. Charlie Puth",
+          "sortName": "Wiz Khalifa feat. Charlie Puth",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/wiz-khalifa-feat-charlie-puth-43c00b2f.html"
+      },
+      {
+          "mbid": "4e72e2de-ef7d-4ff5-9df3-aa06d4a3712c",
+          "name": "Justin Franks / Wiz Khalifa / Charlie Puth",
+          "sortName": "Franks, Justin / Khalifa, Wiz / Puth, Charlie",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/justin-franks-wiz-khalifa-charlie-puth-2bcabc76.html"
+      },
+      {
+          "mbid": "f14007e9-e2a0-4252-922b-4e3fb06acae2",
+          "name": "Charlie Puth feat. Wale",
+          "sortName": "Puth, Charlie feat. Wale",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-feat-wale-63c05a93.html"
+      },
+      {
+          "mbid": "0e01e3c8-8ce6-45a1-bebc-9c3b13451df8",
+          "name": "Lotus & Ricky Dillon, Charlie Puth",
+          "sortName": "Lotus & Dillon, Ricky, Puth, Charlie",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/lotus-and-ricky-dillon-charlie-puth-3cda503.html"
+      },
+      {
+          "mbid": "ed4758ca-49f5-44ff-beea-d16793de9106",
+          "name": "Charlie Puth feat. Kehlani",
+          "sortName": "Puth, Charlie feat. Kehlani",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/charlie-puth-feat-kehlani-bcb254e.html"
+      }
+  ]
+}
