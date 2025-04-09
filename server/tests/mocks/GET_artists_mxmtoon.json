@@ -1,0 +1,78 @@
+{
+  "type": "artists",
+  "itemsPerPage": 30,
+  "page": 1,
+  "total": 10,
+  "artist": [
+      {
+          "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+          "name": "mxmtoon",
+          "sortName": "mxmtoon",
+          "disambiguation": "American singer-songwriter",
+          "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+      },
+      {
+          "mbid": "34c77870-e677-4100-8857-ef76ad6bf9c0",
+          "name": "mxmtoon feat. Kero Kero Bonito",
+          "sortName": "mxmtoon feat. Kero Kero Bonito",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/mxmtoon-feat-kero-kero-bonito-63e0fa9f.html"
+      },
+      {
+          "mbid": "a138512b-9d91-4558-b2f6-017567d10ab7",
+          "name": "LLusion & mxmtoon",
+          "sortName": "LLusion & mxmtoon",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/llusion-and-mxmtoon-63f04a33.html"
+      },
+      {
+          "mbid": "10e9495a-5580-4e16-9227-36aa03f31157",
+          "name": "mxmtoon & Kero Kero Bonito",
+          "sortName": "mxmtoon & Kero Kero Bonito",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/mxmtoon-and-kero-kero-bonito-6be09ade.html"
+      },
+      {
+          "mbid": "36870535-3a30-49d3-854b-27e1d4e02215",
+          "name": "mxmtoon feat. Luna Li",
+          "sortName": "mxmtoon feat. Li, Luna",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/mxmtoon-feat-luna-li-63e08aa7.html"
+      },
+      {
+          "mbid": "34f1be18-df0e-4138-8095-476d7ebb5e40",
+          "name": "Lyn Lapid with mxmtoon",
+          "sortName": "Lapid, Lyn with mxmtoon",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/lyn-lapid-with-mxmtoon-be15dfe.html"
+      },
+      {
+          "mbid": "f7108c15-0788-4880-bf11-46c6696696c0",
+          "name": "Cavetown w/ Mxmtoon",
+          "sortName": "Cavetown w/ mxmtoon",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/cavetown-w-mxmtoon-6bfa8e5e.html"
+      },
+      {
+          "mbid": "80e17255-7ba8-439b-9623-c139df50a427",
+          "name": "mxmtoon & Luna Li",
+          "sortName": "mxmtoon & Li, Luna",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/mxmtoon-and-luna-li-73e09add.html"
+      },
+      {
+          "mbid": "f7ca1142-833f-482a-bcac-39652f292f76",
+          "name": "mxmtoon feat. Carly Rae Jepsen",
+          "sortName": "mxmtoon feat. Jepsen, Carly Rae",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/mxmtoon-feat-carly-rae-jepsen-73f4d291.html"
+      },
+      {
+          "mbid": "208a3fcf-7eb6-4925-9d2a-87a0f4e1e655",
+          "name": "BoyWithUke & mxmtoon",
+          "sortName": "BoyWithUke & mxmtoon",
+          "disambiguation": "",
+          "url": "https://www.setlist.fm/setlists/boywithuke-and-mxmtoon-4be3d792.html"
+      }
+  ]
+}

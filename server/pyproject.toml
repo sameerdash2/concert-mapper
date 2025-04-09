@@ -1,4 +1,7 @@
 [tool.pytest.ini_options]
+markers = [
+    "timer: this test has a timer, making it slow",
+]
 pythonpath = ["src"]
 asyncio_default_fixture_loop_scope = "function"
 filterwarnings = [
@@ -6,3 +9,7 @@ filterwarnings = [
     'ignore:jsonschema.exceptions.RefResolutionError is deprecated:DeprecationWarning',
     'ignore:Accessing jsonschema.draft4_format_checker is deprecated:DeprecationWarning',
 ]
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
