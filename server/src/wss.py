@@ -54,6 +54,7 @@ class QueryParamProtocol(websockets.WebSocketServerProtocol):
 class WebSocketServer:
     def __init__(self, loop: asyncio.AbstractEventLoop, db: Database) -> None:
         self.db = db
+        self.server = None
         # needed so we can force-close connections in the same event loop
         # that they started in, or something
         self.loop = loop
@@ -102,15 +103,13 @@ class WebSocketServer:
             conn_set.remove(websocket)
 
     async def start_server(self) -> None:
-        server = await websockets.serve(
+        self.server = await websockets.serve(
             self.handle_connection,
             host="0.0.0.0",
             port=PORT,
             create_protocol=QueryParamProtocol
         )
         logger.info(f"WebSocket server started on port {PORT}")
-
-        await server.wait_closed()
 
     def broadcast_to_channel(self, mbid: str, event: dict) -> int:
         """Broadcast an event to all clients connected to a specific artist's channel.
@@ -140,7 +139,7 @@ class WebSocketServer:
             elapsed += 0.5
 
         if len(mbids_to_connections[mbid]) == 0:
-            logger.warn(f"No clients connected for artist '{mbid}' :(")
+            logger.warning(f"No clients connected for artist '{mbid}' :(")
 
         self.broadcast_to_channel(mbid, goodbye_event)
 
@@ -158,9 +157,22 @@ class WebSocketServer:
 
         del mbids_to_connections[mbid]
 
-    # Add a new artist.
-    # I would make `fetcher` const if this were C++
-
     def add_artist(self, mbid: str, fetcher: 'Fetcher') -> None:
+        """Add a new artist, opening a channel for it."""
         mbids_to_connections[mbid] = set()
         fetchers[mbid] = fetcher
+
+    # Below: a bunch of weird functions that are used by pytest to stop the server between tests
+
+    def stop_server(self) -> None:
+        if self.server:
+            self.loop.call_soon_threadsafe(self._stop_sync)
+
+    def _stop_sync(self) -> None:
+        self.server.close()
+        self.loop.create_task(self._shutdown())
+
+    async def _shutdown(self):
+        await self.server.wait_closed()
+        self.server = None
+        logger.info("WebSocket server stopped")

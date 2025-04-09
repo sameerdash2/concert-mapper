@@ -1,11 +1,12 @@
 import pytest
+import pytest_asyncio
 from flask import Flask
 from flask.testing import FlaskClient, FlaskCliRunner
 from app import create_app
 
 
-@pytest.fixture()
-def app() -> Flask:
+@pytest_asyncio.fixture()
+async def app() -> Flask:
     app = create_app()
     app.config.update({
         "TESTING": True,
@@ -19,6 +20,8 @@ def app() -> Flask:
     loggers = [logging.getLogger()] + list(logging.Logger.manager.loggerDict.values())
     for logger in loggers:
         logger.handlers = []
+
+    app.wss.stop_server()
 
 
 @pytest.fixture()
