@@ -12,4 +12,4 @@ filterwarnings = [
 
 [tool.coverage.run]
 branch = true
-source = ["src"]
+source = ["src", "tests"]

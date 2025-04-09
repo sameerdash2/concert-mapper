@@ -17,6 +17,12 @@ The backend API will run at `http://localhost:8000`.
 
 To shut down the Docker container, run `docker-compose down`.
 
+### Backend Tests
+
+The app has tests for the backend, though not for the frontend. To run all tests, use `python test.py`. This will also generate a coverage report in text and HTML.
+
+Some tests run slowly by design because the implementation uses timers (for example, to wait and retry requests to an external API). To run only the tests that don't have timeouts, use `pytest -m "not timer"`.
+
 ## Frontend setup
 
 1. `cd client`
