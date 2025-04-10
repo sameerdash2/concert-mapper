@@ -25,30 +25,34 @@ logging.getLogger("websockets").propagate = False
 
 # Mapping of artist mbids to WebSocket connections.
 # Artist mbids may persist even after fetching completes
-mbids_to_connections: Dict[str, set[websockets.WebSocketServerProtocol]] = {}
+mbids_to_connections: Dict[str, set[websockets.ServerConnection]] = {}
 
 # Mapping of artist mbids to Fetcher instances.
 # Used to access fetched setlists for newly connected clients
 # Any new connections for mbids not in this dict will be refused.
 fetchers: Dict[str, 'Fetcher'] = {}
 
+async def process_request(
+    connection: websockets.ServerConnection,
+    request: websockets.http11.Request
+) -> websockets.http11.Response | None:
+    """
+    Intercept incoming HTTP requests to handle query parameter `mbid` before accepting the connection.
+    """
+    query = urllib.parse.urlparse(request.path).query
+    params = urllib.parse.parse_qs(query)
 
-# Override the WebSocketServerProtocol, to handle query parameters before accepting the connection.
-class QueryParamProtocol(websockets.WebSocketServerProtocol):
-    async def process_request(self, path, _):
-        query = urllib.parse.urlparse(path).query
-        params = urllib.parse.parse_qs(query)
+    if "mbid" in params:
+        mbid = params["mbid"][0]
+    else:
+        return connection.respond(http.HTTPStatus.UNAUTHORIZED, b"Missing mbid\n")
 
-        if "mbid" in params:
-            mbid = params["mbid"][0]
-        else:
-            return http.HTTPStatus.UNAUTHORIZED, [], b"Missing mbid\n"
+    if mbid not in fetchers:
+        return connection.respond(http.HTTPStatus.UNAUTHORIZED, b"Invalid mbid\n")
 
-        if mbid not in fetchers:
-            return http.HTTPStatus.UNAUTHORIZED, [], b"Invalid mbid\n"
-
-        # Store the mbid on this protocol instance
-        self.mbid = mbid
+    # Store the mbid on this connection instance
+    connection.mbid = mbid
+    return None
 
 
 class WebSocketServer:
@@ -59,7 +63,7 @@ class WebSocketServer:
         # that they started in, or something
         self.loop = loop
 
-    async def handle_connection(self, websocket: websockets.WebSocketServerProtocol):
+    async def handle_connection(self, websocket: websockets.ServerConnection) -> None:
         # In case the fetch process finished between process_request and now...
         if websocket.mbid not in mbids_to_connections or websocket.mbid not in fetchers:
             await websocket.close()
@@ -107,7 +111,7 @@ class WebSocketServer:
             self.handle_connection,
             host="0.0.0.0",
             port=PORT,
-            create_protocol=QueryParamProtocol
+            process_request=process_request,
         )
         logger.info(f"WebSocket server started on port {PORT}")
 
