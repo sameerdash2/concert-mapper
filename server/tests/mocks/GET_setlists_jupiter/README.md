@@ -1,0 +1,1 @@
+4 setlists for **Boys Go To Jupiter** (`904e413a-1327-4418-a96d-114a14a874ff`) as if retrieved from setlist.fm's [1.0/artist/{mbid}/setlists](https://api.setlist.fm/docs/1.0/resource__1.0_artist__mbid__setlists.html) endpoint on 2025-04-10.
