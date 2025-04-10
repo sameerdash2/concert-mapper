@@ -1,16 +1,26 @@
 import pytest
 import pytest_asyncio
+import os
 from flask import Flask
 from flask.testing import FlaskClient, FlaskCliRunner
+from pymongo import MongoClient
 from app import create_app
+
+
+def pytest_configure():
+    # Set app to use test database
+    os.environ["MONGO_DB_NAME"] = "test"
 
 
 @pytest_asyncio.fixture()
 async def app() -> Flask:
     app = create_app()
-    app.config.update({
-        "TESTING": True,
-    })
+
+    # Reset database
+    mongo_client = MongoClient("mongodb://localhost:27017/")
+    db = mongo_client[os.getenv("MONGO_DB_NAME")]
+    db.drop_collection("artists")
+    mongo_client.close()
 
     yield app
 

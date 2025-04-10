@@ -1,4 +1,4 @@
-# db.py
+# database.py
 # Interface for storing artist setlists in the database and retrieving them.
 
 from pymongo import MongoClient
@@ -7,6 +7,7 @@ from typing import TypedDict
 from setlist import Setlist
 import datetime
 import logging
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -43,7 +44,7 @@ class Database:
         self._client.server_info()
 
         # Keep a handle to the database collection
-        db = self._client["cm-db"]
+        db = self._client[os.getenv("MONGO_DB_NAME")]
         self._artists: Collection[ArtistDocument] = db["artists"]
 
     def insert_artist(self, mbid: str, name: str) -> None:
