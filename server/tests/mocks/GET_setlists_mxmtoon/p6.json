@@ -1,0 +1,243 @@
+{
+  "type": "setlists",
+  "itemsPerPage": 20,
+  "page": 6,
+  "total": 103,
+  "setlist": [
+      {
+          "id": "5bbe43f0",
+          "versionId": "g13e4b1f1",
+          "eventDate": "01-10-2019",
+          "lastUpdated": "2022-11-13T16:36:57.980+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "43d5b3bb",
+              "name": "Valley Bar",
+              "city": {
+                  "id": "5308655",
+                  "name": "Phoenix",
+                  "state": "Arizona",
+                  "stateCode": "AZ",
+                  "coords": {
+                      "lat": 33.4483771,
+                      "long": -112.0740373
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/valley-bar-phoenix-az-usa-43d5b3bb.html"
+          },
+          "tour": {
+              "name": "the masquerade tour"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2019/valley-bar-phoenix-az-5bbe43f0.html"
+      },
+      {
+          "id": "139c35c5",
+          "versionId": "g73a79a4d",
+          "eventDate": "20-09-2019",
+          "lastUpdated": "2024-06-19T16:27:55.616+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "7bd64e30",
+              "name": "Rio Theatre",
+              "city": {
+                  "id": "6173331",
+                  "name": "Vancouver",
+                  "state": "British Columbia",
+                  "stateCode": "BC",
+                  "coords": {
+                      "lat": 49.249657393,
+                      "long": -123.119340403
+                  },
+                  "country": {
+                      "code": "CA",
+                      "name": "Canada"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/rio-theatre-vancouver-bc-canada-7bd64e30.html"
+          },
+          "tour": {
+              "name": "the masquerade tour"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "blame game"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "dream of you"
+                          },
+                          {
+                              "name": "late nights"
+                          },
+                          {
+                              "name": "high & dry"
+                          },
+                          {
+                              "name": "suffice"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "my ted talk"
+                          },
+                          {
+                              "name": "untitled"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "prom dress"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2019/rio-theatre-vancouver-bc-canada-139c35c5.html"
+      },
+      {
+          "id": "6b9cca0e",
+          "versionId": "g7ba79a4c",
+          "eventDate": "19-09-2019",
+          "lastUpdated": "2024-06-19T16:27:55.628+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "4bd6c77a",
+              "name": "Holocene",
+              "city": {
+                  "id": "5746545",
+                  "name": "Portland",
+                  "state": "Oregon",
+                  "stateCode": "OR",
+                  "coords": {
+                      "lat": 45.5234515,
+                      "long": -122.6762071
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/holocene-portland-or-usa-4bd6c77a.html"
+          },
+          "tour": {
+              "name": "the masquerade tour"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "blame game"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "suffice"
+                          },
+                          {
+                              "name": "dream of you"
+                          },
+                          {
+                              "name": "late nights"
+                          },
+                          {
+                              "name": "high & dry"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "my ted talk"
+                          },
+                          {
+                              "name": "untitled"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "prom dress"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2019/holocene-portland-or-6b9cca0e.html"
+      }
+  ]
+}

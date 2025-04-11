@@ -10,6 +10,8 @@ from app import create_app
 def pytest_configure():
     # Set app to use test database
     os.environ["MONGO_DB_NAME"] = "test"
+    # Overwrite API key. Tests should not contact setlist.fm API
+    os.environ["SETLISTFM_API_KEY"] = "mango"
 
 
 @pytest_asyncio.fixture()

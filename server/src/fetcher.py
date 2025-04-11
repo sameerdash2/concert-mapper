@@ -2,7 +2,7 @@
 # An instance of the Fetcher class handles the lookup and streaming of setlists to the client, for one artist.
 
 import asyncio
-import threading
+from threading import Thread
 from requests import HTTPError
 from setlist import Setlist
 from setlistfm_api import SetlistFmAPI
@@ -133,7 +133,7 @@ class Fetcher:
 
                 self.db.reinsert_artist(self.artist_mbid)
 
-                thread = threading.Thread(target=lambda: asyncio.run(self._fetch_setlists(appending=True)))
+                thread = Thread(target=lambda: asyncio.run(self._fetch_setlists(appending=True)))
             else:
                 # New artist. Start a new fetch process
                 logger.info(f"Starting new setlists fetch for {self}")
@@ -141,7 +141,7 @@ class Fetcher:
                 # Add artist to database
                 self.db.insert_artist(self.artist_mbid, self.artist_name)
 
-                thread = threading.Thread(target=lambda: asyncio.run(self._fetch_setlists(appending=False)))
+                thread = Thread(target=lambda: asyncio.run(self._fetch_setlists(appending=False)))
 
             # Inform our WebSocketServer about new artist fetch, so it can create a virtual channel
             self.wss.add_artist(self.artist_mbid, self)

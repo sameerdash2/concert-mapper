@@ -1,0 +1,1973 @@
+{
+  "type": "setlists",
+  "itemsPerPage": 20,
+  "page": 4,
+  "total": 103,
+  "setlist": [
+      {
+          "id": "7bbebaac",
+          "versionId": "g63a79a5b",
+          "eventDate": "17-10-2022",
+          "lastUpdated": "2024-06-19T16:27:55.271+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "6bd72ae6",
+              "name": "Electric Brixton",
+              "city": {
+                  "id": "2643743",
+                  "name": "London",
+                  "state": "England",
+                  "stateCode": "ENG",
+                  "coords": {
+                      "lat": 51.5084152563931,
+                      "long": -0.125532746315002
+                  },
+                  "country": {
+                      "code": "GB",
+                      "name": "United Kingdom"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/electric-brixton-london-england-6bd72ae6.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "cliché",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "feelings are fatal",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "prom dress",
+                              "info": ""
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "info": "enc",
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/electric-brixton-london-england-7bbebaac.html"
+      },
+      {
+          "id": "bb15992",
+          "versionId": "g6ba79a5a",
+          "eventDate": "16-10-2022",
+          "lastUpdated": "2024-06-19T16:27:55.299+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "23d63487",
+              "name": "La Maroquinerie",
+              "city": {
+                  "id": "2988507",
+                  "name": "Paris",
+                  "state": "Île-de-France",
+                  "stateCode": "11",
+                  "coords": {
+                      "lat": 48.853,
+                      "long": 2.349
+                  },
+                  "country": {
+                      "code": "FR",
+                      "name": "France"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/la-maroquinerie-paris-france-23d63487.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "cliché",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "feelings are fatal",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/la-maroquinerie-paris-france-bb15992.html"
+      },
+      {
+          "id": "53ad2335",
+          "versionId": "g5bb5b398",
+          "eventDate": "11-10-2022",
+          "lastUpdated": "2024-02-24T11:27:35.749+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "53d583cd",
+              "name": "The Tuning Fork",
+              "city": {
+                  "id": "2193733",
+                  "name": "Auckland",
+                  "state": "Auckland",
+                  "stateCode": "E7",
+                  "coords": {
+                      "lat": -36.8666667,
+                      "long": 174.7666667
+                  },
+                  "country": {
+                      "code": "NZ",
+                      "name": "New Zealand"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-tuning-fork-auckland-new-zealand-53d583cd.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "mona lisa"
+                          },
+                          {
+                              "name": "prom dress"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/the-tuning-fork-auckland-new-zealand-53ad2335.html"
+      },
+      {
+          "id": "3bbee408",
+          "versionId": "g73a79a59",
+          "eventDate": "09-10-2022",
+          "lastUpdated": "2024-06-19T16:27:55.322+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "bd479a2",
+              "name": "The Triffid",
+              "city": {
+                  "id": "2174003",
+                  "name": "Brisbane",
+                  "state": "Queensland",
+                  "stateCode": "QLD",
+                  "coords": {
+                      "lat": -27.4679357321901,
+                      "long": 153.028092384338
+                  },
+                  "country": {
+                      "code": "AU",
+                      "name": "Australia"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-triffid-brisbane-australia-bd479a2.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/the-triffid-brisbane-australia-3bbee408.html"
+      },
+      {
+          "id": "5ba7d71c",
+          "versionId": "g7ba79a58",
+          "eventDate": "06-10-2022",
+          "lastUpdated": "2024-06-19T16:27:55.337+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "33d10491",
+              "name": "Metro Theatre",
+              "city": {
+                  "id": "2147714",
+                  "name": "Sydney",
+                  "state": "New South Wales",
+                  "stateCode": "NSW",
+                  "coords": {
+                      "lat": -33.8678499639382,
+                      "long": 151.207323074341
+                  },
+                  "country": {
+                      "code": "AU",
+                      "name": "Australia"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/metro-theatre-sydney-australia-33d10491.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/metro-theatre-sydney-australia-5ba7d71c.html"
+      },
+      {
+          "id": "13b1d119",
+          "versionId": "g63a79a5f",
+          "eventDate": "04-10-2022",
+          "lastUpdated": "2024-06-19T16:27:55.352+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "63d5e2a7",
+              "name": "Salon, Melbourne Recital Centre",
+              "city": {
+                  "id": "2158177",
+                  "name": "Melbourne",
+                  "state": "Victoria",
+                  "stateCode": "VIC",
+                  "coords": {
+                      "lat": -37.8139965641595,
+                      "long": 144.963322877884
+                  },
+                  "country": {
+                      "code": "AU",
+                      "name": "Australia"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/salon-melbourne-recital-centre-melbourne-australia-63d5e2a7.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/salon-melbourne-recital-centre-melbourne-australia-13b1d119.html"
+      },
+      {
+          "id": "53b47b89",
+          "versionId": "g6ba79a5e",
+          "eventDate": "13-06-2022",
+          "lastUpdated": "2024-06-19T16:27:55.374+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3d635a7",
+              "name": "9:30 Club",
+              "city": {
+                  "id": "4140963",
+                  "name": "Washington",
+                  "state": "Washington, D.C.",
+                  "stateCode": "DC",
+                  "coords": {
+                      "lat": 38.895,
+                      "long": -77.036
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/930-club-washington-dc-usa-3d635a7.html"
+          },
+          "tour": {
+              "name": "rising"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "name": "Set 1:",
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own",
+                              "with": {
+                                  "mbid": "6c2cd859-b792-4258-8ede-402c5dcf8b90",
+                                  "name": "chloe moriondo",
+                                  "sortName": "Moriondo, Chloe",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/chloe-moriondo-33c9e0a5.html"
+                              }
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          }
+                      ]
+                  },
+                  {
+                      "name": "Acoustic",
+                      "song": [
+                          {
+                              "name": "i feel like chet",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "cliché",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "feelings are fatal",
+                              "info": "Acoustic"
+                          }
+                      ]
+                  },
+                  {
+                      "name": "Set 2:",
+                      "song": [
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "info": "",
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/930-club-washington-dc-53b47b89.html"
+      },
+      {
+          "id": "3b40d37",
+          "versionId": "g73a79a5d",
+          "eventDate": "11-06-2022",
+          "lastUpdated": "2024-06-19T16:27:55.397+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "13d285a1",
+              "name": "Royale",
+              "city": {
+                  "id": "4930956",
+                  "name": "Boston",
+                  "state": "Massachusetts",
+                  "stateCode": "MA",
+                  "coords": {
+                      "lat": 42.3584308,
+                      "long": -71.0597732
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/royale-boston-ma-usa-13d285a1.html"
+          },
+          "tour": {
+              "name": "rising"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "name": "with Full Band",
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          }
+                      ]
+                  },
+                  {
+                      "name": "Solo Acoustic",
+                      "song": [
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          }
+                      ]
+                  },
+                  {
+                      "name": "with Full Band",
+                      "song": [
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/royale-boston-ma-3b40d37.html"
+      },
+      {
+          "id": "bb40d32",
+          "versionId": "g7ba79a5c",
+          "eventDate": "10-06-2022",
+          "lastUpdated": "2024-06-19T16:27:55.410+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "13d285a1",
+              "name": "Royale",
+              "city": {
+                  "id": "4930956",
+                  "name": "Boston",
+                  "state": "Massachusetts",
+                  "stateCode": "MA",
+                  "coords": {
+                      "lat": 42.3584308,
+                      "long": -71.0597732
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/royale-boston-ma-usa-13d285a1.html"
+          },
+          "tour": {
+              "name": "rising"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "cliché",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "feelings are fatal",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/royale-boston-ma-bb40d32.html"
+      },
+      {
+          "id": "63b43697",
+          "versionId": "g63a79a53",
+          "eventDate": "07-06-2022",
+          "lastUpdated": "2024-06-19T16:27:55.426+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "6bd63a96",
+              "name": "Webster Hall",
+              "city": {
+                  "id": "5128581",
+                  "name": "New York",
+                  "state": "New York",
+                  "stateCode": "NY",
+                  "coords": {
+                      "lat": 40.7142691,
+                      "long": -74.0059729
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/webster-hall-new-york-ny-usa-6bd63a96.html"
+          },
+          "tour": {
+              "name": "rising"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own",
+                              "with": {
+                                  "mbid": "6c2cd859-b792-4258-8ede-402c5dcf8b90",
+                                  "name": "chloe moriondo",
+                                  "sortName": "Moriondo, Chloe",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/chloe-moriondo-33c9e0a5.html"
+                              }
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/webster-hall-new-york-ny-63b43697.html"
+      },
+      {
+          "id": "33b48c8d",
+          "versionId": "g23f6f027",
+          "eventDate": "01-06-2022",
+          "lastUpdated": "2022-05-30T11:32:59.061+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "23d63c6b",
+              "name": "Variety Playhouse",
+              "city": {
+                  "id": "4180439",
+                  "name": "Atlanta",
+                  "state": "Georgia",
+                  "stateCode": "GA",
+                  "coords": {
+                      "lat": 33.7489954,
+                      "long": -84.3879824
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/variety-playhouse-atlanta-ga-usa-23d63c6b.html"
+          },
+          "tour": {
+              "name": "rising"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/variety-playhouse-atlanta-ga-33b48c8d.html"
+      },
+      {
+          "id": "53b48f69",
+          "versionId": "g23f6f01f",
+          "eventDate": "31-05-2022",
+          "lastUpdated": "2022-05-30T11:34:53.115+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "33d70809",
+              "name": "The Beacham",
+              "city": {
+                  "id": "4167147",
+                  "name": "Orlando",
+                  "state": "Florida",
+                  "stateCode": "FL",
+                  "coords": {
+                      "lat": 28.5383355,
+                      "long": -81.3792365
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-beacham-orlando-fl-usa-33d70809.html"
+          },
+          "tour": {
+              "name": "rising"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/the-beacham-orlando-fl-53b48f69.html"
+      },
+      {
+          "id": "5bbe4304",
+          "versionId": "gbe4b112",
+          "eventDate": "25-05-2022",
+          "lastUpdated": "2022-11-13T16:30:32.279+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "43d2af2b",
+              "name": "The Van Buren",
+              "city": {
+                  "id": "5308655",
+                  "name": "Phoenix",
+                  "state": "Arizona",
+                  "stateCode": "AZ",
+                  "coords": {
+                      "lat": 33.4483771,
+                      "long": -112.0740373
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-van-buren-phoenix-az-usa-43d2af2b.html"
+          },
+          "tour": {
+              "name": "rising"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/the-van-buren-phoenix-az-5bbe4304.html"
+      },
+      {
+          "id": "1ba7d5b8",
+          "versionId": "g6ba79a52",
+          "eventDate": "22-05-2022",
+          "lastUpdated": "2024-06-19T16:27:55.439+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "1bd74988",
+              "name": "The Fonda Theatre",
+              "city": {
+                  "id": "5368361",
+                  "name": "Los Angeles",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 34.052,
+                      "long": -118.244
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-fonda-theatre-los-angeles-ca-usa-1bd74988.html"
+          },
+          "tour": {
+              "name": "rising"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/the-fonda-theatre-los-angeles-ca-1ba7d5b8.html"
+      },
+      {
+          "id": "43b75367",
+          "versionId": "g73a79a51",
+          "eventDate": "20-05-2022",
+          "lastUpdated": "2024-06-19T16:27:55.453+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "6bd7cab2",
+              "name": "The Observatory",
+              "city": {
+                  "id": "5392900",
+                  "name": "Santa Ana",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 33.7455731,
+                      "long": -117.8678338
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-observatory-santa-ana-ca-usa-6bd7cab2.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own",
+                              "with": {
+                                  "mbid": "6c2cd859-b792-4258-8ede-402c5dcf8b90",
+                                  "name": "chloe moriondo",
+                                  "sortName": "Moriondo, Chloe",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/chloe-moriondo-33c9e0a5.html"
+                              }
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "cliché",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "feelings are fatal",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/the-observatory-santa-ana-ca-43b75367.html"
+      },
+      {
+          "id": "33b7083d",
+          "versionId": "g7ba79a50",
+          "eventDate": "18-05-2022",
+          "lastUpdated": "2024-06-19T16:27:55.467+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "63d35a77",
+              "name": "The Regency Ballroom",
+              "city": {
+                  "id": "5391959",
+                  "name": "San Francisco",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 37.775,
+                      "long": -122.419
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-regency-ballroom-san-francisco-ca-usa-63d35a77.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own",
+                              "with": {
+                                  "mbid": "6c2cd859-b792-4258-8ede-402c5dcf8b90",
+                                  "name": "chloe moriondo",
+                                  "sortName": "Moriondo, Chloe",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/chloe-moriondo-33c9e0a5.html"
+                              }
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          }
+                      ]
+                  },
+                  {
+                      "name": "Acoustic",
+                      "song": [
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          }
+                      ]
+                  },
+                  {
+                      "name": "",
+                      "song": [
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "almost home",
+                              "info": "with string section"
+                          },
+                          {
+                              "name": "seasonal depression",
+                              "info": "with string section"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "prom dress",
+                              "info": "with string section"
+                          },
+                          {
+                              "name": "mona lisa",
+                              "info": "with string section"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/the-regency-ballroom-san-francisco-ca-33b7083d.html"
+      },
+      {
+          "id": "4bb71bda",
+          "versionId": "g335e9c21",
+          "eventDate": "17-05-2022",
+          "lastUpdated": "2024-12-04T06:42:08.982+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "63d35a77",
+              "name": "The Regency Ballroom",
+              "city": {
+                  "id": "5391959",
+                  "name": "San Francisco",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 37.775,
+                      "long": -122.419
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-regency-ballroom-san-francisco-ca-usa-63d35a77.html"
+          },
+          "tour": {
+              "name": "rising"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own",
+                              "info": "with ukulele",
+                              "with": {
+                                  "mbid": "6c2cd859-b792-4258-8ede-402c5dcf8b90",
+                                  "name": "chloe moriondo",
+                                  "sortName": "Moriondo, Chloe",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/chloe-moriondo-33c9e0a5.html"
+                              }
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          }
+                      ]
+                  },
+                  {
+                      "name": "Acoustic",
+                      "song": [
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          }
+                      ]
+                  },
+                  {
+                      "name": "",
+                      "song": [
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "seasonal depression",
+                              "info": "with ukulele"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "prom dress",
+                              "info": "with ukulele"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/the-regency-ballroom-san-francisco-ca-4bb71bda.html"
+      },
+      {
+          "id": "3bb4c860",
+          "versionId": "g6ba79a56",
+          "eventDate": "15-05-2022",
+          "lastUpdated": "2024-06-19T16:27:55.496+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "53d4c7cd",
+              "name": "Showbox",
+              "city": {
+                  "id": "5809844",
+                  "name": "Seattle",
+                  "state": "Washington",
+                  "stateCode": "WA",
+                  "coords": {
+                      "lat": 47.6062095,
+                      "long": -122.3320708
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/showbox-seattle-wa-usa-53d4c7cd.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own",
+                              "with": {
+                                  "mbid": "6c2cd859-b792-4258-8ede-402c5dcf8b90",
+                                  "name": "chloe moriondo",
+                                  "sortName": "Moriondo, Chloe",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/chloe-moriondo-33c9e0a5.html"
+                              }
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/showbox-seattle-wa-3bb4c860.html"
+      },
+      {
+          "id": "1bb721fc",
+          "versionId": "g7bc852fc",
+          "eventDate": "14-05-2022",
+          "lastUpdated": "2022-05-16T05:07:26.243+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "2bd6340e",
+              "name": "Wonder Ballroom",
+              "city": {
+                  "id": "5746545",
+                  "name": "Portland",
+                  "state": "Oregon",
+                  "stateCode": "OR",
+                  "coords": {
+                      "lat": 45.5234515,
+                      "long": -122.6762071
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/wonder-ballroom-portland-or-usa-2bd6340e.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/wonder-ballroom-portland-or-1bb721fc.html"
+      },
+      {
+          "id": "bb031d6",
+          "versionId": "g73a79a55",
+          "eventDate": "13-05-2022",
+          "lastUpdated": "2024-06-19T16:27:55.510+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "bd62162",
+              "name": "Vogue Theatre",
+              "city": {
+                  "id": "6173331",
+                  "name": "Vancouver",
+                  "state": "British Columbia",
+                  "stateCode": "BC",
+                  "coords": {
+                      "lat": 49.249657393,
+                      "long": -123.119340403
+                  },
+                  "country": {
+                      "code": "CA",
+                      "name": "Canada"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/vogue-theatre-vancouver-bc-canada-bd62162.html"
+          },
+          "tour": {
+              "name": "rising"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "blame game"
+                          },
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/vogue-theatre-vancouver-bc-canada-bb031d6.html"
+      }
+  ]
+}

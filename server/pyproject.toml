@@ -8,6 +8,13 @@ filterwarnings = [
     'ignore:jsonschema.RefResolver is deprecated:DeprecationWarning',
     'ignore:jsonschema.exceptions.RefResolutionError is deprecated:DeprecationWarning',
     'ignore:Accessing jsonschema.draft4_format_checker is deprecated:DeprecationWarning',
+
+    # TODO: this is here to silence exceptions from requests_mock.
+    # occurs when the app begins an outgoing API request in one test, and it completes during another test,
+    # which hasn't mocked that endpoint.
+    # haven't figured out a better way to prevent this, so I am ignoring those exceptions.
+    # can't ignore only `NoMockAddress` exceptions, so we need to ignore *any* thread exceptions.
+    'ignore:Exception in thread:pytest.PytestUnhandledThreadExceptionWarning',
 ]
 
 [tool.coverage.run]

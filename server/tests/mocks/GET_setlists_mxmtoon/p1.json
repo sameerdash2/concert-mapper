@@ -1,0 +1,1354 @@
+{
+  "type": "setlists",
+  "itemsPerPage": 20,
+  "page": 1,
+  "total": 103,
+  "setlist": [
+      {
+          "id": "b5109b6",
+          "versionId": "g1340cde1",
+          "eventDate": "25-02-2025",
+          "lastUpdated": "2025-04-02T22:25:47.188+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "6bd106f6",
+              "name": "White Oak Upstairs",
+              "city": {
+                  "id": "4699066",
+                  "name": "Houston",
+                  "state": "Texas",
+                  "stateCode": "TX",
+                  "coords": {
+                      "lat": 29.7632836,
+                      "long": -95.3632715
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/white-oak-upstairs-houston-tx-usa-6bd106f6.html"
+          },
+          "tour": {
+              "name": "Liminal Space"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "i hate texas"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "the situation"
+                          },
+                          {
+                              "name": "rain"
+                          },
+                          {
+                              "name": "god?"
+                          },
+                          {
+                              "name": "elevator"
+                          },
+                          {
+                              "name": "now's not the time"
+                          },
+                          {
+                              "name": "white out"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "VHS"
+                          },
+                          {
+                              "name": "number one boy"
+                          },
+                          {
+                              "name": "mona lisa"
+                          },
+                          {
+                              "name": "just a little"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "passenger side"
+                          },
+                          {
+                              "name": "dance (end of the world)"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2025/white-oak-upstairs-houston-tx-b5109b6.html"
+      },
+      {
+          "id": "b5109b2",
+          "versionId": "g4b5c9ff6",
+          "eventDate": "22-02-2025",
+          "lastUpdated": "2024-12-19T18:09:50.283+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3bd38804",
+              "name": "The Ritz Ybor",
+              "city": {
+                  "id": "4174757",
+                  "name": "Tampa",
+                  "state": "Florida",
+                  "stateCode": "FL",
+                  "coords": {
+                      "lat": 27.9475216,
+                      "long": -82.4584279
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-ritz-ybor-tampa-fl-usa-3bd38804.html"
+          },
+          "tour": {
+              "name": "Liminal Space"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2025/the-ritz-ybor-tampa-fl-b5109b2.html"
+      },
+      {
+          "id": "35109b3",
+          "versionId": "g4b5c9ffe",
+          "eventDate": "21-02-2025",
+          "lastUpdated": "2024-12-19T18:08:31.763+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "33d70809",
+              "name": "The Beacham",
+              "city": {
+                  "id": "4167147",
+                  "name": "Orlando",
+                  "state": "Florida",
+                  "stateCode": "FL",
+                  "coords": {
+                      "lat": 28.5383355,
+                      "long": -81.3792365
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-beacham-orlando-fl-usa-33d70809.html"
+          },
+          "tour": {
+              "name": "Liminal Space"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2025/the-beacham-orlando-fl-35109b3.html"
+      },
+      {
+          "id": "b5109be",
+          "versionId": "g1b40cde0",
+          "eventDate": "19-02-2025",
+          "lastUpdated": "2025-04-02T22:25:47.202+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "5bd63b34",
+              "name": "Center Stage",
+              "city": {
+                  "id": "4180439",
+                  "name": "Atlanta",
+                  "state": "Georgia",
+                  "stateCode": "GA",
+                  "coords": {
+                      "lat": 33.7489954,
+                      "long": -84.3879824
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/center-stage-atlanta-ga-usa-5bd63b34.html"
+          },
+          "tour": {
+              "name": "Liminal Space"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "dramatic escape",
+                              "info": "Shortened"
+                          },
+                          {
+                              "name": "i hate texas"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "the situation",
+                              "info": "Introduced band"
+                          },
+                          {
+                              "name": "rain"
+                          },
+                          {
+                              "name": "god?"
+                          },
+                          {
+                              "name": "elevator"
+                          },
+                          {
+                              "name": "now's not the time",
+                              "with": {
+                                  "mbid": "17958f7b-a755-42a7-ab72-4a7b601ed115",
+                                  "name": "Luna Li",
+                                  "sortName": "Li, Luna",
+                                  "disambiguation": "Dreamy rock from Toronto",
+                                  "url": "https://www.setlist.fm/setlists/luna-li-1bf7b538.html"
+                              }
+                          },
+                          {
+                              "name": "white out"
+                          },
+                          {
+                              "name": "cliché",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "feelings are fatal",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "VHS"
+                          },
+                          {
+                              "name": "number one boy"
+                          },
+                          {
+                              "name": "mona lisa"
+                          },
+                          {
+                              "name": "just a little"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "passenger side"
+                          },
+                          {
+                              "name": "dance (end of the world)"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2025/center-stage-atlanta-ga-b5109be.html"
+      },
+      {
+          "id": "35109bf",
+          "versionId": "g340cde7",
+          "eventDate": "18-02-2025",
+          "lastUpdated": "2025-04-02T22:25:47.213+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "53d3074d",
+              "name": "Brooklyn Bowl Nashville",
+              "city": {
+                  "id": "4644585",
+                  "name": "Nashville",
+                  "state": "Tennessee",
+                  "stateCode": "TN",
+                  "coords": {
+                      "lat": 36.1658899,
+                      "long": -86.7844432
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/brooklyn-bowl-nashville-nashville-tn-usa-53d3074d.html"
+          },
+          "tour": {
+              "name": "Liminal Space"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "dramatic escape",
+                              "info": "Shortened"
+                          },
+                          {
+                              "name": "i hate texas"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "the situation",
+                              "info": "With band intros"
+                          },
+                          {
+                              "name": "rain"
+                          },
+                          {
+                              "name": "god?"
+                          },
+                          {
+                              "name": "elevator"
+                          },
+                          {
+                              "name": "now's not the time",
+                              "with": {
+                                  "mbid": "17958f7b-a755-42a7-ab72-4a7b601ed115",
+                                  "name": "Luna Li",
+                                  "sortName": "Li, Luna",
+                                  "disambiguation": "Dreamy rock from Toronto",
+                                  "url": "https://www.setlist.fm/setlists/luna-li-1bf7b538.html"
+                              }
+                          },
+                          {
+                              "name": "white out"
+                          },
+                          {
+                              "name": "cliché",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "feelings are fatal",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "VHS"
+                          },
+                          {
+                              "name": "number one boy"
+                          },
+                          {
+                              "name": "mona lisa"
+                          },
+                          {
+                              "name": "just a little"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "passenger side"
+                          },
+                          {
+                              "name": "dance (end of the world)"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2025/brooklyn-bowl-nashville-nashville-tn-35109bf.html"
+      },
+      {
+          "id": "7b5bae3c",
+          "versionId": "g2b467c8e",
+          "eventDate": "03-12-2024",
+          "lastUpdated": "2025-02-17T18:42:09.929+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "33d3a8bd",
+              "name": "Private Venue",
+              "city": {
+                  "id": "cu:aa193361-06c7-11e6-b736-22000bb3106b",
+                  "name": "Unknown City",
+                  "state": "",
+                  "stateCode": "",
+                  "coords": {
+                      "lat": 54.2563,
+                      "long": 1.2825
+                  },
+                  "country": {
+                      "code": "GB",
+                      "name": "United Kingdom"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/private-venue-unknown-city-null-33d3a8bd.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "rain"
+                          },
+                          {
+                              "name": "the situation",
+                              "with": {
+                                  "mbid": "329ef27a-0555-4698-babc-f69c0814a097",
+                                  "name": "Sarah Bonito",
+                                  "sortName": "Bonito, Sarah",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/sarah-bonito-13db45d1.html"
+                              }
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/private-venue-unknown-city-null-7b5bae3c.html"
+      },
+      {
+          "id": "1357d919",
+          "versionId": "g235f1c8b",
+          "eventDate": "16-11-2024",
+          "lastUpdated": "2024-12-15T22:29:49.191+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3d62133",
+              "name": "Autódromo Hermanos Rodríguez",
+              "city": {
+                  "id": "3530597",
+                  "name": "Mexico City",
+                  "state": "Distrito Federal",
+                  "stateCode": "DIF",
+                  "coords": {
+                      "lat": 19.434,
+                      "long": -99.139
+                  },
+                  "country": {
+                      "code": "MX",
+                      "name": "Mexico"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/autodromo-hermanos-rodriguez-mexico-city-mexico-3d62133.html"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/autodromo-hermanos-rodriguez-mexico-city-mexico-1357d919.html"
+      },
+      {
+          "id": "3b5c30c0",
+          "versionId": "g1b5da5ec",
+          "eventDate": "09-11-2024",
+          "lastUpdated": "2024-12-29T04:02:37.048+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "4bd34b82",
+              "name": "Private Venue",
+              "city": {
+                  "id": "5128581",
+                  "name": "New York",
+                  "state": "New York",
+                  "stateCode": "NY",
+                  "coords": {
+                      "lat": 40.7142691,
+                      "long": -74.0059729
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/private-venue-new-york-ny-usa-4bd34b82.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "mona lisa",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "i hate texas",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "Crying, Laughing, Loving, Lying",
+                              "cover": {
+                                  "mbid": "6838ca8e-da88-436c-a0fd-6d3a7e832f1f",
+                                  "name": "Labi Siffre",
+                                  "sortName": "Siffre, Labi",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/labi-siffre-4bd4b3ee.html"
+                              },
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "the situation",
+                              "info": "Acoustic"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "info": "Acoustic set for Track Star* Presents",
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/private-venue-new-york-ny-3b5c30c0.html"
+      },
+      {
+          "id": "235eb087",
+          "versionId": "g1b526958",
+          "eventDate": "07-11-2024",
+          "lastUpdated": "2024-11-10T01:48:10.851+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "4bd7c3d6",
+              "name": "Jimmy Kimmel Live",
+              "city": {
+                  "id": "5368361",
+                  "name": "Los Angeles",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 34.052,
+                      "long": -118.244
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/jimmy-kimmel-live-los-angeles-ca-usa-4bd7c3d6.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "rain"
+                          },
+                          {
+                              "name": "rain"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "info": "One of the two takes aired on Jimmy Kimmel Live!",
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/jimmy-kimmel-live-los-angeles-ca-235eb087.html"
+      },
+      {
+          "id": "3b5c30b0",
+          "versionId": "g35da5b3",
+          "eventDate": "06-11-2024",
+          "lastUpdated": "2024-12-29T04:05:13.654+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3d671bb",
+              "name": "Amoeba Music",
+              "city": {
+                  "id": "5368361",
+                  "name": "Los Angeles",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 34.052,
+                      "long": -118.244
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/amoeba-music-los-angeles-ca-usa-3d671bb.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "prom dress",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "mona lisa",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "the situation",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "rain",
+                              "info": "Acoustic"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "info": "Setlist incomplete and out of order",
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/amoeba-music-los-angeles-ca-3b5c30b0.html"
+      },
+      {
+          "id": "4b5eb366",
+          "versionId": "g3526947",
+          "eventDate": "02-11-2024",
+          "lastUpdated": "2024-11-10T01:51:07.290+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "6bd39e12",
+              "name": "Fingerprints Music",
+              "city": {
+                  "id": "5367929",
+                  "name": "Long Beach",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 33.7669623,
+                      "long": -118.1892348
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/fingerprints-music-long-beach-ca-usa-6bd39e12.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "mona lisa",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "prom dress",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "rain",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "the situation",
+                              "info": "Acoustic"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "info": "Solo performance on guitar. *Setlist incomplete*",
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/fingerprints-music-long-beach-ca-4b5eb366.html"
+      },
+      {
+          "id": "5355f7a1",
+          "versionId": "g2bae20f2",
+          "eventDate": "03-08-2024",
+          "lastUpdated": "2024-08-05T04:42:53.477+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3bd61414",
+              "name": "TD Garden",
+              "city": {
+                  "id": "4930956",
+                  "name": "Boston",
+                  "state": "Massachusetts",
+                  "stateCode": "MA",
+                  "coords": {
+                      "lat": 42.3584308,
+                      "long": -71.0597732
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/td-garden-boston-ma-usa-3bd61414.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "i hate texas"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "dance (end of the world)"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "info": "",
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/td-garden-boston-ma-5355f7a1.html"
+      },
+      {
+          "id": "b55fd32",
+          "versionId": "g53ae3399",
+          "eventDate": "02-08-2024",
+          "lastUpdated": "2024-08-04T19:52:24.069+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3bd2b05c",
+              "name": "Capital One Arena",
+              "city": {
+                  "id": "4140963",
+                  "name": "Washington",
+                  "state": "Washington, D.C.",
+                  "stateCode": "DC",
+                  "coords": {
+                      "lat": 38.895,
+                      "long": -77.036
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/capital-one-arena-washington-dc-usa-3bd2b05c.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "i hate texas"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "dance (end of the world)"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/capital-one-arena-washington-dc-b55fd32.html"
+      },
+      {
+          "id": "1350c9f9",
+          "versionId": "g2356447f",
+          "eventDate": "30-07-2024",
+          "lastUpdated": "2024-10-12T04:32:43.442+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "73d20e81",
+              "name": "State Farm Arena",
+              "city": {
+                  "id": "4180439",
+                  "name": "Atlanta",
+                  "state": "Georgia",
+                  "stateCode": "GA",
+                  "coords": {
+                      "lat": 33.7489954,
+                      "long": -84.3879824
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/state-farm-arena-atlanta-ga-usa-73d20e81.html"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/state-farm-arena-atlanta-ga-1350c9f9.html"
+      },
+      {
+          "id": "3b55acb0",
+          "versionId": "g63a16af3",
+          "eventDate": "29-07-2024",
+          "lastUpdated": "2024-07-31T04:02:29.682+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "1bd515b8",
+              "name": "The Underground",
+              "city": {
+                  "id": "4460243",
+                  "name": "Charlotte",
+                  "state": "North Carolina",
+                  "stateCode": "NC",
+                  "coords": {
+                      "lat": 35.2270869,
+                      "long": -80.8431268
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-underground-charlotte-nc-usa-1bd515b8.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "i hate texas"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "passenger side"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "kaleidoscope"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "dance (end of the world)"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/the-underground-charlotte-nc-3b55acb0.html"
+      },
+      {
+          "id": "2b55b482",
+          "versionId": "gba121e2",
+          "eventDate": "27-07-2024",
+          "lastUpdated": "2024-07-29T17:20:02.866+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "23d63cc7",
+              "name": "Madison Square Garden",
+              "city": {
+                  "id": "5128581",
+                  "name": "New York",
+                  "state": "New York",
+                  "stateCode": "NY",
+                  "coords": {
+                      "lat": 40.7142691,
+                      "long": -74.0059729
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/madison-square-garden-new-york-ny-usa-23d63cc7.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "i hate texas"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "dance (end of the world)"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/madison-square-garden-new-york-ny-2b55b482.html"
+      },
+      {
+          "id": "235444e3",
+          "versionId": "g7ba12a80",
+          "eventDate": "26-07-2024",
+          "lastUpdated": "2024-07-29T15:18:26.506+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "23d63cc7",
+              "name": "Madison Square Garden",
+              "city": {
+                  "id": "5128581",
+                  "name": "New York",
+                  "state": "New York",
+                  "stateCode": "NY",
+                  "coords": {
+                      "lat": 40.7142691,
+                      "long": -74.0059729
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/madison-square-garden-new-york-ny-usa-23d63cc7.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "i hate texas"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "dance (end of the world)"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/madison-square-garden-new-york-ny-235444e3.html"
+      },
+      {
+          "id": "b544df2",
+          "versionId": "g63a04a53",
+          "eventDate": "25-07-2024",
+          "lastUpdated": "2024-07-26T04:42:44.620+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3bd65058",
+              "name": "Wells Fargo Center",
+              "city": {
+                  "id": "4560349",
+                  "name": "Philadelphia",
+                  "state": "Pennsylvania",
+                  "stateCode": "PA",
+                  "coords": {
+                      "lat": 39.952335,
+                      "long": -75.163789
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/wells-fargo-center-philadelphia-pa-usa-3bd65058.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "i hate texas"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "dance (end of the world)"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "info": "Second opening act for AJR's The Maybe Man Tour",
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/wells-fargo-center-philadelphia-pa-b544df2.html"
+      },
+      {
+          "id": "5354677d",
+          "versionId": "g13a00da1",
+          "eventDate": "23-07-2024",
+          "lastUpdated": "2024-07-24T05:00:25.521+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "53d3d7f5",
+              "name": "Heritage Bank Center",
+              "city": {
+                  "id": "4508722",
+                  "name": "Cincinnati",
+                  "state": "Ohio",
+                  "stateCode": "OH",
+                  "coords": {
+                      "lat": 39.1620036,
+                      "long": -84.4568863
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/heritage-bank-center-cincinnati-oh-usa-53d3d7f5.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "i hate texas"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "dance (end of the world)"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/heritage-bank-center-cincinnati-oh-5354677d.html"
+      },
+      {
+          "id": "b54753a",
+          "versionId": "g6ba0d21a",
+          "eventDate": "21-07-2024",
+          "lastUpdated": "2024-07-22T14:15:22.252+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "43d0d767",
+              "name": "CHI Health Center Omaha",
+              "city": {
+                  "id": "5074472",
+                  "name": "Omaha",
+                  "state": "Nebraska",
+                  "stateCode": "NE",
+                  "coords": {
+                      "lat": 41.2586096,
+                      "long": -95.937792
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/chi-health-center-omaha-omaha-ne-usa-43d0d767.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "i hate texas"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "dance (end of the world)"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2024/chi-health-center-omaha-omaha-ne-b54753a.html"
+      }
+  ]
+}

@@ -1,10 +1,18 @@
 import json
 import requests_mock
-from pathlib import Path
 from websockets.sync.client import connect
 
 MXTMOON_MBID = "ccbced49-2689-46f8-9101-1c265d6f7b8f"
 JUPITER_MBID = "904e413a-1327-4418-a96d-114a14a874ff"
+
+
+def load_json(path: str) -> dict:
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+jupiter_setlists = [load_json(f"tests/mocks/GET_setlists_jupiter/p{i}.json") for i in range(1, 3)]
+mxmtoon_setlists = [load_json(f"tests/mocks/GET_setlists_mxmtoon/p{i}.json") for i in range(1, 7)]
 
 
 def test_start_fetch_process(client):
@@ -28,10 +36,8 @@ def test_hello_message(client):
         m.get("https://api.spotify.com/v1/search", status_code=404, json={})
         # Mock setlist.fm API responses
         m.get(f"https://api.setlist.fm/rest/1.0/artist/{JUPITER_MBID}", json={"name": "Boys Go To Jupiter"})
-        mock_data_p1 = json.loads(Path("tests/mocks/GET_setlists_jupiter/p1.json").read_text(encoding="utf-8"))
-        mock_data_p2 = json.loads(Path("tests/mocks/GET_setlists_jupiter/p2.json").read_text(encoding="utf-8"))
-        m.get(f"https://api.setlist.fm/rest/1.0/artist/{JUPITER_MBID}/setlists?p=1", json=mock_data_p1)
-        m.get(f"https://api.setlist.fm/rest/1.0/artist/{JUPITER_MBID}/setlists?p=2", json=mock_data_p2)
+        for i, page in enumerate(jupiter_setlists):
+            m.get(f"https://api.setlist.fm/rest/1.0/artist/{JUPITER_MBID}/setlists?p={i+1}", json=page)
 
         response = client.get(f"/api/setlists/{JUPITER_MBID}")
 
@@ -41,6 +47,7 @@ def test_hello_message(client):
             # Wait for the hello message
             response = websocket.recv()
             event = json.loads(response)
+
             # Check
             assert event["type"] == "hello"
             assert event["artistMbid"] == JUPITER_MBID

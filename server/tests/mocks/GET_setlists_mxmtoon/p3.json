@@ -1,0 +1,1518 @@
+{
+  "type": "setlists",
+  "itemsPerPage": 20,
+  "page": 3,
+  "total": 103,
+  "setlist": [
+      {
+          "id": "4bae6b86",
+          "versionId": "g3b8a04bc",
+          "eventDate": "12-12-2023",
+          "lastUpdated": "2023-12-23T23:06:38.418+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "7bd6c644",
+              "name": "SPACE",
+              "city": {
+                  "id": "4891382",
+                  "name": "Evanston",
+                  "state": "Illinois",
+                  "stateCode": "IL",
+                  "coords": {
+                      "lat": 42.0411414,
+                      "long": -87.6900587
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/space-evanston-il-usa-7bd6c644.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "the idea of you"
+                          },
+                          {
+                              "name": "mona lisa"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "porcelain"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "temporary nothing"
+                          },
+                          {
+                              "name": "sarah"
+                          },
+                          {
+                              "name": "hong kong"
+                          },
+                          {
+                              "name": "stuck"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          }
+                      ]
+                  },
+                  {
+                      "name": "Encore",
+                      "song": [
+                          {
+                              "name": "Riptide",
+                              "cover": {
+                                  "mbid": "df36f6db-5987-46ed-9d02-0cf36ed4e060",
+                                  "name": "Vance Joy",
+                                  "sortName": "Joy, Vance",
+                                  "disambiguation": "Australian singer-songwriter",
+                                  "url": "https://www.setlist.fm/setlists/vance-joy-bdd8596.html"
+                              }
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/space-evanston-il-4bae6b86.html"
+      },
+      {
+          "id": "6bae0af6",
+          "versionId": "g738dc62d",
+          "eventDate": "09-12-2023",
+          "lastUpdated": "2023-12-11T04:58:56.610+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "73d6ca21",
+              "name": "The Echo",
+              "city": {
+                  "id": "5368361",
+                  "name": "Los Angeles",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 34.052,
+                      "long": -118.244
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-echo-los-angeles-ca-usa-73d6ca21.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "the idea of you"
+                          },
+                          {
+                              "name": "mona lisa"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "porcelain"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "temporary nothing"
+                          },
+                          {
+                              "name": "sarah",
+                              "info": "unreleased"
+                          },
+                          {
+                              "name": "hong kong"
+                          },
+                          {
+                              "name": "stuck",
+                              "info": "stopped and started again because she cried due to a fan project"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "Riptide",
+                              "cover": {
+                                  "mbid": "df36f6db-5987-46ed-9d02-0cf36ed4e060",
+                                  "name": "Vance Joy",
+                                  "sortName": "Joy, Vance",
+                                  "disambiguation": "Australian singer-songwriter",
+                                  "url": "https://www.setlist.fm/setlists/vance-joy-bdd8596.html"
+                              }
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/the-echo-los-angeles-ca-6bae0af6.html"
+      },
+      {
+          "id": "4baec3d2",
+          "versionId": "g6b8dc63a",
+          "eventDate": "08-12-2023",
+          "lastUpdated": "2023-12-11T04:58:14.397+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "23d6347f",
+              "name": "Café du Nord",
+              "city": {
+                  "id": "5391959",
+                  "name": "San Francisco",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 37.775,
+                      "long": -122.419
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/cafe-du-nord-san-francisco-ca-usa-23d6347f.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "the idea of you"
+                          },
+                          {
+                              "name": "mona lisa"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "porcelain"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "temporary nothing"
+                          },
+                          {
+                              "name": "sarah",
+                              "info": "unreleased"
+                          },
+                          {
+                              "name": "hong kong"
+                          },
+                          {
+                              "name": "stuck"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "Riptide",
+                              "cover": {
+                                  "mbid": "df36f6db-5987-46ed-9d02-0cf36ed4e060",
+                                  "name": "Vance Joy",
+                                  "sortName": "Joy, Vance",
+                                  "disambiguation": "Australian singer-songwriter",
+                                  "url": "https://www.setlist.fm/setlists/vance-joy-bdd8596.html"
+                              }
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/cafe-du-nord-san-francisco-ca-4baec3d2.html"
+      },
+      {
+          "id": "73ae0ae9",
+          "versionId": "g7b8dc6fc",
+          "eventDate": "06-12-2023",
+          "lastUpdated": "2023-12-11T05:00:35.878+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3bd7201c",
+              "name": "Barboza",
+              "city": {
+                  "id": "5809844",
+                  "name": "Seattle",
+                  "state": "Washington",
+                  "stateCode": "WA",
+                  "coords": {
+                      "lat": 47.6062095,
+                      "long": -122.3320708
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/barboza-seattle-wa-usa-3bd7201c.html"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/barboza-seattle-wa-73ae0ae9.html"
+      },
+      {
+          "id": "3aeb18f",
+          "versionId": "g5b8c7b70",
+          "eventDate": "27-11-2023",
+          "lastUpdated": "2023-12-05T15:56:40.547+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "13d50df9",
+              "name": "Omeara",
+              "city": {
+                  "id": "2643743",
+                  "name": "London",
+                  "state": "England",
+                  "stateCode": "ENG",
+                  "coords": {
+                      "lat": 51.5084152563931,
+                      "long": -0.125532746315002
+                  },
+                  "country": {
+                      "code": "GB",
+                      "name": "United Kingdom"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/omeara-london-england-13d50df9.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "the idea of you"
+                          },
+                          {
+                              "name": "mona lisa"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "porcelain"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "temporary nothing"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "sarah",
+                              "info": "Unreleased"
+                          },
+                          {
+                              "name": "stuck"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "Riptide",
+                              "cover": {
+                                  "mbid": "df36f6db-5987-46ed-9d02-0cf36ed4e060",
+                                  "name": "Vance Joy",
+                                  "sortName": "Joy, Vance",
+                                  "disambiguation": "Australian singer-songwriter",
+                                  "url": "https://www.setlist.fm/setlists/vance-joy-bdd8596.html"
+                              }
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/omeara-london-england-3aeb18f.html"
+      },
+      {
+          "id": "13aec505",
+          "versionId": "g6b8dc60a",
+          "eventDate": "17-11-2023",
+          "lastUpdated": "2023-12-11T05:00:08.068+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "33d29cd1",
+              "name": "Statler Auditorium, Cornell University",
+              "city": {
+                  "id": "5122432",
+                  "name": "Ithaca",
+                  "state": "New York",
+                  "stateCode": "NY",
+                  "coords": {
+                      "lat": 42.4406284,
+                      "long": -76.4966071
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/statler-auditorium-cornell-university-ithaca-ny-usa-33d29cd1.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "the idea of you"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "mona lisa"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "Riptide",
+                              "cover": {
+                                  "mbid": "df36f6db-5987-46ed-9d02-0cf36ed4e060",
+                                  "name": "Vance Joy",
+                                  "sortName": "Joy, Vance",
+                                  "disambiguation": "Australian singer-songwriter",
+                                  "url": "https://www.setlist.fm/setlists/vance-joy-bdd8596.html"
+                              }
+                          }
+                      ]
+                  }
+              ]
+          },
+          "info": "Setlist incomplete and out of order",
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/statler-auditorium-cornell-university-ithaca-ny-13aec505.html"
+      },
+      {
+          "id": "4ba413c2",
+          "versionId": "g7b9d26e0",
+          "eventDate": "05-08-2023",
+          "lastUpdated": "2023-08-06T13:51:11.501+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "33d1e80d",
+              "name": "The Palladium Outdoors",
+              "city": {
+                  "id": "4956184",
+                  "name": "Worcester",
+                  "state": "Massachusetts",
+                  "stateCode": "MA",
+                  "coords": {
+                      "lat": 42.2625932,
+                      "long": -71.8022934
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-palladium-outdoors-worcester-ma-usa-33d1e80d.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "kaleidoscope"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/the-palladium-outdoors-worcester-ma-4ba413c2.html"
+      },
+      {
+          "id": "6ba41e46",
+          "versionId": "g1b9d3dac",
+          "eventDate": "04-08-2023",
+          "lastUpdated": "2023-08-05T15:49:26.671+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3bd498b8",
+              "name": "Skyline Stage at the Mann Center",
+              "city": {
+                  "id": "4560349",
+                  "name": "Philadelphia",
+                  "state": "Pennsylvania",
+                  "stateCode": "PA",
+                  "coords": {
+                      "lat": 39.952335,
+                      "long": -75.163789
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/skyline-stage-at-the-mann-center-philadelphia-pa-usa-3bd498b8.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "kaleidoscope"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "info": "",
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/skyline-stage-at-the-mann-center-philadelphia-pa-6ba41e46.html"
+      },
+      {
+          "id": "63a41e43",
+          "versionId": "gb9de93a",
+          "eventDate": "03-08-2023",
+          "lastUpdated": "2023-08-04T00:20:17.315+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "4bd61b52",
+              "name": "Central Park SummerStage",
+              "city": {
+                  "id": "5128581",
+                  "name": "New York",
+                  "state": "New York",
+                  "stateCode": "NY",
+                  "coords": {
+                      "lat": 40.7142691,
+                      "long": -74.0059729
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/central-park-summerstage-new-york-ny-usa-4bd61b52.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "kaleidoscope"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/central-park-summerstage-new-york-ny-63a41e43.html"
+      },
+      {
+          "id": "13a42d3d",
+          "versionId": "g63a71257",
+          "eventDate": "01-08-2023",
+          "lastUpdated": "2024-06-23T17:05:55.076+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "2bd78062",
+              "name": "Jacobs Pavilion at Nautica",
+              "city": {
+                  "id": "5150529",
+                  "name": "Cleveland",
+                  "state": "Ohio",
+                  "stateCode": "OH",
+                  "coords": {
+                      "lat": 41.4994954,
+                      "long": -81.6954088
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/jacobs-pavilion-at-nautica-cleveland-oh-usa-2bd78062.html"
+          },
+          "tour": {
+              "name": "Bittersweet Daze"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "kaleidoscope"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/jacobs-pavilion-at-nautica-cleveland-oh-13a42d3d.html"
+      },
+      {
+          "id": "4ba4d3c2",
+          "versionId": "g4b877b4a",
+          "eventDate": "30-07-2023",
+          "lastUpdated": "2023-09-24T19:03:19.715+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "5bd42300",
+              "name": "Holliday Park",
+              "city": {
+                  "id": "4259418",
+                  "name": "Indianapolis",
+                  "state": "Indiana",
+                  "stateCode": "IN",
+                  "coords": {
+                      "lat": 39.7683765,
+                      "long": -86.1580423
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/holliday-park-indianapolis-in-usa-5bd42300.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "kaleidoscope"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/holliday-park-indianapolis-in-4ba4d3c2.html"
+      },
+      {
+          "id": "5ba4db00",
+          "versionId": "g13ba41c5",
+          "eventDate": "29-07-2023",
+          "lastUpdated": "2024-05-14T20:07:00.836+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "bd15d7a",
+              "name": "The Fairgrounds at the Salt Shed",
+              "city": {
+                  "id": "4887398",
+                  "name": "Chicago",
+                  "state": "Illinois",
+                  "stateCode": "IL",
+                  "coords": {
+                      "lat": 41.850033,
+                      "long": -87.6500523
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-fairgrounds-at-the-salt-shed-chicago-il-usa-bd15d7a.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "kaleidoscope"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "coming of age"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/the-fairgrounds-at-the-salt-shed-chicago-il-5ba4db00.html"
+      },
+      {
+          "id": "4ba4db12",
+          "versionId": "g639daa9b",
+          "eventDate": "28-07-2023",
+          "lastUpdated": "2023-08-01T17:14:01.925+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "63d086a3",
+              "name": "Saint Louis Music Park",
+              "city": {
+                  "id": "4397340",
+                  "name": "Maryland Heights",
+                  "state": "Missouri",
+                  "stateCode": "MO",
+                  "coords": {
+                      "lat": 38.7131073,
+                      "long": -90.4298401
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/saint-louis-music-park-maryland-heights-mo-usa-63d086a3.html"
+          },
+          "tour": {
+              "name": "Bittersweet Daze"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "kaleidoscope"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/saint-louis-music-park-maryland-heights-mo-4ba4db12.html"
+      },
+      {
+          "id": "63a4f65f",
+          "versionId": "g139c212d",
+          "eventDate": "26-07-2023",
+          "lastUpdated": "2023-07-28T07:13:55.985+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3bd2b89c",
+              "name": "Levitt Pavilion Denver",
+              "city": {
+                  "id": "5419384",
+                  "name": "Denver",
+                  "state": "Colorado",
+                  "stateCode": "CO",
+                  "coords": {
+                      "lat": 39.7391536,
+                      "long": -104.9847034
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/levitt-pavilion-denver-denver-co-usa-3bd2b89c.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream",
+                              "info": "Maia went up to barricade"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "no faker",
+                              "info": ""
+                          },
+                          {
+                              "name": "kaleidoscope"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/levitt-pavilion-denver-denver-co-63a4f65f.html"
+      },
+      {
+          "id": "43a4f797",
+          "versionId": "g3b9ce0ac",
+          "eventDate": "25-07-2023",
+          "lastUpdated": "2023-07-26T02:11:43.157+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "2bd61c8e",
+              "name": "Saltair",
+              "city": {
+                  "id": "5777793",
+                  "name": "Magna",
+                  "state": "Utah",
+                  "stateCode": "UT",
+                  "coords": {
+                      "lat": 40.7091121,
+                      "long": -112.1016088
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/saltair-magna-ut-usa-2bd61c8e.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "kaleidoscope"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/saltair-magna-ut-43a4f797.html"
+      },
+      {
+          "id": "33a49c59",
+          "versionId": "g39c8113",
+          "eventDate": "23-07-2023",
+          "lastUpdated": "2023-07-24T17:22:50.689+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "63d3aa7f",
+              "name": "Frost Amphitheater",
+              "city": {
+                  "id": "5398563",
+                  "name": "Stanford",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 37.424106,
+                      "long": -122.1660756
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/frost-amphitheater-stanford-ca-usa-63d3aa7f.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "kaleidoscope"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/frost-amphitheater-stanford-ca-33a49c59.html"
+      },
+      {
+          "id": "4ba4b382",
+          "versionId": "g3b9f10a8",
+          "eventDate": "21-07-2023",
+          "lastUpdated": "2023-07-19T19:55:37.325+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "7bd47af4",
+              "name": "Cal Coast Credit Union Open Air Theatre",
+              "city": {
+                  "id": "5391811",
+                  "name": "San Diego",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 32.7153292,
+                      "long": -117.1572551
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/cal-coast-credit-union-open-air-theatre-san-diego-ca-usa-7bd47af4.html"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/cal-coast-credit-union-open-air-theatre-san-diego-ca-4ba4b382.html"
+      },
+      {
+          "id": "7ba74268",
+          "versionId": "g5b9f6790",
+          "eventDate": "20-07-2023",
+          "lastUpdated": "2023-07-21T08:54:15.311+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "4bd61ff2",
+              "name": "Greek Theatre",
+              "city": {
+                  "id": "5368361",
+                  "name": "Los Angeles",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 34.052,
+                      "long": -118.244
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/greek-theatre-los-angeles-ca-usa-4bd61ff2.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "kaleidoscope"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "feelings are fatal",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/greek-theatre-los-angeles-ca-7ba74268.html"
+      },
+      {
+          "id": "2ba4b46a",
+          "versionId": "g53a7ab05",
+          "eventDate": "18-07-2023",
+          "lastUpdated": "2024-06-18T23:02:34.365+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "6bd7cab2",
+              "name": "The Observatory",
+              "city": {
+                  "id": "5392900",
+                  "name": "Santa Ana",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 33.7455731,
+                      "long": -117.8678338
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-observatory-santa-ana-ca-usa-6bd7cab2.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "kaleidoscope"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "blame game"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/the-observatory-santa-ana-ca-2ba4b46a.html"
+      },
+      {
+          "id": "73bc5275",
+          "versionId": "g6be00a8e",
+          "eventDate": "11-01-2023",
+          "lastUpdated": "2023-01-09T21:50:46.437+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3d1b54b",
+              "name": "Racket",
+              "city": {
+                  "id": "5128581",
+                  "name": "New York",
+                  "state": "New York",
+                  "stateCode": "NY",
+                  "coords": {
+                      "lat": 40.7142691,
+                      "long": -74.0059729
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/racket-new-york-ny-usa-3d1b54b.html"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2023/racket-new-york-ny-73bc5275.html"
+      }
+  ]
+}

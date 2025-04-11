@@ -1,0 +1,1471 @@
+{
+  "type": "setlists",
+  "itemsPerPage": 20,
+  "page": 5,
+  "total": 103,
+  "setlist": [
+      {
+          "id": "13b739f5",
+          "versionId": "g53c817ad",
+          "eventDate": "11-05-2022",
+          "lastUpdated": "2022-05-13T03:23:36.582+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "13d53d51",
+              "name": "Rockwell at The Complex",
+              "city": {
+                  "id": "5780993",
+                  "name": "Salt Lake City",
+                  "state": "Utah",
+                  "stateCode": "UT",
+                  "coords": {
+                      "lat": 40.7607794,
+                      "long": -111.8910474
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/rockwell-at-the-complex-salt-lake-city-ut-usa-13d53d51.html"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/rockwell-at-the-complex-salt-lake-city-ut-13b739f5.html"
+      },
+      {
+          "id": "4bb1bf22",
+          "versionId": "g53fa7f91",
+          "eventDate": "10-05-2022",
+          "lastUpdated": "2022-09-23T22:29:45.475+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "53d63b21",
+              "name": "Gothic Theatre",
+              "city": {
+                  "id": "5421250",
+                  "name": "Englewood",
+                  "state": "Colorado",
+                  "stateCode": "CO",
+                  "coords": {
+                      "lat": 39.6477653,
+                      "long": -104.9877597
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/gothic-theatre-englewood-co-usa-53d63b21.html"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/gothic-theatre-englewood-co-4bb1bf22.html"
+      },
+      {
+          "id": "13b7dd29",
+          "versionId": "g7ba79a54",
+          "eventDate": "08-05-2022",
+          "lastUpdated": "2024-06-19T16:27:55.524+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "5bd6c30c",
+              "name": "Varsity Theater",
+              "city": {
+                  "id": "5037649",
+                  "name": "Minneapolis",
+                  "state": "Minnesota",
+                  "stateCode": "MN",
+                  "coords": {
+                      "lat": 44.9799654,
+                      "long": -93.2638361
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/varsity-theater-minneapolis-mn-usa-5bd6c30c.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own",
+                              "with": {
+                                  "mbid": "6c2cd859-b792-4258-8ede-402c5dcf8b90",
+                                  "name": "chloe moriondo",
+                                  "sortName": "Moriondo, Chloe",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/chloe-moriondo-33c9e0a5.html"
+                              }
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet",
+                              "info": "Solo"
+                          },
+                          {
+                              "name": "cliché",
+                              "info": "Solo"
+                          },
+                          {
+                              "name": "feelings are fatal",
+                              "info": "Solo"
+                          },
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "blame game"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "info": "Show cut short due to curfew",
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/varsity-theater-minneapolis-mn-13b7dd29.html"
+      },
+      {
+          "id": "73b7829d",
+          "versionId": "g63a79a4b",
+          "eventDate": "05-05-2022",
+          "lastUpdated": "2024-06-19T16:27:55.540+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3d63def",
+              "name": "Majestic Theatre",
+              "city": {
+                  "id": "4990729",
+                  "name": "Detroit",
+                  "state": "Michigan",
+                  "stateCode": "MI",
+                  "coords": {
+                      "lat": 42.331427,
+                      "long": -83.0457538
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/majestic-theatre-detroit-mi-usa-3d63def.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own",
+                              "with": {
+                                  "mbid": "6c2cd859-b792-4258-8ede-402c5dcf8b90",
+                                  "name": "chloe moriondo",
+                                  "sortName": "Moriondo, Chloe",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/chloe-moriondo-33c9e0a5.html"
+                              }
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "florida"
+                          },
+                          {
+                              "name": "blame game"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/majestic-theatre-detroit-mi-73b7829d.html"
+      },
+      {
+          "id": "63b78ee7",
+          "versionId": "g6ba79a4a",
+          "eventDate": "04-05-2022",
+          "lastUpdated": "2024-06-19T16:27:55.555+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3d6d92f",
+              "name": "Danforth Music Hall",
+              "city": {
+                  "id": "6167865",
+                  "name": "Toronto",
+                  "state": "Ontario",
+                  "stateCode": "ON",
+                  "coords": {
+                      "lat": 43.700113788,
+                      "long": -79.416304194
+                  },
+                  "country": {
+                      "code": "CA",
+                      "name": "Canada"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/danforth-music-hall-toronto-on-canada-3d6d92f.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown",
+                              "info": "unreleased"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you",
+                              "info": "unreleased"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "i feel like chet",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "cliché",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "feelings are fatal",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "florida",
+                              "info": "unreleased"
+                          },
+                          {
+                              "name": "blame game"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age",
+                              "info": "unreleased"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "mona lisa"
+                          },
+                          {
+                              "name": "prom dress"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/danforth-music-hall-toronto-on-canada-63b78ee7.html"
+      },
+      {
+          "id": "73b7a269",
+          "versionId": "g73a79a49",
+          "eventDate": "02-05-2022",
+          "lastUpdated": "2024-06-19T16:27:55.568+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "5bd4439c",
+              "name": "Théâtre Fairmount",
+              "city": {
+                  "id": "6077243",
+                  "name": "Montreal",
+                  "state": "Quebec",
+                  "stateCode": "QC",
+                  "coords": {
+                      "lat": 45.5088375,
+                      "long": -73.587809
+                  },
+                  "country": {
+                      "code": "CA",
+                      "name": "Canada"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/theatre-fairmount-montreal-qc-canada-5bd4439c.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "frown",
+                              "info": "Live debut"
+                          },
+                          {
+                              "name": "sad disco"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "learn to love you",
+                              "info": "Live debut"
+                          },
+                          {
+                              "name": "i feel like chet",
+                              "info": "Solo/Acoustic"
+                          },
+                          {
+                              "name": "cliché",
+                              "info": "Solo/Acoustic"
+                          },
+                          {
+                              "name": "feelings are fatal",
+                              "info": "Solo/Acoustic"
+                          },
+                          {
+                              "name": "florida",
+                              "info": "Live debut"
+                          },
+                          {
+                              "name": "blame game"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "victim of nostalgia"
+                          },
+                          {
+                              "name": "coming of age",
+                              "info": "Live debut"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  },
+                  {
+                      "encore": 1,
+                      "song": [
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "mona lisa"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/theatre-fairmount-montreal-qc-canada-73b7a269.html"
+      },
+      {
+          "id": "638942b3",
+          "versionId": "g23ccccab",
+          "eventDate": "25-03-2022",
+          "lastUpdated": "2022-03-30T13:59:02.895+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "13d50df9",
+              "name": "Omeara",
+              "city": {
+                  "id": "2643743",
+                  "name": "London",
+                  "state": "England",
+                  "stateCode": "ENG",
+                  "coords": {
+                      "lat": 51.5084152563931,
+                      "long": -0.125532746315002
+                  },
+                  "country": {
+                      "code": "GB",
+                      "name": "United Kingdom"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/omeara-london-england-13d50df9.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "mona lisa",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "feelings are fatal",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "sad disco",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "All Star",
+                              "cover": {
+                                  "mbid": "944e1036-8a03-4611-8aa0-31515a05c848",
+                                  "name": "Smash Mouth",
+                                  "sortName": "Smash Mouth",
+                                  "disambiguation": "US rock band from San Jose, CA",
+                                  "url": "https://www.setlist.fm/setlists/smash-mouth-33d6c819.html"
+                              },
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "seasonal depression",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "cliché",
+                              "info": "Acoustic"
+                          },
+                          {
+                              "name": "prom dress",
+                              "info": "Acoustic"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2022/omeara-london-england-638942b3.html"
+      },
+      {
+          "id": "5b8aa74c",
+          "versionId": "g7ba79a48",
+          "eventDate": "31-10-2021",
+          "lastUpdated": "2024-06-19T16:27:55.578+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3d6cdeb",
+              "name": "Golden Gate Park",
+              "city": {
+                  "id": "5391959",
+                  "name": "San Francisco",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 37.775,
+                      "long": -122.419
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/golden-gate-park-san-francisco-ca-usa-3d6cdeb.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "used to you"
+                          },
+                          {
+                              "name": "quiet motions"
+                          },
+                          {
+                              "name": "blame game"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "in the darkness"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2021/golden-gate-park-san-francisco-ca-5b8aa74c.html"
+      },
+      {
+          "id": "638a8ecb",
+          "versionId": "g63a79a4f",
+          "eventDate": "29-10-2021",
+          "lastUpdated": "2024-06-19T16:27:55.589+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "7bd63658",
+              "name": "The Catalyst",
+              "city": {
+                  "id": "5393052",
+                  "name": "Santa Cruz",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 36.9741171,
+                      "long": -122.0307963
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-catalyst-santa-cruz-ca-usa-7bd63658.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "used to you"
+                          },
+                          {
+                              "name": "quiet motions"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "blame game"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "lessons"
+                          },
+                          {
+                              "name": "almost home"
+                          },
+                          {
+                              "name": "in the darkness"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          },
+                          {
+                              "name": "cliché",
+                              "info": "**encore"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2021/the-catalyst-santa-cruz-ca-638a8ecb.html"
+      },
+      {
+          "id": "b8f15be",
+          "versionId": "g7bddaa54",
+          "eventDate": "01-08-2021",
+          "lastUpdated": "2021-08-09T05:48:55.804+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "53d6cfdd",
+              "name": "Grant Park",
+              "city": {
+                  "id": "4887398",
+                  "name": "Chicago",
+                  "state": "Illinois",
+                  "stateCode": "IL",
+                  "coords": {
+                      "lat": 41.850033,
+                      "long": -87.6500523
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/grant-park-chicago-il-usa-53d6cfdd.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "lessons"
+                          },
+                          {
+                              "name": "quiet motions"
+                          },
+                          {
+                              "name": "suffice"
+                          },
+                          {
+                              "name": "blame game"
+                          },
+                          {
+                              "name": "fever dream"
+                          },
+                          {
+                              "name": "no faker"
+                          },
+                          {
+                              "name": "ok on your own"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "bon iver"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2021/grant-park-chicago-il-b8f15be.html"
+      },
+      {
+          "id": "5bb40370",
+          "versionId": "g1bff99bc",
+          "eventDate": "30-07-2021",
+          "lastUpdated": "2022-08-23T15:26:29.028+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "bd2f55e",
+              "name": "Rockwood Music Hall Stage 2",
+              "city": {
+                  "id": "5128581",
+                  "name": "New York",
+                  "state": "New York",
+                  "stateCode": "NY",
+                  "coords": {
+                      "lat": 40.7142691,
+                      "long": -74.0059729
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/rockwood-music-hall-stage-2-new-york-ny-usa-bd2f55e.html"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2021/rockwood-music-hall-stage-2-new-york-ny-5bb40370.html"
+      },
+      {
+          "id": "23858c77",
+          "versionId": "1b242114",
+          "eventDate": "29-08-2020",
+          "lastUpdated": "2020-08-27T01:18:45.921+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "33d27cf9",
+              "name": "Private Venue",
+              "city": {
+                  "id": "cu:aa194bc8-06c7-11e6-b736-22000bb3106b",
+                  "name": "Unknown City",
+                  "coords": {
+                      "lat": 44.967243,
+                      "long": -103.771556
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/private-venue-unknown-city-usa-33d27cf9.html"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2020/private-venue-unknown-city-23858c77.html"
+      },
+      {
+          "id": "63841697",
+          "versionId": "2b27b48e",
+          "eventDate": "31-07-2020",
+          "lastUpdated": "2020-07-30T00:12:44.085+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "33d27cf9",
+              "name": "Private Venue",
+              "city": {
+                  "id": "cu:aa194bc8-06c7-11e6-b736-22000bb3106b",
+                  "name": "Unknown City",
+                  "coords": {
+                      "lat": 44.967243,
+                      "long": -103.771556
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/private-venue-unknown-city-usa-33d27cf9.html"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2020/private-venue-unknown-city-63841697.html"
+      },
+      {
+          "id": "7386d649",
+          "versionId": "g73a59ee1",
+          "eventDate": "16-04-2020",
+          "lastUpdated": "2024-07-02T15:14:01.910+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3bd7b4a0",
+              "name": "Panic Room",
+              "city": {
+                  "id": "5368361",
+                  "name": "Los Angeles",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 34.052,
+                      "long": -118.244
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/panic-room-los-angeles-ca-usa-3bd7b4a0.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "lessons"
+                          },
+                          {
+                              "name": "quiet motions"
+                          },
+                          {
+                              "name": "Wonderwall",
+                              "cover": {
+                                  "mbid": "39ab1aed-75e0-4140-bd47-540276886b60",
+                                  "name": "Oasis",
+                                  "sortName": "Oasis",
+                                  "disambiguation": "Noel & Liam Gallagher",
+                                  "url": "https://www.setlist.fm/setlists/oasis-bd6bd7e.html"
+                              }
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "Be Wherever You Are",
+                              "cover": {
+                                  "mbid": "10587e37-c76a-4530-ac32-86203752cd5e",
+                                  "name": "Rebecca Sugar",
+                                  "sortName": "Sugar, Rebecca",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/rebecca-sugar-3c249c7.html"
+                              }
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "suffice"
+                          },
+                          {
+                              "name": "Sofia",
+                              "cover": {
+                                  "mbid": "d786f59b-1836-4ddb-8393-ab753edbe984",
+                                  "name": "Clairo",
+                                  "sortName": "Clairo",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/clairo-bccddf2.html"
+                              }
+                          },
+                          {
+                              "name": "quarantine depression"
+                          },
+                          {
+                              "name": "R U Mine?",
+                              "cover": {
+                                  "mbid": "ada7a83c-e3e1-40f1-93f9-3e73dbc9298a",
+                                  "name": "Arctic Monkeys",
+                                  "sortName": "Arctic Monkeys",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/arctic-monkeys-3d6bdbf.html"
+                              }
+                          },
+                          {
+                              "name": "Buzzcut Season",
+                              "cover": {
+                                  "mbid": "8e494408-8620-4c6a-82c2-c2ca4a1e4f12",
+                                  "name": "Lorde",
+                                  "sortName": "Lorde",
+                                  "disambiguation": "New Zealand singer‐songwriter",
+                                  "url": "https://www.setlist.fm/setlists/lorde-6bdc4632.html"
+                              }
+                          },
+                          {
+                              "name": "Call Me Back",
+                              "cover": {
+                                  "mbid": "f181961b-20f7-459e-89de-920ef03c7ed0",
+                                  "name": "The Strokes",
+                                  "sortName": "Strokes, The",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/the-strokes-23d6982f.html"
+                              }
+                          },
+                          {
+                              "name": "Falling for U",
+                              "cover": {
+                                  "mbid": "2ef12c9c-3825-4a32-9d8d-1800dd73445b",
+                                  "name": "Peachy!",
+                                  "sortName": "Peachy!",
+                                  "disambiguation": "Late 2010's Indie Pop artist originating from Atlanta, GA",
+                                  "url": "https://www.setlist.fm/setlists/peachy-23f4b023.html"
+                              }
+                          },
+                          {
+                              "name": "blame game"
+                          },
+                          {
+                              "name": "She Plays Bass",
+                              "cover": {
+                                  "mbid": "88d17133-abbc-42db-9526-4e2c1db60336",
+                                  "name": "beabadoobee",
+                                  "sortName": "beabadoobee",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/beabadoobee-6bc8be2e.html"
+                              }
+                          },
+                          {
+                              "name": "Nothing",
+                              "cover": {
+                                  "mbid": "01962e70-c4a6-440d-81c4-b5eb9de7b299",
+                                  "name": "Bruno Major",
+                                  "sortName": "Major, Bruno",
+                                  "disambiguation": "",
+                                  "url": "https://www.setlist.fm/setlists/bruno-major-4bd9a7ea.html"
+                              }
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2020/panic-room-los-angeles-ca-7386d649.html"
+      },
+      {
+          "id": "3b86b41c",
+          "versionId": "4b313fba",
+          "eventDate": "03-04-2020",
+          "lastUpdated": "2020-04-03T20:49:03.767+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3bd7b4a0",
+              "name": "Panic Room",
+              "city": {
+                  "id": "5368361",
+                  "name": "Los Angeles",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 34.052,
+                      "long": -118.244
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/panic-room-los-angeles-ca-usa-3bd7b4a0.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "quiet motions"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "quarantine depression"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "prom dress"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2020/panic-room-los-angeles-ca-3b86b41c.html"
+      },
+      {
+          "id": "5b996b24",
+          "versionId": "13306579",
+          "eventDate": "26-03-2020",
+          "lastUpdated": "2020-03-26T21:32:59.287+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "3bd7b4a0",
+              "name": "Panic Room",
+              "city": {
+                  "id": "5368361",
+                  "name": "Los Angeles",
+                  "state": "California",
+                  "stateCode": "CA",
+                  "coords": {
+                      "lat": 34.052,
+                      "long": -118.244
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/panic-room-los-angeles-ca-usa-3bd7b4a0.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "quiet motions"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "quarantine depression"
+                          },
+                          {
+                              "name": "suffice"
+                          },
+                          {
+                              "name": "prom dress"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2020/panic-room-los-angeles-ca-5b996b24.html"
+      },
+      {
+          "id": "239bb8d3",
+          "versionId": "23089033",
+          "eventDate": "10-12-2019",
+          "lastUpdated": "2019-12-11T12:11:29.595+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "4bd63b1e",
+              "name": "Fleece",
+              "city": {
+                  "id": "2654675",
+                  "name": "Bristol",
+                  "state": "England",
+                  "stateCode": "ENG",
+                  "coords": {
+                      "lat": 51.45,
+                      "long": -2.5833333
+                  },
+                  "country": {
+                      "code": "GB",
+                      "name": "United Kingdom"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/fleece-bristol-england-4bd63b1e.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "blame game"
+                          },
+                          {
+                              "name": "suffice"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "i feel like chet"
+                          },
+                          {
+                              "name": "porcelain"
+                          },
+                          {
+                              "name": "prom dress"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2019/fleece-bristol-england-239bb8d3.html"
+      },
+      {
+          "id": "339a003d",
+          "versionId": "5b0bd730",
+          "eventDate": "01-12-2019",
+          "lastUpdated": "2019-12-01T23:13:26.928+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "73d2d2f5",
+              "name": "Engine Rooms",
+              "city": {
+                  "id": "2637487",
+                  "name": "Southampton",
+                  "state": "England",
+                  "stateCode": "ENG",
+                  "coords": {
+                      "lat": 50.9,
+                      "long": -1.4
+                  },
+                  "country": {
+                      "code": "GB",
+                      "name": "United Kingdom"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/engine-rooms-southampton-england-73d2d2f5.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "late nights"
+                          },
+                          {
+                              "name": "unspoken words"
+                          },
+                          {
+                              "name": "suffice"
+                          },
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "cliché"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          },
+                          {
+                              "name": "porcelain"
+                          },
+                          {
+                              "name": "prom dress"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2019/engine-rooms-southampton-england-339a003d.html"
+      },
+      {
+          "id": "5b55c7c8",
+          "versionId": "g7bae4ee0",
+          "eventDate": "15-11-2019",
+          "lastUpdated": "2024-08-08T01:28:46.914+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "5bd60bb0",
+              "name": "The Gramercy Theatre",
+              "city": {
+                  "id": "5128581",
+                  "name": "New York",
+                  "state": "New York",
+                  "stateCode": "NY",
+                  "coords": {
+                      "lat": 40.7142691,
+                      "long": -74.0059729
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/the-gramercy-theatre-new-york-ny-usa-5bd60bb0.html"
+          },
+          "sets": {
+              "set": []
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2019/the-gramercy-theatre-new-york-ny-5b55c7c8.html"
+      },
+      {
+          "id": "39a91ef",
+          "versionId": "230d0cf3",
+          "eventDate": "14-11-2019",
+          "lastUpdated": "2019-11-14T20:11:08.051+0000",
+          "artist": {
+              "mbid": "ccbced49-2689-46f8-9101-1c265d6f7b8f",
+              "name": "mxmtoon",
+              "sortName": "mxmtoon",
+              "disambiguation": "American singer-songwriter",
+              "url": "https://www.setlist.fm/setlists/mxmtoon-7bcaa6b0.html"
+          },
+          "venue": {
+              "id": "1bd575cc",
+              "name": "Paste Studios",
+              "city": {
+                  "id": "5128581",
+                  "name": "New York",
+                  "state": "New York",
+                  "stateCode": "NY",
+                  "coords": {
+                      "lat": 40.7142691,
+                      "long": -74.0059729
+                  },
+                  "country": {
+                      "code": "US",
+                      "name": "United States"
+                  }
+              },
+              "url": "https://www.setlist.fm/venue/paste-studios-new-york-ny-usa-1bd575cc.html"
+          },
+          "sets": {
+              "set": [
+                  {
+                      "song": [
+                          {
+                              "name": "seasonal depression"
+                          },
+                          {
+                              "name": "prom dress"
+                          },
+                          {
+                              "name": "feelings are fatal"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "url": "https://www.setlist.fm/setlist/mxmtoon/2019/paste-studios-new-york-ny-39a91ef.html"
+      }
+  ]
+}
