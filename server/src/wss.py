@@ -152,10 +152,7 @@ class WebSocketServer:
         # Stop any new connections.
         del fetchers[mbid]
 
-        # For any clients that linger around for more than 1 second after
-        # the goodbye message, close them.
-        await asyncio.sleep(1)
-
+        # For any clients that still linger around, close them.
         for conn in mbids_to_connections[mbid]:
             self.loop.create_task(conn.close())
 

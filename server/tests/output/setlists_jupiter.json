@@ -1,0 +1,50 @@
+[
+  {
+    "isValid": true,
+    "eventDate": "2025-03-21",
+    "venueName": "Sonia",
+    "cityName": "Cambridge",
+    "cityLat": 42.375097,
+    "cityLong": -71.1056079,
+    "stateName": "Massachusetts",
+    "countryName": "United States",
+    "setlistUrl": "https://www.setlist.fm/setlist/boys-go-to-jupiter/2025/sonia-cambridge-ma-53581fc1.html",
+    "songsPerformed": null
+  },
+  {
+    "isValid": true,
+    "eventDate": "2025-03-16",
+    "venueName": "Music Hall of Williamsburg",
+    "cityName": "Brooklyn",
+    "cityLat": 40.65,
+    "cityLong": -73.95,
+    "stateName": "New York",
+    "countryName": "United States",
+    "setlistUrl": "https://www.setlist.fm/setlist/boys-go-to-jupiter/2025/music-hall-of-williamsburg-brooklyn-ny-4358d36b.html",
+    "songsPerformed": null
+  },
+  {
+    "isValid": true,
+    "eventDate": "2025-03-13",
+    "venueName": "Pie Shop",
+    "cityName": "Washington",
+    "cityLat": 38.895,
+    "cityLong": -77.036,
+    "stateName": "Washington, D.C.",
+    "countryName": "United States",
+    "setlistUrl": "https://www.setlist.fm/setlist/boys-go-to-jupiter/2025/pie-shop-washington-dc-2b58b0ae.html",
+    "songsPerformed": 2
+  },
+  {
+    "isValid": true,
+    "eventDate": "2025-03-11",
+    "venueName": "Schubas Tavern",
+    "cityName": "Chicago",
+    "cityLat": 41.850033,
+    "cityLong": -87.6500523,
+    "stateName": "Illinois",
+    "countryName": "United States",
+    "setlistUrl": "https://www.setlist.fm/setlist/boys-go-to-jupiter/2025/schubas-tavern-chicago-il-5b5df3e4.html",
+    "songsPerformed": null
+  }
+]

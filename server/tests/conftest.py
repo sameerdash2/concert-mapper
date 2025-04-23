@@ -27,6 +27,7 @@ async def app() -> Flask:
     yield app
 
     # Remove handlers from all loggers
+    # This also silences logs after the first test...
     # https://github.com/pytest-dev/pytest/issues/5502#issuecomment-1190557648
     import logging
     loggers = [logging.getLogger()] + list(logging.Logger.manager.loggerDict.values())
