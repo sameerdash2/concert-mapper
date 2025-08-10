@@ -40,8 +40,3 @@ async def app() -> Flask:
 @pytest.fixture()
 def client(app: Flask) -> FlaskClient:
     return app.test_client()
-
-
-@pytest.fixture()
-def runner(app: Flask) -> FlaskCliRunner:
-    return app.test_cli_runner()

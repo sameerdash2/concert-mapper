@@ -8,7 +8,7 @@ from typing import Dict
 from typing import TYPE_CHECKING
 from database import Database
 
-if TYPE_CHECKING:
+if TYPE_CHECKING:  # pragma: no cover
     from fetcher import Fetcher
 
 logger = logging.getLogger(__name__)
@@ -45,10 +45,10 @@ async def process_request(
     if "mbid" in params:
         mbid = params["mbid"][0]
     else:
-        return connection.respond(http.HTTPStatus.UNAUTHORIZED, b"Missing mbid\n")
+        return connection.respond(http.HTTPStatus.UNAUTHORIZED, "Missing mbid\n")
 
     if mbid not in fetchers:
-        return connection.respond(http.HTTPStatus.UNAUTHORIZED, b"Invalid mbid\n")
+        return connection.respond(http.HTTPStatus.UNAUTHORIZED, "Invalid mbid\n")
 
     # Store the mbid on this connection instance
     connection.mbid = mbid
@@ -118,10 +118,8 @@ class WebSocketServer:
     def broadcast_to_channel(self, mbid: str, event: dict) -> int:
         """Broadcast an event to all clients connected to a specific artist's channel.
         Returns the number of clients broadcasted to."""
-        if mbid in mbids_to_connections:
-            websockets.broadcast(mbids_to_connections[mbid], json.dumps(event))
-            return len(mbids_to_connections[mbid])
-        return 0
+        websockets.broadcast(mbids_to_connections[mbid], json.dumps(event))
+        return len(mbids_to_connections[mbid])
 
     async def broadcast_goodbye_to_channel(self, mbid: str, total_setlists: int, error: bool) -> None:
         """Broadcast a goodbye message to a channel, and close all its connections."""
