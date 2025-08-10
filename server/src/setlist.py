@@ -8,7 +8,7 @@ class Setlist:
         # Essential fields: if any are missing, mark the setlist as invalid for this app.
         try:
             # Store date in YYYY-MM-DD format (ISO 8601), converting from DD-MM-YYYY
-            self.event_date = "-".join(raw_setlist["eventDate"].split("-")[::-1])
+            self.event_date = Setlist.convert_date_to_ISO(raw_setlist["eventDate"])
             self.city_lat = raw_setlist["venue"]["city"]["coords"]["lat"]
             self.city_long = raw_setlist["venue"]["city"]["coords"]["long"]
             self.is_valid = True
@@ -52,3 +52,8 @@ class Setlist:
             setlist = Setlist(raw_setlist)
             converted_setlists.append(setlist.to_dict())
         return converted_setlists
+
+    @staticmethod
+    def convert_date_to_ISO(date: str) -> str:
+        """Convert a date from DD-MM-YYYY to YYYY-MM-DD."""
+        return "-".join(date.split("-")[::-1])

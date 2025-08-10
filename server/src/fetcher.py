@@ -8,6 +8,7 @@ from setlist import Setlist
 from setlistfm_api import SetlistFmAPI
 from wss import WebSocketServer
 from database import Database
+import datetime
 import logging
 
 logger = logging.getLogger(__name__)
@@ -59,8 +60,9 @@ class Fetcher:
     async def _fetch_setlists(self, appending: bool) -> None:
         # Loop for fetching setlists.
         if appending:
-            # TODO: Implement appending: only retrieve newer setlists than those already stored.
-            self.done_fetching = True
+            last_setlist = self.db.get_last_setlist(self.artist_mbid)
+        else:
+            last_setlist = None
 
         page = 1
         while True:
@@ -88,8 +90,23 @@ class Fetcher:
                 # Update metadata based on response
                 self._update_metadata(setlists_response)
 
-            # TODO: this skips all new concerts if appending
             if len(raw_setlists) > 0 and not self.done_fetching:
+                # If appending, only keep raw setlists that are newer than last setlist
+                if appending and last_setlist is not None:
+                    fresh_setlists = []
+                    for setlist in raw_setlists:
+                        if (
+                            # Stop when we encounter the same URL
+                            setlist["url"] == last_setlist["setlistUrl"] or
+                            # Rare case: in case last_setlist was deleted off setlist.fm, also check by date.
+                            Setlist.convert_date_to_ISO(setlist["eventDate"]) < last_setlist["eventDate"]
+                        ):
+                            self.done_fetching = True
+                            break
+                        else:
+                            fresh_setlists.append(setlist)
+                    raw_setlists = fresh_setlists
+
                 # Broadcast a payload of the new setlists to all connected clients
                 new_setlists = Setlist.convert_setlists(raw_setlists)
                 self._broadcast_new_setlists(new_setlists)
@@ -118,7 +135,15 @@ class Fetcher:
         self._obtain_artist_name()
 
         # Check if artist's setlists are already in DB.
-        exists, in_progress = self.db.check_artist(self.artist_mbid)
+        exists, in_progress, last_updated = self.db.check_artist(self.artist_mbid)
+
+        # If artist hasn't been updated in the last 15 seconds, the fetch likely got stuck. Reset it.
+        if exists and in_progress and (
+            datetime.datetime.now(tz=datetime.timezone.utc) - last_updated > datetime.timedelta(seconds=15)
+        ):
+            logger.warning(f"Setlists for {self} were found stuck. Restarting fetch.")
+            self.db.delete_artist(self.artist_mbid)
+            exists = False
 
         if exists and in_progress:
             # Fetch in progress: client can join the existing channel.
@@ -133,6 +158,10 @@ class Fetcher:
 
                 self.db.reinsert_artist(self.artist_mbid)
 
+                # Pull database setlists into memory before starting the fetch.
+                self.fetched_setlists.extend(self.db.get_all_setlists(self.artist_mbid))
+
+                # Fetch only new setlists, appending to those already stored.
                 thread = Thread(target=lambda: asyncio.run(self._fetch_setlists(appending=True)))
             else:
                 # New artist. Start a new fetch process

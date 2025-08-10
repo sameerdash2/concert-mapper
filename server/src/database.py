@@ -38,7 +38,8 @@ class Database:
         # Short timeout for locating server since this is hosted locally
         self._client = MongoClient(
             "mongodb://localhost:27017/",
-            serverSelectionTimeoutMS=200
+            serverSelectionTimeoutMS=200,
+            tz_aware=True
         )
         # Force connection attempt
         self._client.server_info()
@@ -73,23 +74,28 @@ class Database:
         except Exception as e:
             logger.error(f"Error reinserting artist '{mbid}': {e}")
 
-    def check_artist(self, mbid: str) -> tuple[bool, bool]:
+    def check_artist(self, mbid: str) -> tuple[bool, bool, datetime.datetime]:
         """Check if an artist is already in the database.
         Returns:
-            (exists, inProgress):
+            (exists, inProgress, lastUpdated):
             exists is True if the artist exists in the database.
             inProgress is True if their setlists are being fetched.
+            lastUpdated is when they were last fetched.
         """
         try:
             artist = self._artists.find_one({"mbid": mbid})
         except Exception as e:
             logger.error(f"Error checking artist '{mbid}': {e}")
-            return False, False
+            return False, False, None
 
-        return (
-            artist is not None,
-            artist["inProgress"] if artist else False
-        )
+        if artist is not None:
+            return (
+                True,
+                artist["inProgress"],
+                artist["lastUpdated"]
+            )
+
+        return False, False, None
 
     def insert_setlists(self, mbid: str, new_setlists: list[dict]) -> None:
         """Insert new setlists for an artist."""
@@ -115,6 +121,36 @@ class Database:
         # hope the artist was found
         return artist["setlists"] if artist else []
 
+    def get_last_setlist(self, mbid: str) -> Setlist | None:
+        """Get the most recent setlist stored for an artist. Returns None if no setlists stored."""
+        pipeline = [
+            {"$match": {"mbid": mbid}},
+            {
+                # Write the last setlist into a new field `lastSetlist`
+                "$set": {
+                    "lastSetlist": {
+                        "$arrayElemAt": [
+                            # Sort by descending eventDate, then take first elem
+                            {"$sortArray": {
+                                "input": "$setlists",
+                                "sortBy": {"eventDate": -1}
+                            }},
+                            0
+                        ]
+                    }
+                }
+            },
+            {"$project": {"_id": 0, "lastSetlist": 1}}
+        ]
+
+        try:
+            result = list(self._artists.aggregate(pipeline))
+        except Exception as e:
+            logger.error(f"Error retrieving last setlist for '{mbid}': {e}")
+            return None
+        last_setlist = result[0]["lastSetlist"] if result else None
+        return last_setlist
+
     def mark_artist_complete(self, mbid: str) -> None:
         try:
             self._artists.update_one(
@@ -126,6 +162,12 @@ class Database:
             )
         except Exception as e:
             logger.error(f"Error marking artist '{mbid}' as complete: {e}")
+
+    def delete_artist(self, mbid: str) -> None:
+        try:
+            self._artists.delete_one({"mbid": mbid})
+        except Exception as e:
+            logger.error(f"Error deleting artist '{mbid}': {e}")
 
     def close(self) -> None:
         self._client.close()

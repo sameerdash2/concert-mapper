@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import {store} from '../store/state';
 import {formatDate} from '@/services/util';
+import {computed} from 'vue';
+
+// store.setlists is not guaranteed to be in order.
+// Keep it in descending order.
+const sortedSetlists = computed(() => {
+  return [...store.setlists].sort((a, b) =>
+    b.eventDate.localeCompare(a.eventDate)
+  );
+});
 </script>
 
 <template>
@@ -19,7 +28,7 @@ import {formatDate} from '@/services/util';
     </thead>
     <tbody>
       <tr
-        v-for="setlist in store.setlists"
+        v-for="setlist in sortedSetlists"
         :key="setlist.setlistUrl"
       >
         <th>
