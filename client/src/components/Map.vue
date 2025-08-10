@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {onMounted, onUnmounted, watch} from 'vue';
+import {onMounted, onUnmounted, toRaw, watch} from 'vue';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type {Setlist} from '@/store/state';
@@ -64,7 +64,10 @@ onUnmounted(() => {
 const placeSetlistMarkers = (setlists: Setlist[]) => {
   setlists.forEach((setlist) => {
     if (map) {
-      setlist.marker.addTo(map);
+      // Un-proxy the `map` object using toRaw().
+      // otherwise, markers don't respond to zooming sometimes.
+      // https://stackoverflow.com/questions/65981712/uncaught-typeerror-this-map-is-null-vue-js-3-leaflet/66693709#66693709
+      setlist.marker.addTo(toRaw(map));
       plottedSetlists.add(setlist);
     }
   });
