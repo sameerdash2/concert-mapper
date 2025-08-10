@@ -107,22 +107,36 @@ export class WebSocketManager {
           break;
         }
         case 'goodbye':
-          this.socket?.close();
-
-          if (data.hadError) {
-            setMessage(
-                `Fetched ${this.count} concerts -- aborted due to error`
-            );
-          } else {
-            setMessage(`Fetched ${this.count} concerts ✅`);
-          }
-
-          // Now that fetching is finished, scatter setlists to prevent overlap
-          assignScatteredCoordinates();
-
-          store.isFetching = false;
+          this.processGoodbye(data);
           break;
       }
     };
+  }
+
+  /**
+   * Process the goodbye message from the websocket.
+   * @param {object} data - ws message
+   */
+  private static processGoodbye(data: object) {
+    // Sometimes the goodbye message might arrive before the final page of
+    // setlists. This is a hack for that
+    if (this.count < data.totalSetlists) {
+      setTimeout(() => this.processGoodbye(data), 200);
+      return;
+    }
+    this.socket?.close();
+
+    if (data.hadError) {
+      setMessage(
+          `Fetched ${this.count} concerts -- aborted due to error`
+      );
+    } else {
+      setMessage(`Fetched ${this.count} concerts ✅`);
+    }
+
+    // Now that fetching is finished, scatter setlists to prevent overlap
+    assignScatteredCoordinates();
+
+    store.isFetching = false;
   }
 }
