@@ -14,6 +14,10 @@ module.exports = {
   },
   rules: {
     'comma-dangle': ['error', 'never'],
-    'vue/multi-word-component-names': 'off'
+    'vue/multi-word-component-names': 'off',
+    'vue/max-attributes-per-line': ['error', {
+      'singleline': 3,
+      'multiline': 1
+    }]
   }
 };

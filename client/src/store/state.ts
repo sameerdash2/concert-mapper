@@ -33,7 +33,9 @@ export const store = reactive({
   proposedArtist: {} as Artist,
   artist: {} as Artist,
   isFetching: false,
-  setlists: [] as Setlist[]
+  setlists: [] as Setlist[],
+  // used for mobile
+  showSidebar: false
 });
 
 export const setMessage = (message: string) => {

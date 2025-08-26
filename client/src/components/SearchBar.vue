@@ -5,6 +5,7 @@ import {
   clearProposedArtist
 } from '../store/state';
 import {onMounted, onUnmounted, ref} from 'vue';
+import {store} from '../store/state';
 import {API_BASE_URL} from '@/services/util';
 
 const searchQuery = defineModel({
@@ -23,6 +24,7 @@ const searchArtist = () => {
   fetch(`${API_BASE_URL}/api/artists/${encodeURIComponent(searchText)}`)
       .then((response) => response.json())
       .then((data) => {
+        store.showSidebar = true;
         if (data.error) {
           setMessage(data.error);
           clearProposedArtist();

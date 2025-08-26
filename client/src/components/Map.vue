@@ -116,8 +116,6 @@ defineExpose({
 <style scoped>
 #the-map {
   font-family: inherit;
-  /* fill up whole viewport */
-  height: 100vh;
 }
 .leaflet-container {
   font-size: 14px;
