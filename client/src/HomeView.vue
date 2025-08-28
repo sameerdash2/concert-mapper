@@ -62,6 +62,13 @@ onMounted(() => isMobile.value = window.innerWidth < 769);
 .desktop-map {
   height: 100vh;
 }
+/* match the desktop cutoff point for Bulma is-narrow */
+@media print, screen and (min-width: 769px) {
+  .is-narrow {
+    width: 448px;
+    max-width: 448px;
+  }
+}
 /* mobile layout styling */
 @media (max-width: 768px) {
   .mobile-root {
