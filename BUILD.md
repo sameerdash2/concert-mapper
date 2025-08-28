@@ -10,12 +10,12 @@
 1. Copy `.env.example` to a new file `.env`
 1. In `.env`, fill in your setlist.fm API key
 1. *(optional)* To show artist images, [create a new app](https://developer.spotify.com/documentation/web-api/concepts/apps) on Spotify for Developers and add the credentials to `.env`: the Client ID and the Client Secret. If not added, artists will display with a default profile picture.
-1. Start the Docker container: `docker-compose up -d` -- this will be a locally hosted instance of MongoDB.
+1. Start the Docker container: `docker compose up -d` -- this will be a locally hosted instance of MongoDB.
 1. Run the app: `flask run`
 
 The backend API will run at `http://localhost:8000`.
 
-To shut down the Docker container, run `docker-compose down`.
+To shut down the Docker container, run `docker compose down`.
 
 ### Backend Tests
 
@@ -61,7 +61,7 @@ These notes are mostly for myself.
       ProxyPassReverse /api http://127.0.0.1:8000/api
     </VirtualHost>
     ```
-    If you don't have an SSL certificate, use `<VirtualHost *:80>` to serve the site over HTTP. If you do, a tool like `certbot` should help in adding the proper lines to the config.
+    If you don't have an SSL certificate, use `<VirtualHost *:80>` to serve the site over HTTP. If you do, a tool like `certbot` should help in adding the proper lines to the config. (Make sure `certbot` doesn't create a *new* config file)
 1. Enable the new virtual host: `sudo a2ensite <domain_name>.conf`
 1. Validate the config with `sudo apache2ctl configtest`
 1. Restart Apache to apply the changes: `sudo systemctl restart apache2`
@@ -84,6 +84,14 @@ Now the backend API should be up. Test it out with something simple (like `curl 
 
     <Directory /PATH-TO-DIST-DIR>
         Require all granted
+
+        # Direct all sub paths to index.html so they get handled by Vue
+        RewriteEngine On
+        RewriteBase /
+        RewriteRule ^index\.html$ - [L]
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule . /index.html [L]
     </Directory>
 
     # WebSocket...
@@ -96,7 +104,7 @@ Now the backend API should be up. Test it out with something simple (like `curl 
 
 Now Apache should be set up to serve both the backend API and the frontend's assets at the same domain name.
 
-Here is my final config for production:
+Here is the final config for production:
 
 ```conf
 <VirtualHost *:80>
@@ -114,7 +122,6 @@ Here is my final config for production:
   ServerName concertmapper.eastus2.cloudapp.azure.com
   ServerAlias www.concertmapper.eastus2.cloudapp.azure.com
 
-  DocumentRoot /var/www/concertmapper.eastus2.cloudapp.azure.com
   ErrorLog ${APACHE_LOG_DIR}/error.log
   CustomLog ${APACHE_LOG_DIR}/access.log combined
 
@@ -127,6 +134,14 @@ Here is my final config for production:
 
   <Directory /home/kite/cm/client/dist>
     Require all granted
+
+    # Direct all sub paths to index.html so they get handled by Vue
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
   </Directory>
 
   # SSL put by certbot
