@@ -78,12 +78,13 @@ def get_artist_image_url(name: str) -> str:
         else:
             break
 
+    if response.status_code != 200:
+        logger.error(f"Error fetching artist image for '{name}': {response.status_code}: {response.text}")
+        return DEFAULT_ARTIST_IMAGE_URL
+
     response_body = response.json()
 
-    if response.status_code != 200:
-        logger.error(f"Error fetching artist image for '{name}': {response.status_code}: {response_body}")
-        return DEFAULT_ARTIST_IMAGE_URL
-    elif len(response_body["artists"]["items"]) == 0:
+    if len(response_body["artists"]["items"]) == 0:
         # Haven't actually found a query string that yields 0 results,
         # but handling it anyway
         logger.warning(f"No artists found in Spotify API for '{name}'.")
