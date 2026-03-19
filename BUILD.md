@@ -10,6 +10,7 @@
 1. Copy `.env.example` to a new file `.env`
 1. In `.env`, fill in your setlist.fm API key
 1. *(optional)* To show artist images, [create a new app](https://developer.spotify.com/documentation/web-api/concepts/apps) on Spotify for Developers and add the credentials to `.env`: the Client ID and the Client Secret. If not added, artists will display with a default profile picture.
+    - As of 9 Mar 2026, you now need a paid Spotify Premium account to use the API. I may find an alternative for this eventually.
 1. Start the Docker container: `docker compose up -d` -- this will be a locally hosted instance of MongoDB.
 1. Run the app: `flask run`
 
