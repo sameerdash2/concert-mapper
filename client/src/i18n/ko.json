@@ -1,0 +1,27 @@
+{
+  "subtitle": "좋아하는 아티스트가 투어 했던 모든 곳을 확인하세요",
+  "searchArtist": "아티스트 검색",
+  "searching": "검색 중...",
+  "confirm": "선택",
+  "working": "검색 중...",
+  "fetchedOf": "콘서트 {1}개 중 {0}개를 가져왔음...",
+  "fetchedNotOf": "콘서트 {0}개를 가져왔음...",
+  "fetchedDone": "콘서트 {0}개를 가져왔음 ✅",
+  "fetchedError": "콘서트 {0}개를 가져왔음 -- 오류로 인해 중단됨",
+  "viewMap": "지도 보기",
+  "viewList": "리스트 보기",
+  "artist": "아티스트",
+  "table": {
+    "date": "날짜",
+    "city": "도시",
+    "venue": "장소",
+    "songs": "곡 개수",
+    "viewSetlist": "세트리스트 확인"
+  },
+  "wsFailed": "WebSocket 연결을 실패했습니다. 나중에 다시 시도해 주세요.",
+  "wsError": "WebSocket 서버가 준비되지 않았습니다. 나중에 다시 시도해 주세요",
+  "map": {
+    "about": "정보",
+    "attribution": "데이터 출처: {0}"
+  }
+}
