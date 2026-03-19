@@ -4,6 +4,8 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type {Setlist} from '@/store/state';
 import {store} from '@/store/state';
+import {useI18n} from 'vue-i18n';
+const {t} = useI18n();
 
 // Fix default marker icon not loading when bundled
 // https://github.com/Leaflet/Leaflet/issues/4968#issuecomment-269750768
@@ -43,8 +45,8 @@ onMounted(() => {
   // Add attribution & link to About
   map.attributionControl
       .setPrefix(false)
-      .addAttribution('Concert data from <a href="https://www.setlist.fm/">setlist.fm</a>')
-      .addAttribution('<a target="_self" href="/about">About</a>');
+      .addAttribution(t('map.attribution', [`<a href="https://www.setlist.fm/">setlist.fm</a>`]))
+      .addAttribution(`<a target="_self" href="/about">${t('map.about')}</a>`);
 
   // Plot existing setlists
   placeSetlistMarkers(store.setlists as Setlist[]);

@@ -31,7 +31,7 @@ onMounted(() => isMobile.value = window.innerWidth < 769);
       class="button toggle-btn"
       @click="store.showSidebar = !store.showSidebar"
     >
-      {{ store.showSidebar ? 'View Map 🗺️' : 'View List 📃' }}
+      {{ store.showSidebar ? $t('viewMap') : $t('viewList') }}
     </button>
   </div>
 

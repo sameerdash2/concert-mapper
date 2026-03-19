@@ -1,0 +1,27 @@
+{
+  "subtitle": "See where your favorite artists have been on tour",
+  "searchArtist": "Search artist...",
+  "searching": "Searching...",
+  "confirm": "Confirm",
+  "working": "Working...",
+  "fetchedOf": "Fetched {0} of {1} concerts...",
+  "fetchedNotOf": "Fetched {0} concerts...",
+  "fetchedDone": "Fetched {0} concerts ✅",
+  "fetchedError": "Fetched {0} concerts -- aborted due to error",
+  "viewMap": "View Map 🗺️",
+  "viewList": "View List 📃",
+  "table": {
+    "artist": "Artist",
+    "date": "Date",
+    "city": "City",
+    "venue": "Venue",
+    "songs": "Songs",
+    "viewSetlist": "View setlist"
+  },
+  "wsFailed": "WebSocket connection failed. Please try again later.",
+  "wsError": "WebSocket server is not ready. Please try again later.",
+  "map": {
+    "about": "About",
+    "attribution": "Concert data from {0}"
+  }
+}

@@ -3,6 +3,8 @@
 <script setup lang="ts">
 import type {Setlist} from '@/store/state';
 import {formatDate} from '@/services/util';
+import {useI18n} from 'vue-i18n';
+const {t} = useI18n();
 
 const props = defineProps<{
   setlist: Setlist;
@@ -19,13 +21,13 @@ const eventDateString = formatDate(props.setlist.eventDate);
     <b>{{ props.setlist.cityName }}, {{ props.setlist.countryName }}</b>
   </div>
   <div>
-    <b>Venue</b>: {{ props.setlist.venueName || 'N/A' }}
+    <b>{{ t('table.venue') }}</b>: {{ props.setlist.venueName || 'N/A' }}
   </div>
   <div>
-    <b>Songs</b>: {{ props.setlist.songsPerformed || 'N/A' }}
+    <b>{{ t('table.songs') }}</b>: {{ props.setlist.songsPerformed || 'N/A' }}
   </div>
   <div>
-    <b><a :href="props.setlist.setlistUrl">View setlist</a></b>
+    <b><a :href="props.setlist.setlistUrl">{{ t('table.viewSetlist') }}</a></b>
   </div>
 </template>
 

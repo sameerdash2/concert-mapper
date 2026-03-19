@@ -7,6 +7,8 @@ import {
 import {onMounted, onUnmounted, ref} from 'vue';
 import {store} from '../store/state';
 import {API_BASE_URL} from '@/services/util';
+import {useI18n} from 'vue-i18n';
+const {t} = useI18n();
 
 const searchQuery = defineModel({
   type: String,
@@ -20,7 +22,7 @@ const searchArtist = () => {
   }
 
   searchQuery.value = '';
-  setMessage('Searching...');
+  setMessage(t('searching'));
   fetch(`${API_BASE_URL}/api/artists/${encodeURIComponent(searchText)}`)
       .then((response) => response.json())
       .then((data) => {
@@ -58,7 +60,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown));
       v-model="searchQuery"
       class="input"
       type="text"
-      placeholder="Search artist..."
+      :placeholder="$t('searchArtist')"
       autofocus
     >
   </form>

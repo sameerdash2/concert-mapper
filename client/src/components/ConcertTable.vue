@@ -21,9 +21,9 @@ const sortedSetlists = computed(() => {
     </colgroup>
     <thead>
       <tr>
-        <th>Date</th>
-        <th>City</th>
-        <th>Venue</th>
+        <th>{{ $t('table.date') }}</th>
+        <th>{{ $t('table.city') }}</th>
+        <th>{{ $t('table.venue') }}</th>
       </tr>
     </thead>
     <tbody>

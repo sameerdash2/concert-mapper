@@ -9,6 +9,8 @@ import {
 import {computed} from 'vue';
 import Map from './Map.vue';
 import {API_BASE_URL} from '@/services/util';
+import {useI18n} from 'vue-i18n';
+const {t} = useI18n();
 
 const props = defineProps<{
   mapRef: InstanceType<typeof Map> | null;
@@ -19,7 +21,7 @@ const proposedArtistExists = computed(() => {
 });
 
 const handleConfirm = () => {
-  setMessage('Working...');
+  setMessage(t('working'));
   // Set proposed artist as actual artist
   setArtist(store.proposedArtist);
   clearProposedArtist();
@@ -34,8 +36,7 @@ const handleConfirm = () => {
           store.isFetching = false;
           return;
         } else if (data.wssReady === false) {
-          setMessage(
-              'Error: WebSocket server is not ready. Please try again later.');
+          setMessage(t('wsError'));
           store.isFetching = false;
           return;
         }
@@ -53,7 +54,7 @@ const handleConfirm = () => {
 <template>
   <div v-if="proposedArtistExists">
     <p>
-      <b>Artist:</b> {{ store.proposedArtist.name }}
+      <b>{{ $t('artist') }}</b>: {{ store.proposedArtist.name }}
     </p>
     <img
       :src="store.proposedArtist.imageUrl"
@@ -65,7 +66,7 @@ const handleConfirm = () => {
       class="button"
       @click="handleConfirm"
     >
-      Confirm
+      {{ $t('confirm') }}
     </button>
   </div>
 </template>

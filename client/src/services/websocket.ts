@@ -7,6 +7,7 @@ import {
 import {assignScatteredCoordinates} from './scatter';
 import {createApp} from 'vue';
 import ConcertPopup from '@/components/ConcertPopup.vue';
+import {i18n} from '@/main';
 import L from 'leaflet';
 
 const IS_PROD = import.meta.env.PROD;
@@ -35,7 +36,7 @@ export class WebSocketManager {
     this.socket.onclose = (event: CloseEvent) => {
       if (!event.wasClean) {
         console.error('WebSocket connection closed', event);
-        setMessage('WebSocket connection failed. Please try again later.');
+        setMessage(i18n.global.t('wsFailed'));
         store.isFetching = false;
       }
     };
@@ -48,8 +49,11 @@ export class WebSocketManager {
   private static updateMessage(eventData: {totalExpected: number}) {
     setMessage(
         eventData.totalExpected !== null ?
-        `Fetched ${this.count} of ${eventData.totalExpected} concerts...` :
-        `Fetched ${this.count} concerts...`
+        i18n.global.t('fetchedOf', [
+          i18n.global.n(this.count),
+          i18n.global.n(eventData.totalExpected)
+        ]) :
+        i18n.global.t('fetchedNotOf', [i18n.global.n(this.count)])
     );
   }
 
@@ -89,7 +93,7 @@ export class WebSocketManager {
             // Create a Leaflet marker to store within each setlist.
             // Compose a marker and mount it to a new div
             const popupDiv = document.createElement('div');
-            createApp(ConcertPopup, {setlist}).mount(popupDiv);
+            createApp(ConcertPopup, {setlist}).use(i18n).mount(popupDiv);
 
             const marker = L.marker([setlist.cityLat, setlist.cityLong])
                 .bindPopup(popupDiv);
@@ -127,11 +131,9 @@ export class WebSocketManager {
     this.socket?.close();
 
     if (data.hadError) {
-      setMessage(
-          `Fetched ${this.count} concerts -- aborted due to error`
-      );
+      setMessage(i18n.global.t('fetchedError', [i18n.global.n(this.count)]));
     } else {
-      setMessage(`Fetched ${this.count} concerts ✅`);
+      setMessage(i18n.global.t('fetchedDone', [i18n.global.n(this.count)]));
     }
 
     // Now that fetching is finished, scatter setlists to prevent overlap

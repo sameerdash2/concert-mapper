@@ -1,7 +1,7 @@
 <!-- eslint-disable max-len -->
 <template>
   <div class="cell p-4">
-    <h2>About</h2>
+    <h2>{{ $t('map.about') }}</h2>
 
     <h4>How does this website work?</h4>
     <p>
