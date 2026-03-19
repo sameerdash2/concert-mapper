@@ -29,7 +29,7 @@ const router = createRouter({
 
 export const i18n = createI18n({
   legacy: false,
-  // TODO: match user locale
+  locale: navigator.language,
   fallbackLocale: 'en',
   messages
 });

@@ -11,6 +11,6 @@ export const API_BASE_URL = isProd ?
  */
 export const formatDate = (hyphenatedDate: string): string => {
   const [yyyy, mm, dd] = hyphenatedDate.split('-').map(Number);
-  // TODO: match locale with the one used for translation?
-  return new Date(yyyy, mm - 1, dd).toLocaleDateString();
+  // Match locale with the one used for translation
+  return new Date(yyyy, mm - 1, dd).toLocaleDateString(navigator.language);
 };

@@ -10,8 +10,8 @@
   "fetchedError": "Fetched {0} concerts -- aborted due to error",
   "viewMap": "View Map 🗺️",
   "viewList": "View List 📃",
+  "artist": "Artist",
   "table": {
-    "artist": "Artist",
     "date": "Date",
     "city": "City",
     "venue": "Venue",
