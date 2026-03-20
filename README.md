@@ -4,6 +4,14 @@ A web app that maps out the locations of concerts by a given artist. View concer
 
 Made using Flask, Vue, and Leaflet.
 
+## Screenshots
+
+![Concerts of AJR](pics/densemap.png "Concerts of AJR")
+
 ## Build
 
 To build the app for local development, refer to [BUILD.md](BUILD.md).
+
+## Acknowledgements
+
+- Seungmin Jung for Korean localization
